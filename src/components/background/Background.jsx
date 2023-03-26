@@ -17,7 +17,7 @@ export default function Background({ children, currentScreen }) {
 	function handleLogoClick() {
 		const url =
 			process.env.NODE_ENV === 'production'
-				? 'https://vibecheck-8lua.onrender.com'
+				? 'https://thevibecheck.io'
 				: 'http://localhost:3000';
 		window.location.replace(url);
 	}

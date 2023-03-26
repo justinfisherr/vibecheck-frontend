@@ -62,7 +62,7 @@ export default function SocialButtons() {
 			try {
 				await navigator.share({
 					url: shareUrl,
-					title: 'vibecheck.com',
+					title: 'vibecheck.io',
 					text: 'Check your music compatability',
 					files: [
 						new File([blob], 'image.png', {
