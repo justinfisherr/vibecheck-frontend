@@ -7,8 +7,8 @@ export default function useSubmit(username, setResponseData) {
 
 	const defaultUrl =
 		process.env.NODE_ENV === 'production'
-			? 'https://vibecheck-backend.onrender.com/compare'
-			: 'http://localhost:5000/compare';
+			? 'https://vibecheck-backend.onrender.com/compare/'
+			: 'http://localhost:5000/compare/';
 
 	// Context
 	const animationData = useContext(animationContext);
