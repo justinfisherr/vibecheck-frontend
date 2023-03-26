@@ -46,6 +46,7 @@ export default function UsernameInput({ setResponseData, vibeId }) {
 				}`}>
 				<p className='at-symbol'>ID</p>
 				<input
+					type='text'
 					className='username-input'
 					value={input}
 					onChange={(e) => handleInputChange(e.target.value)}
