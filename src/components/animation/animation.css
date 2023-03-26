@@ -1,0 +1,114 @@
+.animation-page{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* transition: all 0.1s ease-in-out; */
+}
+
+.animation-content-wrapper{
+    z-index: 1;
+    padding-inline: 20px;
+}
+
+.recommend{
+    position: absolute;
+    bottom: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    
+}
+
+
+.buttons{
+    bottom: 50px;
+    display: flex;
+    margin: auto;
+    width: fit-content;
+    margin-top: 30px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+}
+
+.buttons-three{
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.carret{
+    width: 20px;
+}
+
+.share-button{
+    color: black;
+}
+
+.animation-button{
+    height: 45px;
+    min-width: 45px;
+    font-size: 16px;
+    border-radius: 5px;
+    font-weight: 600;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.redo-button{
+    height: 45px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    background-color: white;
+    transition: all 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.redo-icon{
+    width: 20px;
+    height: 20px;
+}
+
+.redo-button:hover, .animation-button:hover{
+    transform: scale(1.05);
+}
+
+
+/* Screens */
+.titles{
+    font-weight: 700;
+    font-size: 60px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.sub-texts{
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.fade-in{
+    animation: fade-in 0.5s ease-in-out  forwards ;
+}
+
+@keyframes fade-in {
+    0%   {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+  }

@@ -1,0 +1,49 @@
+.wave-top-container{
+    width: 2200px;
+    height: 100%;
+    height: 300px;
+}
+
+.waves-top{
+    position: absolute;
+    top: 0;
+    pointer-events: none;
+    opacity: 0.1;
+    z-index: 0;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.wave-bottom-container{
+    width: 2800px;
+    height: 100%;
+}
+
+.waves-bottom{
+    position: absolute;
+    bottom: 0;
+    right: -100px;
+    pointer-events: none;
+    opacity: 0.1;
+    z-index: 0;
+    width: 100%;
+    object-fit: cover;
+}
+
+.waves-top-no-match, .waves-bottom-no-match, .waves-top-percent, .waves-bottom-percent{
+    filter: invert(97%) sepia(3%) saturate(0%) hue-rotate(253deg) brightness(103%) contrast(103%);
+    opacity: 0.15;
+}
+
+.fade-away{
+    animation: fade-away 0.8s ease-in-out 0.5s forwards;
+}
+
+@keyframes fade-away {
+    from{
+        opacity: 0.15;
+    }to{
+        opacity: 0;
+    }
+}

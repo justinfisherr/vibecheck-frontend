@@ -1,0 +1,201 @@
+
+.percent-screen-extra-buttons-container{
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-buttons{
+    background-color: blue;
+    
+}
+
+.share-button{
+    /* margin-top: ; */
+    height: 45px;
+    font-weight: 700;
+    border-radius: 5px;
+    border: none;
+    padding-inline: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background-color: white;
+}
+
+.share-button:hover{
+    transform: scale(1.05);
+    background-color: white;
+}
+
+
+.modal{
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transition: all 0.3s;
+
+}
+
+.close-button{
+    position: absolute;
+    top: 4%;
+    right: 4%;
+    width: 11px;
+    height: 11px;
+    cursor: pointer;
+   
+}
+
+.x-icon{
+    width: 100%;
+    height: 100%;
+}
+
+.modal-content{
+    position: relative;
+    padding: 20px;
+    background-color: #d2f4e7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+    margin-inline: 10px;
+}
+
+.rendered-img{
+  object-fit: cover;
+}
+
+
+.modal-buttons-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 20px;
+    column-gap: 10px;
+}
+
+.modal-button{
+    background-color: #88d1b6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 12px;
+}
+
+.modal-button:hover{
+    transform: scale(1.05);
+}
+
+.alt-social-buttons-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.react-share__ShareButton{
+    display: flex;
+    height: fit-content;
+    justify-content: center;
+    
+}
+
+.hide {
+    pointer-events: none;
+    opacity: 0;
+}
+
+
+@media (min-width: 300px){
+    .modal-content{
+        padding: 25px;
+    }
+    
+}
+
+@media (min-width: 350px){
+    .modal-content{
+        padding: 30px;
+    }
+    .modal-button{
+        padding: 10px 15px;
+    }
+}
+
+@media (min-width: 400px){
+    .modal-content{
+        padding: 35px;
+    }
+
+    .modal-buttons-container{
+        margin-top: 35px;
+    }
+
+    .modal-button{
+        font-size: 14px;
+    }
+    
+}
+
+@media (min-width: 450px){
+    .modal-content{
+        padding: 40px;
+    }
+
+    .close-button{
+        width: 15px;
+        height: 15px;
+    }
+}
+
+@media (min-width: 550px){
+    .modal-content{
+        padding: 50px;
+        border-radius: 3%;
+    }
+
+    .close-button{
+        top: 3.5%;
+        right: 3.5%;
+        width: 18px;
+        height: 18px;
+    }
+
+    .modal-buttons-container{
+        margin-top: 50px;
+    }
+
+    .modal-button{
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 750px){
+    .close-button{
+        top: 3%;
+        right: 3%;
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (min-width: 1000px){
+    .close-button{
+        top: 2.5%;
+        right: 2.5%;
+        width: 20px;
+        height: 20px;
+    }
+}

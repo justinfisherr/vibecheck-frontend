@@ -1,0 +1,80 @@
+.compare-page{
+    background-color: #e23838;
+
+}
+
+.compare-content{
+    text-align: center;
+    width: fit-content;
+    padding-inline: 20px;
+}
+
+.compare-heading{
+    font-size: 45px;
+    line-height: 50px;
+    color: white;
+    height: 100px;
+}
+
+.compare-your-id{
+    font-size: 20px;
+    color: white;
+}
+
+.compare-subheading{
+    font-size: 16px;
+    color: white;
+    padding-inline: 20px;
+}
+
+
+
+@media screen and (min-width: 350px) {
+    .compare-heading{
+        font-size: 55px;
+        line-height: 60px;
+        height: 125px;
+    }
+
+    .compare-your-id{
+        font-size: 25px;
+    }
+    
+    .compare-subheading{
+        font-size: 20px;
+    }
+    
+}
+
+@media screen and (min-width: 480px) {
+    .compare-heading{
+        font-size: 70px;
+        line-height: 70px;
+        height: fit-content;
+    }
+
+    .compare-your-id{
+        font-size: 25px;
+    }
+    
+    .compare-subheading{
+        font-size: 20px;
+    }
+    
+}
+
+@media screen and (min-width: 650px) {
+    .compare-heading{
+        font-size: 70px;
+    }
+    
+    .compare-subheading{
+        font-size: 22px;
+    }
+    
+    .compare-your-id{
+        font-size: 35px;
+    }
+}
+
+

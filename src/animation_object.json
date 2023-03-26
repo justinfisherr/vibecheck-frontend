@@ -1,0 +1,146 @@
+{
+    "users": {
+        "user1": {
+            "profile_img": "https://i.scdn.co/image/ab6775700000ee857dadf119d37f733667e97b3b",
+            "username": "Sadie",
+            "id": "user_id",
+            "top_genres": ["genre"],
+            "top_artists": [
+                {
+                    "artist_name": "SZA",
+                    "artist_img": "https://i.scdn.co/image/ab6761610000e5eb7eb7f6371aad8e67e01f0a03",
+                    "genres": ["pop", "r&b"]
+                }
+            ],
+            "top_songs": [
+                {
+                    "song_name": "Money",
+                    "artist_name": "The Drums",
+                    "song_img": "https://i.scdn.co/image/ab67616d0000b273133102973816a5cd4f77a6e0"
+                }
+            ]
+        },
+        "user2": {
+            "profile_img": "https://i.scdn.co/image/ab6775700000ee857dadf119d37f733667e97b3b",
+            "username": "Sadie",
+            "id": "user_id",
+            "top_genres": ["genre"],
+            "top_artists": [
+                {
+                    "artist_name": "SZA",
+                    "artist_img": "https://i.scdn.co/image/ab6761610000e5eb7eb7f6371aad8e67e01f0a03",
+                    "genres": ["pop", "r&b"]
+                }
+            ],
+            "top_songs": [
+                {
+                    "song_name": "Money",
+                    "artist_name": "The Drums",
+                    "song_img": "https://i.scdn.co/image/ab67616d0000b273133102973816a5cd4f77a6e0"
+                }
+            ],
+            "recommended_artists": [
+                {
+                    "artist_name": "SZA",
+                    "artist_img": "https://i.scdn.co/image/ab6761610000e5eb7eb7f6371aad8e67e01f0a03",
+                    "genres": ["pop", "r&b"]
+                },                {
+                    "artist_name": "SZA",
+                    "artist_img": "https://i.scdn.co/image/ab6761610000e5eb7eb7f6371aad8e67e01f0a03",
+                    "genres": ["pop", "r&b"]
+                },                {
+                    "artist_name": "SZA",
+                    "artist_img": "https://i.scdn.co/image/ab6761610000e5eb7eb7f6371aad8e67e01f0a03",
+                    "genres": ["pop", "r&b"]
+                },                {
+                    "artist_name": "SZA",
+                    "artist_img": "https://i.scdn.co/image/ab6761610000e5eb7eb7f6371aad8e67e01f0a03",
+                    "genres": ["pop", "r&b"]
+                },                {
+                    "artist_name": "SZA",
+                    "artist_img": "https://i.scdn.co/image/ab6761610000e5eb7eb7f6371aad8e67e01f0a03",
+                    "genres": ["pop", "r&b"]
+                }
+            ],
+            "recommended_songs": [
+                {
+                    "song_name": "Money",
+                    "artist_name": "The Drums",
+                    "song_img": "https://i.scdn.co/image/ab67616d0000b273133102973816a5cd4f77a6e0"
+                },                {
+                    "song_name": "Money",
+                    "artist_name": "The Drums",
+                    "song_img": "https://i.scdn.co/image/ab67616d0000b273133102973816a5cd4f77a6e0"
+                },                {
+                    "song_name": "Money",
+                    "artist_name": "The Drums",
+                    "song_img": "https://i.scdn.co/image/ab67616d0000b273133102973816a5cd4f77a6e0"
+                },                {
+                    "song_name": "Money",
+                    "artist_name": "The Drums",
+                    "song_img": "https://i.scdn.co/image/ab67616d0000b273133102973816a5cd4f77a6e0"
+                },                {
+                    "song_name": "Money",
+                    "artist_name": "The Drums",
+                    "song_img": "https://i.scdn.co/image/ab67616d0000b273133102973816a5cd4f77a6e0"
+                }
+            ]
+        }
+    },
+    "match_profile": {
+        "matching_genres": [
+            "indie r&b",
+            "pop",
+            "modern indie pop",
+            "chillwave",
+            "art pop"
+        ],
+        "matching_artists": [
+            {
+                "artist_name": "SZA",
+                "artist_img": "https://i.scdn.co/image/ab6761610000e5eb7eb7f6371aad8e67e01f0a03",
+                "genres": ["pop", "r&b"]
+            },                {
+                "artist_name": "SZA",
+                "artist_img": "https://i.scdn.co/image/ab6761610000e5eb7eb7f6371aad8e67e01f0a03",
+                "genres": ["pop", "r&b"]
+            },                {
+                "artist_name": "SZA",
+                "artist_img": "https://i.scdn.co/image/ab6761610000e5eb7eb7f6371aad8e67e01f0a03",
+                "genres": ["pop", "r&b"]
+            },                {
+                "artist_name": "SZA",
+                "artist_img": "https://i.scdn.co/image/ab6761610000e5eb7eb7f6371aad8e67e01f0a03",
+                "genres": ["pop", "r&b"]
+            },                {
+                "artist_name": "SZA",
+                "artist_img": "https://i.scdn.co/image/ab6761610000e5eb7eb7f6371aad8e67e01f0a03",
+                "genres": ["pop", "r&b"]
+            }
+        ],
+        "matching_songs": [
+            {
+                "song_name": "Money",
+                "artist_name": "The Drums",
+                "song_img": "https://i.scdn.co/image/ab67616d0000b273133102973816a5cd4f77a6e0"
+            },            {
+                "song_name": "Money",
+                "artist_name": "The Drums",
+                "song_img": "https://i.scdn.co/image/ab67616d0000b273133102973816a5cd4f77a6e0"
+            },            {
+                "song_name": "Money",
+                "artist_name": "The Drums",
+                "song_img": "https://i.scdn.co/image/ab67616d0000b273133102973816a5cd4f77a6e0"
+            },            {
+                "song_name": "Money",
+                "artist_name": "The Drums",
+                "song_img": "https://i.scdn.co/image/ab67616d0000b273133102973816a5cd4f77a6e0"
+            },            {
+                "song_name": "Money",
+                "artist_name": "The Drums",
+                "song_img": "https://i.scdn.co/image/ab67616d0000b273133102973816a5cd4f77a6e0"
+            }
+        ],
+        "match_percent": 99
+    }
+}

@@ -1,0 +1,36 @@
+.animation-page-no-match{
+    background-color: #a1c2d1;
+}
+
+.recommened-page-content{
+    max-width: 100%;
+
+}
+
+.recommend-page-text{
+    /* display: flex;
+    flex-wrap: wrap; */
+    text-align: center;
+}
+
+
+.no-match-word{
+    font-size: min(10vw, 60px);
+    line-height: min(10vw, 60px);
+    font-weight: 800;
+    text-transform: uppercase;
+    color: white;
+    opacity: 0;
+}
+
+.color-word-no{
+    color: #566f8e;
+}
+
+
+@media (min-width: 600px) {
+    .recommened-page-content{
+        max-width: 600px;
+    
+    }
+}

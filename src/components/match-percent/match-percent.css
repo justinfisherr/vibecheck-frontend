@@ -1,0 +1,135 @@
+:root{
+    --percent-size: 125px;
+    --percent-offset: 2%;
+}
+
+.three-star{
+    width: calc(var(--percent-size)/3);
+    /* filter: invert(100%) sepia(0%) saturate(24%) hue-rotate(98deg) brightness(106%) contrast(108%); */
+    position: absolute;
+}
+
+.three-star-left{
+    left: -15%;
+    bottom: -13%;
+}
+
+.three-star-right{
+    right: -3%;
+    top: -13%;
+}
+
+.match-percent-wrapper{
+    position: relative;
+    width: calc(var(--percent-size)*1.5);
+    height: calc(var(--percent-size));
+    line-height: var(--percent-size);
+    margin-top: 10px;
+    pointer-events: none;
+    /* transform: scale(0); */
+    opacity: 0;
+    animation: grow 1s ease-in-out 0.8s forwards;
+
+}
+
+@keyframes grow {
+    from{
+        opacity: 0;
+        /* transform: scale(0); */
+    }to{
+        opacity: 1;
+        /* transform: scale(1); */
+    }
+}
+
+.match-percent{
+    position: absolute;
+    font-weight: 700;
+    color: white;
+}
+
+.match-percent-1{
+    color: #1e4651;
+    opacity: 0.5;
+    left: calc(var(--percent-offset)*1);
+    top: calc(var(--percent-offset)*1);
+}
+
+.match-percent-2{
+    color: #1e4651;
+    opacity: 0.4;
+    left: calc(var(--percent-offset)*2);
+    top: calc(var(--percent-offset)*2);
+}
+
+.match-percent-3{
+    color: #1e4651;
+    opacity: 0.3;
+    left: calc(var(--percent-offset)*3);
+    top: calc(var(--percent-offset)*3);
+}
+
+.match-percent-4{
+    color: #1e4651;
+    opacity: 0.2;
+    left: calc(var(--percent-offset)*4);
+    top: calc(var(--percent-offset)*4);
+}
+
+.match-percent-5{
+    color: #1e4651;
+    opacity: 0.1;
+    left: calc(var(--percent-offset)*5);
+    top: calc(var(--percent-offset)*5);
+}
+
+.percent{
+    font-size: var(--percent-size);
+    
+}
+
+.percent-symbol{
+    font-size: calc(var(--percent-size)/2);
+}
+
+@media (min-width: 300px) {
+    :root{
+        --percent-size: 140px;
+    }
+    
+}
+
+@media (min-width: 350px) {
+    :root{
+        --percent-size: 160px;
+    }
+    
+}
+
+@media (min-width: 400px) {
+    :root{
+        --percent-size: 180px;
+    }
+    
+}
+
+@media (min-width: 480px) {
+    :root{
+        --percent-size: 200px;
+    }
+    
+}
+
+@media (min-width: 650px) {
+    :root{
+        --percent-size: 250px;
+    }
+    
+}
+
+@media (min-width: 1000px) {
+    :root{
+        --percent-size: 300px;
+    }
+    
+}
