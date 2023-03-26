@@ -6,7 +6,7 @@ function Home() {
 	function redirectToSpotify() {
 		const url =
 			process.env.NODE_ENV === 'production'
-				? 'https://vibecheck-8lua.onrender.com/login'
+				? 'https://vibecheck-backend.onrender.com/login'
 				: 'http://localhost:5000/login';
 		window.location.replace(url);
 	}
