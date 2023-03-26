@@ -49,7 +49,7 @@ export default function UsernameInput({ setResponseData, vibeId }) {
 					type='text'
 					className='username-input'
 					value={input}
-					onChange={(e) => handleInputChange(e.target.value)}
+					// onChange={(e) => handleInputChange(e.target.value)}
 					onKeyDown={(e) => handleKeyDown(e)}
 				/>
 

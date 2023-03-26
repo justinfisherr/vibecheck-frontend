@@ -5,6 +5,11 @@ import axios from 'axios';
 export default function useSubmit(username, setResponseData) {
 	const [state, setState] = useState(null);
 
+	const defaultUrl =
+		process.env.NODE_ENV === 'production'
+			? 'https://vibecheck-backend.onrender.com/compare'
+			: 'http://localhost:5000/compare';
+
 	// Context
 	const animationData = useContext(animationContext);
 
@@ -20,11 +25,7 @@ export default function useSubmit(username, setResponseData) {
 				},
 			};
 
-			const res = await axios.post(
-				'http://localhost:5000/compare',
-				body,
-				header
-			);
+			const res = await axios.post(defaultUrl, body, header);
 
 			setResponseData(res.data.data);
 			animationData.current = res.data.data;

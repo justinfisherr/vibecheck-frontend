@@ -2,7 +2,11 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export default function useFetcher(currentInputValue) {
-	const defaultUrl = 'http://localhost:5000/getuser/';
+	const defaultUrl =
+		process.env.NODE_ENV === 'production'
+			? 'https://vibecheck-backend.onrender.com/getuser'
+			: 'http://localhost:5000/getuser';
+
 	const [state, setState] = useState({
 		data: [],
 		success: true,
