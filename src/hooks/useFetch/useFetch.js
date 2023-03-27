@@ -7,8 +7,6 @@ export default function useFetcher(currentInputValue) {
 			? 'https://vibecheck-backend.onrender.com/getuser/'
 			: 'http://localhost:5000/getuser/';
 
-	console.log(defaultUrl);
-
 	const [state, setState] = useState({
 		data: [],
 		success: true,
