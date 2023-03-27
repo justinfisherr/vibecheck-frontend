@@ -11,7 +11,7 @@ export default function RecommendedArtists({ recommended, type }) {
 
 	useEffect(() => {
 		if (songToPlay) {
-			playRef.current.volume = 0.1;
+			playRef.current.volume = 0.5;
 			playRef.current.play();
 		}
 	}, [playRef, songToPlay]);

@@ -1,5 +1,6 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useContext } from 'react';
 
+import { animationContext } from '../../context/animationContext';
 import ShareScreen from '../share-screen/ShareScreen';
 import html2canvas from 'html2canvas';
 import xIcon from '../../images/x-solid.svg';
@@ -7,13 +8,15 @@ import xIcon from '../../images/x-solid.svg';
 import './social-button.css';
 
 export default function SocialButtons() {
-	const shareUrl = 'https://vibecheck.com';
+	const shareUrl = 'thevibecheck.io';
 	const shareButtonClicked = useRef(false);
 	const downloadClicked = useRef(false);
 	const [runShare, setRunShare] = useState(false);
 	const [showModal, setShowModal] = useState(false);
 	const modalShareClicked = useRef(false);
 	const myRef = useRef();
+	const animationData = useContext(animationContext);
+	console.log(animationData);
 
 	useEffect(() => {
 		const captureElement = async (element) => {
@@ -62,8 +65,8 @@ export default function SocialButtons() {
 			try {
 				await navigator.share({
 					url: shareUrl,
-					title: 'vibecheck.io',
-					text: 'Check your music compatability',
+					title: 'thevibecheck.io',
+					text: `${animationData.current.users.user1.username} and I are a ${animationData.current.match_profile.match_percent}% match according to our music taste! Test your compatibility at thevibecheck.io`,
 					files: [
 						new File([blob], 'image.png', {
 							type: 'image/png',
