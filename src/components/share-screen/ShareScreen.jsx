@@ -13,7 +13,7 @@ export default function ShareScreen({ myRef }) {
 		<div className='modal-wrapper' ref={myRef}>
 			<div className='modal-img-grid'>
 				<div className='modal-title-text'>
-					<h1 className='modal-title shifted-text'>Vibecheck.com</h1>
+					<h1 className='modal-title shifted-text'>thevibecheck.io</h1>
 					<p className='modal-subtext'>Check your music compatability</p>
 				</div>
 
