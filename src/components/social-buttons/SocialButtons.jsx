@@ -66,7 +66,7 @@ export default function SocialButtons() {
 				await navigator.share({
 					url: shareUrl,
 					title: 'thevibecheck.io',
-					text: `${animationData.current.users.user1.username} and I are a ${animationData.current.match_profile.match_percent}% match according to our music taste! Test your compatibility at thevibecheck.io`,
+					text: `${animationData.current.users.user2.username} and I are a ${animationData.current.match_profile.match_percent}% match according to our music taste! Test your compatibility at thevibecheck.io`,
 					files: [
 						new File([blob], 'image.png', {
 							type: 'image/png',
