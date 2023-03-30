@@ -2,6 +2,7 @@ import React from 'react';
 import './background.css';
 import StipleImage from '../stiple-image/StipleImage';
 import Waves from '../waves/Waves';
+import LogoutButton from '../logout-button/LogoutButton';
 
 import stipleBottomLeft from '../../images/Stiple1.png';
 import stipleTopLeft from '../../images/Stiple2.png';
@@ -27,6 +28,7 @@ export default function Background({ children, currentScreen }) {
 			<div onClick={() => handleLogoClick()} className='logo-container'>
 				<img src={logo} alt='' />
 			</div>
+			<LogoutButton />
 			<div className='background-wrapper'>
 				{currentScreen === 'percent' && (
 					<div className='absolute spin-bursts-wrapper'>
