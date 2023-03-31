@@ -1,5 +1,5 @@
 :root{
-    --percent-size: 125px;
+    --percent-size: 110px;
     --percent-offset: 2%;
 }
 
@@ -94,14 +94,14 @@
 
 @media (min-width: 300px) {
     :root{
-        --percent-size: 140px;
+        --percent-size: 120px;
     }
     
 }
 
 @media (min-width: 350px) {
     :root{
-        --percent-size: 160px;
+        --percent-size: 140px;
     }
     
 }

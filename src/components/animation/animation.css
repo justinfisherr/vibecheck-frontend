@@ -11,6 +11,10 @@
 .animation-content-wrapper{
     z-index: 1;
     padding-inline: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .recommend{
@@ -24,18 +28,20 @@
 
 
 .buttons{
-    bottom: 50px;
+    bottom: 30px;
+    position: absolute;
     display: flex;
     margin: auto;
     width: fit-content;
     margin-top: 30px;
-
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 10px;
 }
 
 .buttons-three{
+    margin-top: 50px;
+    position: static;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
