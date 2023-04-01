@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './background.css';
+
 import StipleImage from '../stiple-image/StipleImage';
 import Waves from '../waves/Waves';
 
+import useWindowSize from '../../hooks/window-size/useWindowSize';
+
+import spotifyLogo from '../../images/spotify-logo.svg';
+import spotifyLogoWithText from '../../images/spotify-logo-with-text.svg';
 import stipleBottomLeft from '../../images/Stiple1.png';
 import stipleTopLeft from '../../images/Stiple2.png';
 import stipleTopRight from '../../images/Stiple3.png';
@@ -11,22 +16,46 @@ import star from '../../images/star.png';
 import wavesTop from '../../images/waves-top.svg';
 import wavesBottom from '../../images/waves-bottom.svg';
 import spinBurst from '../../images/spin-burst.png';
-import logo from '../../images/logo.svg';
+import vibecheckLogo from '../../images/logo.svg';
+import vibecheckLogoNoText from '../../images/logo-no-text.svg';
 
 export default function Background({ children, currentScreen }) {
+	const windowSize = useWindowSize();
+
+	const url =
+		process.env.NODE_ENV === 'production'
+			? 'https://thevibecheck.io/'
+			: 'http://localhost:3000/';
+
+	useEffect(() => {}, [windowSize]);
+
 	function handleLogoClick() {
-		const url =
-			process.env.NODE_ENV === 'production'
-				? 'https://thevibecheck.io'
-				: 'http://localhost:3000';
 		window.location.replace(url);
 	}
 
 	return (
 		<div className='background-container'>
 			<div onClick={() => handleLogoClick()} className='logo-container'>
-				<img src={logo} alt='' />
+				<img
+					className='vibecheck-logo'
+					src={windowSize.width < 480 ? vibecheckLogoNoText : vibecheckLogo}
+					alt='vibecheck logo'
+				/>
 			</div>
+			{window.location.href !== url && (
+				<button
+					className='button logout-button'
+					onClick={() => handleLogoClick()}>
+					LOGOUT
+				</button>
+			)}
+			<a href='https://open.spotify.com/' target='_blank'>
+				<img
+					className='spotify-logo'
+					src={windowSize.width < 480 ? spotifyLogo : spotifyLogoWithText}
+					alt='spotify logo'
+				/>
+			</a>
 			<div className='background-wrapper'>
 				{currentScreen === 'percent' && (
 					<div className='absolute spin-bursts-wrapper'>

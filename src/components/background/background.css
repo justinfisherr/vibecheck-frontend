@@ -31,10 +31,15 @@
 .logo-container{
     top:25px;
     left:30px;
-    width: 200px;
+    height: 40px;
     cursor: pointer;
     position: absolute;
     z-index: 1;
+}
+
+.vibecheck-logo{
+    height: 40px;
+    object-fit: cover;
 }
 
 .stiple-img{
@@ -98,6 +103,26 @@
     transform: scale(var(--spin-up-scale));
     opacity: 0;
     animation: drop-in 0.8s ease-in-out 0.8s forwards;
+}
+
+.logout-button{
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    z-index: 1;
+    color: black !important;
+    height: 40px !important;
+    width: 100px !important;
+    margin: 0 !important;
+    font-size: 14px !important;
+}
+
+.spotify-logo{
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    height: 35px;
+    z-index: 1;
 }
 
 @keyframes drop-in {

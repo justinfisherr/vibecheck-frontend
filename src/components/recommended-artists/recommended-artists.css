@@ -60,8 +60,9 @@
     grid-template-columns: 40px 60px 1fr;
     column-gap: 10px;
     color: rgb(0, 0, 0);
-    
+    width: 200px;
     opacity: 0;
+    margin: auto;
 }
 
 .recommended-item-wrapper-0{
@@ -148,6 +149,7 @@
 .recommended-data{
     position: absolute;
     font-size: 22px;
+    line-height: 25px;
     font-weight: 700;
     color: rgb(255, 222, 233);
 }
@@ -174,6 +176,14 @@
     font-size: 22px;
     line-height: 25px;
     font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+.recommended-song-name:hover{
+    text-decoration: underline;
 }
 
 .recommended-artist-name{
@@ -181,12 +191,10 @@ font-size: 14px;
 }
 
 .play-bar{
-    position: absolute;
-    bottom: 0;
+margin-top: 20px;
     margin-inline: auto;
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
     width: 230px;
 }
 
@@ -231,6 +239,7 @@ font-size: 14px;
 
     .recommended-item-wrapper{
         grid-template-columns: 40px 65px 1fr;
+        width: 300px;
     }
 
     .recommended-img-wrapper{
@@ -251,6 +260,7 @@ font-size: 14px;
 
     .recommended-item-wrapper{
         grid-template-columns: 50px 70px 1fr;
+        width: 350px;
     }
 
     .recommended-index{
@@ -268,7 +278,7 @@ font-size: 14px;
     }
 }
 
-/* @media (min-width: 480px){
+@media (min-width: 480px){
     .recommended-title{
         font-size: 50px;
         line-height: 55px;
@@ -276,30 +286,10 @@ font-size: 14px;
 
     .recommended-item-wrapper{
         grid-template-columns: 50px 80px 1fr;
+        width: 400px;
     }
 
-    .recommended-index{
-        font-size: 30px;
-    }
-
-    .recommended-img-wrapper{
-        height: 80px;
-        width: 80px;
-    }
-
-    .recommended-data{
-        font-size: 25px;
-    }
-
-    .recommended-song-name{
-        font-size: 25px;
-        line-height: 30px;
-    }
-    
-    .recommended-artist-name{
-    font-size: 16px;
-    }
-} */
+}
 
 @media (min-width: 737px){
     .recommended-content{
@@ -318,6 +308,7 @@ font-size: 14px;
     .recommended-item-wrapper{
         grid-template-columns: 50px 90px 1fr;
         column-gap: 20px;
+        width: 100%;
     }
 
     .recommended-song-index{
@@ -338,11 +329,4 @@ font-size: 14px;
         font-size: 30px;
     }
 
-}
-
-@media (min-height: 900px){
-    /* .recommended-img-wrapper{
-        height: 90px;
-        width: 90px;
-    } */
 }

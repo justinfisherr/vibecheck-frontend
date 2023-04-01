@@ -48,7 +48,7 @@ export default function RecommendedArtists({ recommended, type }) {
 			</h1>
 			<div className='recommended-grid'>
 				{recommended.map(
-					({ artist_name, artist_img, song_img, song_name }, index) => (
+					({ artist_name, artist_img, song_img, song_name, url }, index) => (
 						<div
 							key={index}
 							className={`recommended-item-wrapper recommended-item-wrapper-${index}`}>
@@ -90,7 +90,12 @@ export default function RecommendedArtists({ recommended, type }) {
 										/>
 									</div>
 									<div className='recommended-song-text'>
-										<p className='recommended-song-name'>{song_name}</p>
+										<a
+											href={url}
+											target='_blank'
+											className='recommended-song-name'>
+											{song_name}
+										</a>
 										<p className='recommended-artist-name'>{artist_name}</p>
 									</div>
 								</>

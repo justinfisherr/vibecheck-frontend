@@ -11,15 +11,12 @@
     text-transform: uppercase;
     margin: auto;
     margin-bottom: 20px;
-    width: 250px;
-    
+    width: 240px;
 }
 
 /* Grid */
 .artist-grid{
-    
     display: grid;
-    /* background-color: rgb(255, 255, 255); */
     max-width: 200px;
     max-height: 550px;
     height: fit-content;
@@ -179,19 +176,22 @@
     font-weight: 700;
     white-space: nowrap;
     font-size: 18px;
-    
+    max-width: 180px;
+    overflow: hidden;
 }
 
 
  @media (min-width: 350px){
     .screen3-title{
-        font-size: 40px;
-        line-height: 45px;
+        font-size: 35px;
+        line-height: 35px;
     }
     
  }
 
 @media (min-width: 400px){
+
+
     .artist-grid{
         max-width: 275px;
         height: 550px;
@@ -238,10 +238,12 @@
 
     .artist-number{
         font-size: 22px;
+        
     }
     
     .artist-name{
         font-size: 20px;
+        max-width: 245px;
     }
     
 }
@@ -271,6 +273,10 @@
     .remaining-artist-img{
         height: 110px;
         border-width: 8px;
+    }
+
+    .artist-name{
+        max-width: 303px;
     }
 }
 

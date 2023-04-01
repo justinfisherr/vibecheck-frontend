@@ -11,7 +11,6 @@
     font-weight: 700;
     text-transform: uppercase;
     color: white;
-
     font-size: 28px;
     line-height: 30px;
 }
@@ -39,8 +38,8 @@
 
 @media (min-width: 650px) {
     .screen1-text{
-        font-size: 60px;
-        line-height: 60px;
+        font-size: 55px;
+        line-height: 55px;
     }
 }
 

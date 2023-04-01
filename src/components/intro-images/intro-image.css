@@ -27,10 +27,6 @@
     position: relative;
 }
 
-
-
-
-
 .circle{
     position: absolute;
     width: 83%;
@@ -45,7 +41,7 @@
     top: 0;
     right: 0;
     z-index: 5;
-    border: 5px solid #fca5ff;
+    border: 6px solid #fca5ff;
     
 }
 
@@ -126,7 +122,7 @@
     bottom: 0;
     left: 0;
     z-index: 5;
-    border: 5px solid #feff97;
+    border: 6px solid #feff97;
 }
 
 .right-img .circle-2{
@@ -232,6 +228,10 @@
         width: 150px;
         height: 150px;
     }
+
+    .circle-1{
+        border-width: 7px !important;
+    }
 }
 
 @media (min-width: 400px) {
@@ -241,14 +241,18 @@
     }
 
     .circle-1{
-        border-width: 6px !important;
+        border-width: 8px !important;
     }
 }
 
 @media (min-width: 480px) {
     .img-wrapper{
-        width: 225px;
-        height: 225px;
+        width: 220px;
+        height: 220px;
+    }
+
+    .circle-1{
+        border-width: 9px !important;
     }
 }
 
