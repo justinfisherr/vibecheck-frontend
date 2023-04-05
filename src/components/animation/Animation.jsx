@@ -19,7 +19,7 @@ function Animation() {
 			if (currentScreen === 0) {
 				const url =
 					process.env.NODE_ENV === 'production'
-						? 'https://pithy-stream-production.up.railway.app/login'
+						? 'https://vibecheck-backend.onrender.com/login'
 						: 'http://localhost:5000/login';
 				window.location.replace(url);
 				return currentScreen;
@@ -40,7 +40,7 @@ function Animation() {
 	function handleRedo() {
 		const url =
 			process.env.NODE_ENV === 'production'
-				? 'https://vibecheck-backend-production.up.railway.app/login'
+				? 'https://vibecheck-backend.onrender.com/login'
 				: 'http://localhost:5000/login';
 		window.location.replace(url);
 	}
