@@ -108,7 +108,6 @@
     width: 60px;
     overflow: hidden;
     position: relative;
-    border-radius: 5%;
 }
 
 .recommended-img-wrapper-0{
@@ -329,4 +328,8 @@ margin-top: 20px;
         font-size: 30px;
     }
 
+}
+
+.recommended-img-wrapper{
+    border: none !important;
 }

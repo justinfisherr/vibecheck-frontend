@@ -305,3 +305,7 @@
         margin-bottom: 40px;
     }
 }
+
+.remaining-artist-img{
+    border: none !important;
+}
