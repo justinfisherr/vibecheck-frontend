@@ -4,7 +4,7 @@ import axios from 'axios';
 export default function useFetcher(currentInputValue) {
 	const defaultUrl =
 		process.env.NODE_ENV === 'production'
-			? 'https://vibecheck-backend-production.up.railway.app/getuser/'
+			? 'https://vibecheck-backend.onrender.com/getuser/'
 			: 'http://localhost:5000/getuser/';
 
 	const [state, setState] = useState({
