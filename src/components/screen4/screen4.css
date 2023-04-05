@@ -336,3 +336,7 @@ font-size: 14px;
     font-size: 16px;
     }
 }
+
+.overlap-img-wrapper{
+    border: none !important;
+}

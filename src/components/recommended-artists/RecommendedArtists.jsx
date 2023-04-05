@@ -107,6 +107,7 @@ export default function RecommendedArtists({ recommended, type }) {
 			{type === 'Songs' && (
 				<figure className='play-bar'>
 					<audio
+						controlsList='noplaybackrate nodownload'
 						onEnded={() => handleSongEnd()}
 						ref={playRef}
 						controls

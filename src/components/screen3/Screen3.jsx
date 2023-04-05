@@ -17,9 +17,9 @@ function Screen3({ animationData }) {
 							/>
 						</div>
 
-						<div className='sun-burst-wrapper'>
+						{/* <div className='sun-burst-wrapper'>
 							<img src={sunBurst} className='top-artist-burst' alt='' />
-						</div>
+						</div> */}
 					</div>
 				</div>
 
