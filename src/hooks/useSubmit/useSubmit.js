@@ -7,7 +7,7 @@ export default function useSubmit(username, setResponseData) {
 
 	const defaultUrl =
 		process.env.NODE_ENV === 'production'
-			? 'https://vibecheck-backend.onrender.com/compare/'
+			? 'http://vibecheck-backend-production.up.railway.app/compare/'
 			: 'http://localhost:5000/compare/';
 
 	// Context
