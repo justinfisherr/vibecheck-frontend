@@ -3,6 +3,7 @@ import { Navigate } from 'react-router-dom';
 import Background from '../background/Background';
 import UsernameInput from '../username-input/UsernameInput';
 import CompareImages from '../compare-images/CompareImages';
+import { Helmet } from 'react-helmet-async';
 import './compare.css';
 
 function Compare() {
@@ -15,6 +16,15 @@ function Compare() {
 
 	return responseData == null ? (
 		<div className='compare-page'>
+			<Helmet>
+				<title>Vibe Check</title>
+				<meta
+					name='description'
+					content='Check your music compatibility. Connect your Spotify account and see how well your music taste matches up.'
+				/>
+				<link rel='canonical' href='/compare' />
+				<meta name='robots' content='noindex' />
+			</Helmet>
 			<Background>
 				<div className='content compare-content'>
 					<h1 className='compare-heading'>COMPARE WITH?</h1>
