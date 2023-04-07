@@ -22,7 +22,7 @@ function Compare() {
 					name='description'
 					content='Check your music compatibility. Connect your Spotify account and see how well your music taste matches up.'
 				/>
-				<link rel='canonical' href='/compare' />
+				<link rel='canonical' href='https://thevibecheck.io/compare' />
 				<meta name='robots' content='noindex' />
 			</Helmet>
 			<Background>
