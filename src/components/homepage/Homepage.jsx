@@ -29,8 +29,11 @@ function Home() {
 					property='og:description'
 					content='Check your music compatibility. Connect your Spotify account and see how well your music taste matches up with others'
 				/>
-				<meta property='og:url' content='/' />
-				<meta property='og:image' content='/vibecheck-card.jpg' />
+				<meta property='og:url' content='https://thevibecheck.io/' />
+				<meta
+					property='og:image'
+					content='https://thevibecheck.io/vibecheck-card.jpg'
+				/>
 				{/* End Facebook tags */}
 
 				{/* Twitter tags */}
@@ -41,7 +44,10 @@ function Home() {
 					name='twitter:description'
 					content='Check your music compatibility. Connect your Spotify account and see how well your music taste matches up with others'
 				/>
-				<meta name='twitter:image' content='/vibecheck-card.jpg' />
+				<meta
+					name='twitter:image'
+					content='https://thevibecheck.io/vibecheck-card.jpg'
+				/>
 				<meta name='twitter:image:alt' content='the homepage'></meta>
 				{/* End Twitter tags */}
 			</Helmet>
