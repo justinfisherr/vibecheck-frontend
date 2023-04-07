@@ -1,7 +1,7 @@
 import React from 'react';
 import Background from '../background/Background';
 import { Helmet } from 'react-helmet-async';
-import coverImg from '../../images/vibecheck-cover.jpg';
+import coverImg from '../../images/vibecheck-cover.png';
 import './homepage.css';
 
 function Home() {
