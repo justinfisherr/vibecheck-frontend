@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import useScreens from '../../hooks/useScreens/useScreens';
-// import useLocalStorage from '../../hooks/useLocalStorage/useLocalStorage';
+import { Helmet } from 'react-helmet-async';
 import redoIcon from '../../images/rotate-right-solid.png';
 import './animation.css';
 
@@ -47,6 +47,15 @@ function Animation() {
 
 	return (
 		<div className={`animation-page animation-page-${styles[index]}`}>
+			<Helmet>
+				<title>Vibe Check</title>
+				<meta
+					name='description'
+					content='Check your music compatibility. Connect your Spotify account and see how well your music taste matches up.'
+				/>
+				<link rel='canonical' href='/animation' />
+				<meta name='robots' content='noindex' />
+			</Helmet>
 			<Background currentScreen={styles[index]}>
 				<div className='animation-content-wrapper'>
 					<div className='screens'>{screens[index]}</div>
