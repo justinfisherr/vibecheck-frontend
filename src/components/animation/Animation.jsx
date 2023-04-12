@@ -19,7 +19,7 @@ function Animation() {
 			if (currentScreen === 0) {
 				const url =
 					process.env.NODE_ENV === 'production'
-						? 'https://vibecheck-backend-production.up.railway.app//login'
+						? 'https://vibecheck-backend-production.up.railway.app/login'
 						: 'http://localhost:5000/login';
 				window.location.replace(url);
 				return currentScreen;
