@@ -29,8 +29,9 @@
     /* transform: scale(0); */
     opacity: 0;
     animation: grow 1s ease-in-out 0.8s forwards;
-
 }
+
+
 
 @keyframes grow {
     from{
@@ -85,7 +86,10 @@
 
 .percent{
     font-size: var(--percent-size);
-    
+}
+
+.one-hundred{
+    font-size: calc(var(--percent-size)*0.8);
 }
 
 .percent-symbol{
@@ -110,20 +114,26 @@
     :root{
         --percent-size: 180px;
     }
-    
+    .one-hundred{
+        font-size: calc(var(--percent-size)*0.75);
+    }
 }
 
 @media (min-width: 480px) {
     :root{
         --percent-size: 200px;
     }
-    
+    .one-hundred{
+        font-size: calc(var(--percent-size)*0.8);
+    }
 }
 
 @media (min-width: 650px) {
     :root{
         --percent-size: 250px;
     }
+
+
     
 }
 
@@ -131,5 +141,8 @@
     :root{
         --percent-size: 300px;
     }
-    
+
+    .one-hundred{
+        font-size: var(--percent-size);
+    }
 }
