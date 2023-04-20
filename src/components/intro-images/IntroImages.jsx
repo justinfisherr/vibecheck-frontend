@@ -1,5 +1,5 @@
 import React from 'react';
-import defaultImg from '../../images/default-user-image.svg';
+import defaultImg from '../../images/default-user-image-green.svg';
 import threeStar from '../../images/three-star.svg';
 import './intro-image.css';
 
@@ -31,7 +31,7 @@ export default function IntroImages({ animationData }) {
 				<div className='circle circle-1'>
 					<img
 						src={
-							animationData.users.user2.profile_image === ''
+							animationData.users.user2.profile_img === ''
 								? defaultImg
 								: animationData.users.user2.profile_img
 						}

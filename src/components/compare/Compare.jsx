@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
 import Background from '../background/Background';
 import UsernameInput from '../username-input/UsernameInput';
@@ -8,11 +8,15 @@ import './compare.css';
 
 function Compare() {
 	// Get url params
-	const urlObj = new URLSearchParams(window.location.search);
-	const vibeId = urlObj.get('vibe_id');
-	const profileImg = urlObj.get('profile_img');
-
 	const [responseData, setResponseData] = useState(null);
+	const [userData, setUserData] = useState(
+		JSON.parse(localStorage.getItem('userData'))
+	);
+
+	const queryParameters = new URLSearchParams(window.location.search);
+	const urlUserImg = queryParameters.get('profile_img');
+	const urlVibeId = queryParameters.get('vibe_id');
+	window.history.replaceState(null, 'Vibe Check', window.location.pathname);
 
 	return responseData == null ? (
 		<div className='compare-page'>
@@ -28,21 +32,25 @@ function Compare() {
 			<Background>
 				<div className='content compare-content'>
 					<h1 className='compare-heading'>COMPARE WITH?</h1>
-					<p className='compare-your-id'>Your ID: {vibeId}</p>
+					<p className='compare-your-id'>
+						Your ID: {userData ? userData.vibeId : urlVibeId}
+					</p>
 
-					<CompareImages profileImg={profileImg} />
+					<CompareImages
+						profileImg={userData ? userData.userImg : urlUserImg}
+					/>
 					<p className='compare-subheading'>
 						Enter the other users Vibe Check ID
 					</p>
-					<UsernameInput setResponseData={setResponseData} vibeId={vibeId} />
+					<UsernameInput
+						setResponseData={setResponseData}
+						vibeId={userData ? userData.vibeId : urlVibeId}
+					/>
 				</div>
 			</Background>
 		</div>
 	) : (
-		<Navigate
-			to={`/animation?${urlObj.toString()}`}
-			responseData={responseData}
-		/>
+		<Navigate to={`/animation`} responseData={responseData} />
 	);
 }
 

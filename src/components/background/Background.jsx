@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './background.css';
 
 import StipleImage from '../stiple-image/StipleImage';
@@ -21,15 +21,24 @@ import vibecheckLogoNoText from '../../images/logo-no-text.svg';
 
 export default function Background({ children, currentScreen }) {
 	const windowSize = useWindowSize();
+	const [userData, setUserData] = useState(null);
 
 	const url =
 		process.env.NODE_ENV === 'production'
 			? 'https://thevibecheck.io/'
 			: 'http://localhost:3000/';
 
-	useEffect(() => {}, [windowSize]);
+	useEffect(() => {
+		const userData = localStorage.getItem('userData');
+		setUserData(JSON.parse(userData));
+	}, [windowSize]);
 
 	function handleLogoClick() {
+		window.location.replace(url);
+	}
+
+	function handleLogout() {
+		localStorage.removeItem('userData');
 		window.location.replace(url);
 	}
 
@@ -42,10 +51,8 @@ export default function Background({ children, currentScreen }) {
 					alt='vibecheck logo'
 				/>
 			</div>
-			{window.location.href !== url && (
-				<button
-					className='button logout-button'
-					onClick={() => handleLogoClick()}>
+			{userData && (
+				<button className='button logout-button' onClick={() => handleLogout()}>
 					LOGOUT
 				</button>
 			)}

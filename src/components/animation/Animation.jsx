@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import useScreens from '../../hooks/useScreens/useScreens';
 import { Helmet } from 'react-helmet-async';
 import redoIcon from '../../images/rotate-right-solid.png';
+import { Navigate } from 'react-router-dom';
 import './animation.css';
 
 import Background from '../background/Background';
@@ -13,16 +14,13 @@ import leftCarret from '../../images/caret-left-solid.svg';
 function Animation() {
 	const [index, setIndex] = useState(0);
 	const [screens, styles] = useScreens();
+	const [back, setBack] = useState(false);
+	window.history.replaceState(null, 'Vibe Check', '/animation');
 
 	function prevScreen() {
 		setIndex((currentScreen) => {
 			if (currentScreen === 0) {
-				const url =
-					process.env.NODE_ENV === 'production'
-						? 'https://vibecheck-backend-production.up.railway.app/login'
-						: 'http://localhost:5000/login';
-				window.location.replace(url);
-				return currentScreen;
+				setBack(true);
 			}
 			return currentScreen - 1;
 		});
@@ -38,14 +36,12 @@ function Animation() {
 	}
 
 	function handleRedo() {
-		const url =
-			process.env.NODE_ENV === 'production'
-				? 'https://vibecheck-backend-production.up.railway.app/login'
-				: 'http://localhost:5000/login';
-		window.location.replace(url);
+		setBack(true);
 	}
 
-	return (
+	return back ? (
+		<Navigate to={`/compare`} />
+	) : (
 		<div className={`animation-page animation-page-${styles[index]}`}>
 			<Helmet>
 				<title>Vibe Check</title>

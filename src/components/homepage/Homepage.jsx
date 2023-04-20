@@ -1,19 +1,31 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
+import { Navigate } from 'react-router-dom';
 import Background from '../background/Background';
 import { Helmet } from 'react-helmet-async';
 import coverImg from '../../images/vibecheck-cover.png';
+import { authContext } from '../../context/authContext';
 import './homepage.css';
 
 function Home() {
+	const [redirectToCompare, setRedirectToCompare] = useState(false);
+	const auth = useContext(authContext);
+	const [userData] = useState(JSON.parse(localStorage.getItem('userData')));
+
 	function redirectToSpotify() {
-		const url =
-			process.env.NODE_ENV === 'production'
-				? 'https://vibecheck-backend-production.up.railway.app/login'
-				: 'http://localhost:5000/login';
-		window.location.replace(url);
+		if (auth.current || userData) {
+			setRedirectToCompare(true);
+		} else {
+			const url =
+				process.env.NODE_ENV === 'production'
+					? 'https://vibecheck-backend-production.up.railway.app/login'
+					: 'http://localhost:5000/login';
+			window.location.replace(url);
+		}
 	}
 
-	return (
+	return redirectToCompare ? (
+		<Navigate to='/compare' />
+	) : (
 		<div className='homepage'>
 			<Helmet>
 				<title>Vibe Check</title>
