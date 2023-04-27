@@ -16,29 +16,30 @@
 }
 
 .change-username-input-container{
-    max-width: 800px;
+    max-width: 600px;
     width: 100%;
     background-color: #e23838;
     border-radius: 10px;
     position: relative;
-    padding: 25px;
+    padding: 35px;
 }
 
 .change-username-title-wrapper{
     display: flex;
     align-items: center;
-    justify-content: space-between;
     width: 100%;
+    gap: 10px;
 }
+
 .change-username-title{
-    font-size: 20px;
+    font-size: 18px;
     color: white;
     font-weight: 600;
     padding-right: 40px;
 }
 
 .change-username-input-wrapper{
-    margin-top: 20px;
+    margin-top: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,7 +48,6 @@
     border-radius: 5px;
     color: white;
     width: 100%;
-    padding: 5px;
 }
 
 .change-username-input {
@@ -60,9 +60,9 @@
 }
 
 .save-username-button{
-    width: 180px;
-    height: 45px;
-    font-size: 16px;
+    width: 100px;
+    height: 40px;
+    font-size: 14px;
     border-radius: 5px;
     font-weight: 600;
     border: none;
@@ -72,21 +72,49 @@
     transition: all ease-in-out 0.2s;
 }
 
+.cancel-button{
+    background-color: #e23838;
+    color: white;
+    border: 2px solid white;
+}
 
-.close-username-modal-x{
+.save-username-button:hover{
+    transform: scale(1.05);
+}
+
+.change-username-modal-subtext-wrapper{
+    margin-top: 30px;
+    display: flex;
+    
+    align-items: center;
+}
+
+.error-message{
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-icon-wrapper{
     width: 20px;
     height: 20px;
-    cursor: pointer;
-    position: absolute;
-    right: 20px;
-    top: 20px;
+    margin-right: 10px;
+}
+
+.change-username-modal-button-wrapper{
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
 }
 
 .change-username-modal-subtext{
-    margin-top: 20px;
     color: white;
     font-size: 16px;
 }
+
 
 @media(min-width: 400px) {
     .change-username-title{

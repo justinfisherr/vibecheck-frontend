@@ -1,72 +1,94 @@
-import React, { useRef } from 'react';
-import xIcon from '../../images/x-solid.svg';
+import React, { useRef, useState } from 'react';
 import './username-modal.css';
+import useSubmitVibeId from '../../hooks/useSubmitVibeId/useSubmitVibeId';
+import editIcon from '../../images/edit-icon.svg';
+import errorIcon from '../../images/circle-exclamation-solid.svg';
 
-export default function UsernameModal({ openModal, setOpenModal, userData }) {
-  const currentInputValue = useRef('');
-  const changeUserNameInput = useRef();
+export default function UsernameModal({
+	openModal,
+	setOpenModal,
+	userData,
+	setUserData,
+}) {
+	const [errors, setErrors] = useState();
+	const [currentInputValue, setCurrentInputValue] = useState(userData.vibeId);
+	const changeUserNameInput = useRef();
+	const submitVibeId = useSubmitVibeId(setUserData, setErrors);
 
-  function handleCloseModal({ target }) {
-    if (target.id === 'allow-close') {
-      setOpenModal(false);
-      currentInputValue.current = '';
-      console.log(changeUserNameInput);
-      changeUserNameInput.current.value = '';
-    }
-  }
+	function handleCloseModal({ target }) {
+		if (target.id === 'allow-close') {
+			setOpenModal(false);
+			setCurrentInputValue(userData.vibeId);
+			setErrors(null);
+		}
+	}
 
-  function handleSaveNewUsername(newUsername) {
-    alert(newUsername);
-  }
-  function handleKeyDown() {}
-  function handleInputChange(value) {
-    currentInputValue.current = value;
-  }
+	function handleSaveNewUsername(newVibeId) {
+		submitVibeId({
+			oldId: userData.vibeId,
+			newId: newVibeId,
+		});
+	}
 
-  return (
-    <div
-      className={`username-modal-container ${
-        openModal ? '' : 'hide-username-modal'
-      }`}
-      id='allow-close'
-      onClick={(e) => handleCloseModal(e)}
-    >
-      <div className='change-username-input-container'>
-        <h3 className='change-username-title'>Change your Vibe ID</h3>
-        <div
-          className='close-username-modal-x'
-          onClick={(e) => handleCloseModal(e)}
-        >
-          <img
-            src={xIcon}
-            className='x-icon'
-            id='allow-close'
-            alt='close window icon'
-          />
-        </div>
+	function handleKeyDown() {}
+	function handleInputChange(value) {
+		setCurrentInputValue(value);
+	}
 
-        <div className='change-username-input-wrapper'>
-          <p className='at-symbol'>ID</p>
-          <input
-            type='text'
-            className='change-username-input'
-            ref={changeUserNameInput}
-            onChange={(e) => handleInputChange(e.target.value)}
-            onKeyDown={(e) => handleKeyDown(e)}
-          />
+	return (
+		<div
+			className={`username-modal-container ${
+				openModal ? '' : 'hide-username-modal'
+			}`}
+			id='allow-close'
+			onMouseDown={(e) => handleCloseModal(e)}>
+			<div className='change-username-input-container'>
+				<div className='change-username-title-wrapper'>
+					<div className='edit-button'>
+						<img src={editIcon} alt='' />
+					</div>
+					<h3 className='change-username-title'>Edit your Vibe ID</h3>
+				</div>
 
-          <button
-            className='save-username-button'
-            type='submit'
-            onClick={() => handleSaveNewUsername(currentInputValue.current)}
-          >
-            Save
-          </button>
-        </div>
-        <p className='change-username-modal-subtext'>
-          Your ID: {userData.vibeId}
-        </p>
-      </div>
-    </div>
-  );
+				<div className='change-username-input-wrapper'>
+					<p className='at-symbol'>ID</p>
+					<input
+						type='text'
+						className='change-username-input'
+						value={currentInputValue}
+						ref={changeUserNameInput}
+						onChange={(e) => handleInputChange(e.target.value)}
+						onKeyDown={(e) => handleKeyDown(e)}
+						spellcheck='false'
+					/>
+				</div>
+
+				<div className='change-username-modal-subtext-wrapper'>
+					{errors && (
+						<p className='error-message'>
+							<span className='error-icon-wrapper'>
+								<img src={errorIcon} alt='' />
+							</span>{' '}
+							{errors}
+						</p>
+					)}
+					<div className='change-username-modal-button-wrapper'>
+						<button
+							className='save-username-button cancel-button'
+							type='submit'
+							id='allow-close'
+							onClick={(e) => handleCloseModal(e)}>
+							Cancel
+						</button>
+						<button
+							className='save-username-button'
+							type='submit'
+							onClick={() => handleSaveNewUsername(currentInputValue)}>
+							Save
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
 }
