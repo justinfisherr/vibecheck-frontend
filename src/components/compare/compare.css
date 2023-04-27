@@ -16,6 +16,13 @@
     height: 100px;
 }
 
+.id-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
 .compare-your-id{
     font-size: 20px;
     color: white;
@@ -27,7 +34,17 @@
     padding-inline: 20px;
 }
 
+.edit-button{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: all 0.1s ease-in-out;
+}
 
+.edit-button:hover{
+    transform: scale(1.05);
+}
 
 @media screen and (min-width: 350px) {
     .compare-heading{
