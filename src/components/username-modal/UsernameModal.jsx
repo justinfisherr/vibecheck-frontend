@@ -3,6 +3,7 @@ import './username-modal.css';
 import useSubmitVibeId from '../../hooks/useSubmitVibeId/useSubmitVibeId';
 import editIcon from '../../images/edit-icon.svg';
 import errorIcon from '../../images/circle-exclamation-solid.svg';
+import Spinner from '../spinner/Spinner';
 
 export default function UsernameModal({
 	openModal,
@@ -10,10 +11,11 @@ export default function UsernameModal({
 	userData,
 	setUserData,
 }) {
+	const [loading, setLoading] = useState(false);
 	const [errors, setErrors] = useState();
 	const [currentInputValue, setCurrentInputValue] = useState(userData.vibeId);
 	const changeUserNameInput = useRef();
-	const submitVibeId = useSubmitVibeId(setUserData, setErrors);
+	const submitVibeId = useSubmitVibeId(setUserData, setErrors, setLoading);
 
 	function handleCloseModal({ target }) {
 		if (target.id === 'allow-close') {
@@ -24,6 +26,7 @@ export default function UsernameModal({
 	}
 
 	function handleSaveNewUsername(newVibeId) {
+		setLoading(true);
 		submitVibeId({
 			oldId: userData.vibeId,
 			newId: newVibeId,
@@ -72,6 +75,7 @@ export default function UsernameModal({
 							{errors}
 						</p>
 					)}
+
 					<div className='change-username-modal-button-wrapper'>
 						<button
 							className='save-username-button cancel-button'
@@ -84,7 +88,7 @@ export default function UsernameModal({
 							className='save-username-button'
 							type='submit'
 							onClick={() => handleSaveNewUsername(currentInputValue)}>
-							Save
+							{loading ? <Spinner /> : 'Save'}
 						</button>
 					</div>
 				</div>

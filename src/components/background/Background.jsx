@@ -19,7 +19,7 @@ import spinBurst from '../../images/spin-burst.png';
 import vibecheckLogo from '../../images/logo.svg';
 import vibecheckLogoNoText from '../../images/logo-no-text.svg';
 
-export default function Background({ children, currentScreen }) {
+export default function Background({ children, currentScreen, setLoggedIn }) {
 	const windowSize = useWindowSize();
 	const [userData, setUserData] = useState(null);
 

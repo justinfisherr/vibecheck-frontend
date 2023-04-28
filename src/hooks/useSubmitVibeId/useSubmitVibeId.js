@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-export default function useSubmitVibeId(setUserData, setErrors) {
+export default function useSubmitVibeId(setUserData, setErrors, setLoading) {
 	const [state, setState] = useState(null);
 
 	const defaultUrl =
@@ -11,7 +11,7 @@ export default function useSubmitVibeId(setUserData, setErrors) {
 
 	useEffect(() => {
 		const sendRequest = async () => {
-			console.log(state);
+			setErrors(null);
 			const body = {
 				vibe_id: state.oldId,
 				newID: state.newId,
@@ -29,9 +29,11 @@ export default function useSubmitVibeId(setUserData, setErrors) {
 					userData.vibeId = state.newId;
 					setUserData(userData);
 					localStorage.setItem('userData', JSON.stringify(userData));
+					setLoading(false);
 				})
 				.catch((error) => {
 					setErrors(error.response.data.message);
+					setLoading(false);
 				});
 		};
 		if (state) {
