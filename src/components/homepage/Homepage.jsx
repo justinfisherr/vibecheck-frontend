@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import Background from '../background/Background';
 import { Helmet } from 'react-helmet-async';

@@ -23,10 +23,10 @@ export default function Background({ children, currentScreen, setLoggedIn }) {
 	const windowSize = useWindowSize();
 	const [userData, setUserData] = useState(null);
 
-	const url =
-		process.env.NODE_ENV === 'production'
-			? 'https://thevibecheck.io/'
-			: 'http://localhost:3000/';
+	// const url =
+	// 	process.env.NODE_ENV === 'production'
+	// 		? 'https://thevibecheck.io/'
+	// 		: 'http://localhost:3000/';
 
 	useEffect(() => {
 		const userData = localStorage.getItem('userData');
@@ -34,12 +34,12 @@ export default function Background({ children, currentScreen, setLoggedIn }) {
 	}, [windowSize]);
 
 	function handleLogoClick() {
-		window.location.replace(url);
+		window.location.replace(window.location.origin);
 	}
 
 	function handleLogout() {
 		localStorage.removeItem('userData');
-		window.location.replace(url);
+		window.location.replace(window.location.origin);
 	}
 
 	return (
@@ -56,7 +56,10 @@ export default function Background({ children, currentScreen, setLoggedIn }) {
 					LOGOUT
 				</button>
 			)}
-			<a href='https://open.spotify.com/' target='_blank'>
+			<a
+				href='https://open.spotify.com/'
+				target='_blank'
+				rel='noopener noreferrer'>
 				<img
 					className='spotify-logo'
 					src={windowSize.width < 480 ? spotifyLogo : spotifyLogoWithText}

@@ -28,11 +28,10 @@ export default function useSubmit(username, setResponseData) {
 			const res = await axios.post(defaultUrl, body, header);
 
 			setResponseData(res.data.data);
-			console.log(res.data.data);
 			animationData.current = res.data.data;
 			localStorage.setItem('animationData', JSON.stringify(res.data.data));
 
-			setState({ input: null });
+			// setState({ input: null });
 		};
 		if (state) {
 			sendRequest();

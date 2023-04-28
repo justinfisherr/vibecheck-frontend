@@ -8,10 +8,26 @@ function PrivateRoute({ children, responseData }) {
 	const urlUsername = queryParameters.get('username');
 	const urlUserImg = queryParameters.get('profile_img');
 	const urlVibeId = queryParameters.get('vibe_id');
+	const compareWith = queryParameters.get('compare_with');
+	const invite = queryParameters.get('invite');
 
 	const [userData, setUserData] = useState(
 		JSON.parse(localStorage.getItem('userData'))
 	);
+
+	if (invite) {
+		localStorage.setItem(
+			'invite',
+			JSON.stringify({ otherVibeId: compareWith })
+		);
+		if (!userData) {
+			const url =
+				process.env.NODE_ENV === 'production'
+					? 'https://vibecheck-backend-production.up.railway.app/login'
+					: 'http://localhost:5000/login';
+			window.location.replace(url);
+		}
+	}
 
 	useEffect(() => {
 		if (urlVibeId && !userData) {

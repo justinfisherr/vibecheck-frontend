@@ -8,19 +8,25 @@ import Spinner from '../spinner/Spinner';
 export default function UsernameModal({
 	openModal,
 	setOpenModal,
-	userData,
+	vibeId,
 	setUserData,
+	setVibeId,
 }) {
 	const [loading, setLoading] = useState(false);
 	const [errors, setErrors] = useState();
-	const [currentInputValue, setCurrentInputValue] = useState(userData.vibeId);
+	const [currentInputValue, setCurrentInputValue] = useState(vibeId);
 	const changeUserNameInput = useRef();
-	const submitVibeId = useSubmitVibeId(setUserData, setErrors, setLoading);
+	const submitVibeId = useSubmitVibeId(
+		setUserData,
+		setErrors,
+		setLoading,
+		setVibeId
+	);
 
 	function handleCloseModal({ target }) {
 		if (target.id === 'allow-close') {
 			setOpenModal(false);
-			setCurrentInputValue(userData.vibeId);
+			setCurrentInputValue(vibeId);
 			setErrors(null);
 		}
 	}
@@ -28,7 +34,7 @@ export default function UsernameModal({
 	function handleSaveNewUsername(newVibeId) {
 		setLoading(true);
 		submitVibeId({
-			oldId: userData.vibeId,
+			oldId: vibeId,
 			newId: newVibeId,
 		});
 	}
@@ -47,7 +53,7 @@ export default function UsernameModal({
 			onMouseDown={(e) => handleCloseModal(e)}>
 			<div className='change-username-input-container'>
 				<div className='change-username-title-wrapper'>
-					<div className='edit-button'>
+					<div className='edit-icon-wrapper'>
 						<img src={editIcon} alt='' />
 					</div>
 					<h3 className='change-username-title'>Edit your Vibe ID</h3>
@@ -62,7 +68,7 @@ export default function UsernameModal({
 						ref={changeUserNameInput}
 						onChange={(e) => handleInputChange(e.target.value)}
 						onKeyDown={(e) => handleKeyDown(e)}
-						spellcheck='false'
+						spellCheck='false'
 					/>
 				</div>
 

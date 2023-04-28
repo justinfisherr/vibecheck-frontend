@@ -93,6 +93,7 @@ export default function RecommendedArtists({ recommended, type }) {
 										<a
 											href={url}
 											target='_blank'
+											rel='noopener noreferrer'
 											className='recommended-song-name'>
 											{song_name}
 										</a>
