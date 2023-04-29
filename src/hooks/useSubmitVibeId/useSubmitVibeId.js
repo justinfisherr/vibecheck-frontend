@@ -3,9 +3,10 @@ import axios from 'axios';
 
 export default function useSubmitVibeId(
 	setUserData,
-	setErrors,
 	setLoading,
-	setVibeId
+	setVibeId,
+	setActive,
+	setError
 ) {
 	const [state, setState] = useState(null);
 
@@ -16,7 +17,6 @@ export default function useSubmitVibeId(
 
 	useEffect(() => {
 		const sendRequest = async () => {
-			setErrors(null);
 			const body = {
 				vibe_id: state.oldId,
 				newID: state.newId,
@@ -36,9 +36,14 @@ export default function useSubmitVibeId(
 					setUserData(userData);
 					localStorage.setItem('userData', JSON.stringify(userData));
 					setLoading(false);
+					setActive('Saved');
 				})
 				.catch((error) => {
-					setErrors(error.response.data.message);
+					setError(true);
+					setTimeout(() => {
+						setError(false);
+					}, 2000);
+					setActive(error.response.data.message);
 					setLoading(false);
 				});
 		};

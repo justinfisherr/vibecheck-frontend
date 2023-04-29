@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 
 export default function useFetcher(currentInputValue) {
@@ -7,44 +7,41 @@ export default function useFetcher(currentInputValue) {
 			? 'https://vibecheck-backend-production.up.railway.app/getuser/'
 			: 'http://localhost:5000/getuser/';
 
-	const [state, setState] = useState({
+	const [searchResults, setSearchResults] = useState({
 		data: [],
 		success: true,
 		loading: true,
 	});
-	const [input, setInput] = useState(null);
 
-	useEffect(() => {
-		const url = defaultUrl + input;
-		setState({
-			data: state.data,
-			success: true,
-			loading: true,
-		});
-		const sendRequest = async () => {
+	async function getSearchResults(value) {
+		console.log(currentInputValue.current, value);
+		const url = defaultUrl + value;
+		if (url && url !== defaultUrl) {
+			setSearchResults({
+				data: searchResults.data,
+				success: true,
+				loading: true,
+			});
 			const res = await axios.get(url, {
 				headers: {
 					'Content-Type': 'application/json',
 				},
 			});
-			if (currentInputValue.current === input) {
-				setState({
+			if (currentInputValue.current === value) {
+				setSearchResults({
 					data: res.data.data,
 					success: res.data.success,
 					loading: false,
 				});
 			}
-		};
-		if (url && url !== defaultUrl) {
-			sendRequest();
 		} else if (url) {
-			setState({
+			setSearchResults({
 				data: [],
 				success: true,
 				loading: true,
 			});
 		}
-	}, [input, setState]);
+	}
 
-	return [state, setInput];
+	return [searchResults, getSearchResults];
 }

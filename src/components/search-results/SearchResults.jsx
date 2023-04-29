@@ -3,7 +3,7 @@ import defaultImg from '../../images/default-user-image.svg';
 import useWindowSize from '../../hooks/window-size/useWindowSize';
 import './search-results.css';
 
-export default function SearchResults({ results, userId, input, handleSend }) {
+export default function SearchResults({ results, vibeId, input, handleSend }) {
 	const windowSize = useWindowSize();
 	const [bottomOfScreen, setBottomOfScreen] = useState(0);
 
@@ -12,8 +12,8 @@ export default function SearchResults({ results, userId, input, handleSend }) {
 		const resultsWrapperTop = resultsWrapper.getBoundingClientRect().top;
 
 		const backgroundWrapper = document.querySelector('.background-wrapper');
-		const backgroundWrapperBottom = backgroundWrapper.getBoundingClientRect()
-			.bottom;
+		const backgroundWrapperBottom =
+			backgroundWrapper.getBoundingClientRect().bottom;
 
 		const bottomOfScreen = backgroundWrapperBottom - resultsWrapperTop - 20;
 		setBottomOfScreen(bottomOfScreen);
@@ -25,7 +25,7 @@ export default function SearchResults({ results, userId, input, handleSend }) {
 			style={{ maxHeight: bottomOfScreen || 0 }}>
 			{results.success &&
 				results.data.map(({ user_info }) => {
-					if (user_info.vibe_id === userId) {
+					if (user_info.vibe_id === vibeId) {
 						return null;
 					}
 					return (
@@ -56,7 +56,7 @@ export default function SearchResults({ results, userId, input, handleSend }) {
 			{!results.loading &&
 				results.success &&
 				results.data.length === 1 &&
-				results.data[0].user_info.user_id === userId && (
+				results.data[0].user_info.user_id === vibeId && (
 					<p className='no-result'>NO RESULT</p>
 				)}
 		</div>

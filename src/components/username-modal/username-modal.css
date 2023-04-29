@@ -40,7 +40,6 @@
     font-size: 18px;
     color: white;
     font-weight: 600;
-    padding-right: 40px;
 }
 
 .change-username-input-wrapper{
@@ -62,7 +61,27 @@
     font-size: 18px;
     background-color: transparent;
     color: white;
+    padding-left: 10px;
 }
+
+.copy-vibe-id-icon-wrapper{
+    width: 50px;
+    height: 45px;
+    padding: 12px;
+    background-color: #b82424;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+    transition: all 0.1s;
+    display: flex;
+    align-items: center;
+}
+
+
+.copy-vibe-id-icon-wrapper:hover{
+    background-color: #ab1f1f;
+}
+
 
 .save-username-button{
     width: 100px;
@@ -85,27 +104,17 @@
     margin-top: 30px;
     display: flex;
     align-items: center;
-}
-
-.error-message{
-    color: white;
-    font-size: 18px;
-    font-weight: 500;
-    display: flex;
+    flex-direction: column-reverse;
     justify-content: center;
-    align-items: center;
-}
-
-.error-icon-wrapper{
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
 }
 
 .change-username-modal-button-wrapper{
     display: flex;
     gap: 10px;
     margin-left: auto;
+    width: 100%;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
 }
 
 .change-username-modal-subtext{
@@ -114,7 +123,7 @@
 }
 
 
-@media(min-width: 400px) {
+@media(min-width: 450px) {
     .change-username-title{
         font-size: 30px;
     }
@@ -122,4 +131,24 @@
     .change-username-modal-subtext{
         font-size: 20px;
     }
+
+    .change-username-modal-button-wrapper{
+        width: fit-content;
+
+    }
+
+    .change-username-modal-subtext-wrapper{
+        flex-direction: row;
+    }
 }
+
+.error-animation{
+    animation:errors .4s ease-in-out
+}
+
+@keyframes errors{
+    0%{transform:translateX(0)}
+    25%{transform:translateX(20px)}
+    50%{transform:translateX(-20px)}
+    75%{transform:translateX(20px)}
+    to{transform:translateX(0)}}

@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     animation: fade-out 0.2s ease-in-out 1.8s forwards;
+    margin-top: 20px;
 }
 
 .check-wrapper{
@@ -25,3 +26,11 @@
     from {opacity: 1;}
     to {opacity: 0;}
   }
+
+
+  @media(min-width: 450px) {
+    .temp-wrapper{
+        margin-top: 0;
+    }
+    
+}

@@ -1,40 +1,37 @@
 import React, { useState, useRef } from 'react';
-import SearchResults from '../search-results/SearchResults';
-
-import arrow from '../../images/arrow-right-solid.svg';
 import './username-input.css';
-
-import useFetch from '../../hooks/useFetch/useFetch';
+import arrow from '../../images/arrow-right-solid.svg';
+import SearchResults from '../search-results/SearchResults';
 import useSubmit from '../../hooks/useSubmit/useSubmit';
+import useFetch from '../../hooks/useFetch/useFetch';
 
 export default function UsernameInput({ setResponseData, vibeId }) {
-	// Ref
+	// State
 	const currentInputValue = useRef();
+	const [userInput, setInput] = useState('');
 
 	// Custom Hooks
 	const sumbitCompare = useSubmit(vibeId, setResponseData);
-	const [searchResults, getSearchResults] = useFetch(currentInputValue);
-
-	// State
-	const [input, setInput] = useState('');
+	const [searchResults, getSearchResultsFor] = useFetch(currentInputValue);
 
 	// Handler Functions
-	function handleSend(input) {
-		if (input) {
-			sumbitCompare(input);
+	function handleSend(chosenUser) {
+		if (chosenUser) {
+			sumbitCompare(chosenUser);
 			setInput('');
 		}
 	}
 
-	function handleInputChange(value) {
-		currentInputValue.current = value;
-		getSearchResults(value);
-		setInput(value);
+	function handleInputChange(newUserInput) {
+		currentInputValue.current = newUserInput;
+		getSearchResultsFor(newUserInput);
+		setInput(newUserInput);
 	}
 
 	function handleKeyDown({ code, target }) {
 		if (code === 'Enter' || code === 'NumpadEnter') {
-			handleSend(target.value);
+			const chosenUser = target.value;
+			handleSend(chosenUser);
 		}
 	}
 
@@ -48,7 +45,7 @@ export default function UsernameInput({ setResponseData, vibeId }) {
 				<input
 					type='text'
 					className='username-input'
-					value={input}
+					value={userInput}
 					onChange={(e) => handleInputChange(e.target.value)}
 					onKeyDown={(e) => handleKeyDown(e)}
 				/>
@@ -56,7 +53,7 @@ export default function UsernameInput({ setResponseData, vibeId }) {
 				<button
 					className='compare-button'
 					type='submit'
-					onClick={() => handleSend(input)}>
+					onClick={() => handleSend(userInput)}>
 					<img src={arrow} className='compare-arrow' alt='' />
 				</button>
 			</div>
@@ -64,7 +61,7 @@ export default function UsernameInput({ setResponseData, vibeId }) {
 				<SearchResults
 					results={searchResults}
 					vibeId={vibeId}
-					input={input}
+					input={userInput}
 					handleSend={handleSend}
 				/>
 			</div>

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './temp-alert.css';
-import check from '../../images/check.svg';
+import exclamation from '../../images/circle-exclamation-solid.svg';
 
-export default function useTempAlert(tempAlert) {
-	const [tempAlertActive, setActive] = useState(false);
+export default function useTempAlert() {
+	const [tempAlertActive, setActive] = useState('');
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
-			setActive(false);
+			setActive('');
 		}, 2000);
 		return () => clearTimeout(timer);
 	}, [tempAlertActive]);
@@ -15,9 +15,9 @@ export default function useTempAlert(tempAlert) {
 	return [
 		<div className='temp-wrapper'>
 			<div className='check-wrapper'>
-				<img src={check} alt='' />
+				<img src={exclamation} alt='' />
 			</div>
-			<p className='temp-alert'>{tempAlert}</p>
+			<p className='temp-alert'>{tempAlertActive}</p>
 		</div>,
 		tempAlertActive,
 		setActive,

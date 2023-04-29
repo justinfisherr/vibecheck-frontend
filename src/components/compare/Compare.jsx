@@ -60,9 +60,9 @@ function Compare() {
 				/>
 				<div className='content compare-content'>
 					<h1 className='compare-heading'>COMPARE WITH?</h1>
-					<div className='id-container'>
+					<div className='id-container' onClick={() => handleChangeUsername()}>
 						<p className='compare-your-id'>Your ID: {vibeId}</p>
-						<div className='edit-button' onClick={() => handleChangeUsername()}>
+						<div className='edit-button'>
 							<img src={editIcon} alt='' />
 						</div>
 					</div>

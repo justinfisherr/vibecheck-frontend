@@ -27,8 +27,10 @@ function Invite({ vibeId }) {
 	}
 
 	function handleCopy() {
-		navigator.clipboard.writeText(inviteLink);
-		setActive(true);
+		if (!tempAlertActive) {
+			navigator.clipboard.writeText(inviteLink);
+			setActive('Copied!');
+		}
 	}
 
 	return (
@@ -44,7 +46,7 @@ function Invite({ vibeId }) {
 					<div className='invite-modal'>
 						<div className='invite-heading-wrapper'>
 							<div className='envelope-icon-wrapper'>
-								<img src={envelope} alt='' />
+								<img src={envelope} alt='envelope icon' />
 							</div>
 							<h3 className='invite-username-title'>Invite a friend</h3>
 						</div>
@@ -53,6 +55,7 @@ function Invite({ vibeId }) {
 								className='invite-input'
 								defaultValue={inviteLink}
 								type='text'
+								readOnly='readonly'
 							/>
 						</div>
 						<div className='invite-modal-subtext-wrapper'>
