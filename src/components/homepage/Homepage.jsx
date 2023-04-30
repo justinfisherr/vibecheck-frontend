@@ -3,6 +3,7 @@ import { Navigate } from 'react-router-dom';
 import Background from '../background/Background';
 import { Helmet } from 'react-helmet-async';
 import coverImg from '../../images/vibecheck-cover.png';
+import NotEnoughDataModal from '../not-enough-data-modal/NotEnoughDataModal';
 
 import './homepage.css';
 
@@ -59,6 +60,7 @@ function Home() {
 			</Helmet>
 			<Background>
 				<div className='content homepage-content'>
+					<NotEnoughDataModal />
 					<h1 className='homepage-heading'>VIBECHECK</h1>
 					<p className='homepage-subtext'>Check your music compatibility</p>
 					<button className='button' onClick={() => redirectToSpotify()}>
