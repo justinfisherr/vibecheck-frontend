@@ -40,6 +40,7 @@ export default function SearchResults({
 							onClick={() => handleSend(user_info.vibe_id)}
 							key={user_info.user_id}>
 							<div className='result-img-wrapper'>
+								<img src={defaultImg} className='result-img' alt='' />
 								<img
 									src={
 										user_info.profile_img ? user_info.profile_img : defaultImg

@@ -17,6 +17,7 @@ export default function IntroImages({ animationData }) {
 						className='profile-img'
 						alt=''
 					/>
+					<img src={defaultImg} className='profile-img' alt='' />
 				</div>
 				<div className='circle circle-2'></div>
 				<div className='circle circle-3'></div>
@@ -38,6 +39,7 @@ export default function IntroImages({ animationData }) {
 						className='profile-img'
 						alt=''
 					/>
+					<img src={defaultImg} className='profile-img' alt='' />
 				</div>
 				<div className='circle circle-2'></div>
 				<div className='circle circle-3'></div>
