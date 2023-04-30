@@ -6,7 +6,7 @@ function NotEnoughDataModal() {
 	const queryParameters = new URLSearchParams(window.location.search);
 	const notEnoughData = queryParameters.get('not_enough_data');
 	const [displayModal, setDisplayModal] = useState(notEnoughData === 'true');
-	// window.history.replaceState(null, 'Vibe Check', window.location.pathname);
+	window.history.replaceState(null, 'Vibe Check', window.location.pathname);
 
 	function handleCloseModal({ target }) {
 		if (target.id === 'allow-close') {
