@@ -3,7 +3,13 @@ import defaultImg from '../../images/default-user-image.svg';
 import useWindowSize from '../../hooks/window-size/useWindowSize';
 import './search-results.css';
 
-export default function SearchResults({ results, vibeId, input, handleSend }) {
+export default function SearchResults({
+	results,
+	vibeId,
+	userInput,
+	handleSend,
+	searchLoading,
+}) {
 	const windowSize = useWindowSize();
 	const [bottomOfScreen, setBottomOfScreen] = useState(0);
 
@@ -23,8 +29,8 @@ export default function SearchResults({ results, vibeId, input, handleSend }) {
 		<div
 			className='search-results-wrapper'
 			style={{ maxHeight: bottomOfScreen || 0 }}>
-			{results.success &&
-				results.data.map(({ user_info }) => {
+			{results &&
+				results.map(({ user_info }) => {
 					if (user_info.vibe_id === vibeId) {
 						return null;
 					}
@@ -49,16 +55,10 @@ export default function SearchResults({ results, vibeId, input, handleSend }) {
 						</div>
 					);
 				})}
-			{!results.loading &&
-				results.success &&
-				results.data.length === 0 &&
-				input && <p className='no-result'>NO RESULT</p>}
-			{!results.loading &&
-				results.success &&
-				results.data.length === 1 &&
-				results.data[0].user_info.user_id === vibeId && (
-					<p className='no-result'>NO RESULT</p>
-				)}
+			{searchLoading && <p className='no-result'>Loading...</p>}
+			{!searchLoading && results.length === 0 && userInput && (
+				<p className='no-result'>NO RESULT</p>
+			)}
 		</div>
 	);
 }

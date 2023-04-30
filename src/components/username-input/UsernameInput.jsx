@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './username-input.css';
 import arrow from '../../images/arrow-right-solid.svg';
 import SearchResults from '../search-results/SearchResults';
@@ -9,10 +9,12 @@ export default function UsernameInput({ setResponseData, vibeId }) {
 	// State
 	const currentInputValue = useRef();
 	const [userInput, setInput] = useState('');
+	const [searchLoading, setSearchLoading] = useState(false);
+	const [searchResults, setSearchResults] = useState([]);
 
 	// Custom Hooks
 	const sumbitCompare = useSubmit(vibeId, setResponseData);
-	const [searchResults, getSearchResultsFor] = useFetch(currentInputValue);
+	const getSearchResultsFor = useFetch(setSearchLoading, setSearchResults);
 
 	// Handler Functions
 	function handleSend(chosenUser) {
@@ -22,9 +24,24 @@ export default function UsernameInput({ setResponseData, vibeId }) {
 		}
 	}
 
+	useEffect(() => {
+		setSearchResults([]);
+		if (userInput) {
+			setSearchLoading(true);
+		}
+
+		const delayDebounceFn = setTimeout(() => {
+			getSearchResultsFor(userInput);
+		}, 500);
+
+		return () => {
+			setSearchLoading(false);
+			clearTimeout(delayDebounceFn);
+		};
+	}, [userInput]);
+
 	function handleInputChange(newUserInput) {
 		currentInputValue.current = newUserInput;
-		getSearchResultsFor(newUserInput);
 		setInput(newUserInput);
 	}
 
@@ -39,7 +56,7 @@ export default function UsernameInput({ setResponseData, vibeId }) {
 		<div className='username-form'>
 			<div
 				className={`input-wrapper ${
-					searchResults.data.length !== 0 ? 'bottom-line' : ''
+					searchResults.length !== 0 ? 'bottom-line' : ''
 				}`}>
 				<p className='at-symbol'>ID</p>
 				<input
@@ -61,8 +78,9 @@ export default function UsernameInput({ setResponseData, vibeId }) {
 				<SearchResults
 					results={searchResults}
 					vibeId={vibeId}
-					input={userInput}
+					userInput={userInput}
 					handleSend={handleSend}
+					searchLoading={searchLoading}
 				/>
 			</div>
 		</div>
