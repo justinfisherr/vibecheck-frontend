@@ -7,8 +7,7 @@
 }
 
 .social-buttons{
-    background-color: blue;
-    
+
 }
 
 .share-button{
@@ -117,10 +116,26 @@
     opacity: 0;
 }
 
+.plug-text{
+    margin-top: 20px;
+    color: #5a8694;
+    font-weight: 300;
+    font-size: 12px;
+    text-align: center;
+    width: 150px;
+}
 
-@media (min-width: 300px){
+.plug-link{
+    color: #1e4651;
+}
+
+@media (min-width: 300px){ 
     .modal-content{
         padding: 25px;
+    }
+
+    .plug-text{
+        width: 200px;
     }
     
 }
@@ -145,6 +160,12 @@
 
     .modal-button{
         font-size: 14px;
+    }
+
+    .plug-text{
+        margin-top: 30px;
+        font-size: 14px;
+        width: 250px;
     }
     
 }
@@ -180,6 +201,11 @@
     .modal-button{
         font-size: 16px;
     }
+
+    .plug-text{
+        font-size: 14px;
+        width: 280px;
+    }
 }
 
 @media (min-width: 750px){
@@ -197,5 +223,10 @@
         right: 2.5%;
         width: 20px;
         height: 20px;
+    }
+
+    .plug-text{
+        font-size: 14px;
+        width: 500px;
     }
 }

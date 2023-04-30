@@ -24,9 +24,8 @@ export default function SocialButtons() {
 				allowTaint: true,
 				useCORS: true,
 				onclone: (el) => {
-					const elementsWithShiftedDownwardText = el.querySelectorAll(
-						'.shifted-text'
-					);
+					const elementsWithShiftedDownwardText =
+						el.querySelectorAll('.shifted-text');
 					elementsWithShiftedDownwardText.forEach((element) => {
 						element.style.transform = 'translateY(-30%)';
 					});
@@ -137,6 +136,25 @@ export default function SocialButtons() {
 							SHARE
 						</button>
 					</div>
+
+					<p className='plug-text'>
+						Like Vibe Check? Follow us{' '}
+						<a
+							className='plug-link'
+							href='https://www.linkedin.com/in/justinthedev/'
+							target='_blank'
+							rel='noopener noreferrer'>
+							Justin Fisher
+						</a>{' '}
+						and{' '}
+						<a
+							className='plug-link'
+							href='https://www.linkedin.com/in/webdevlex/'
+							target='_blank'
+							rel='noopener noreferrer'>
+							Alexis Martin
+						</a>
+					</p>
 				</div>
 			</div>
 		</div>
