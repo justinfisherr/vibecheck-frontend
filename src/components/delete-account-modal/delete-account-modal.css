@@ -1,0 +1,95 @@
+.delete-account-modal-container{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 20px;
+}
+
+.delete-account-modal{
+    max-width: 600px;
+    width: 100%;
+    background-color: #e23838;
+    border-radius: 10px;
+    position: relative;
+    padding: 35px;
+}
+
+.error-icon-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.error-icon{
+    height: 80px;
+}
+
+.delete-account-heading{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+    margin-block: 20px;
+}
+
+.delete-account-subtext{
+    text-align: center;
+    font-size: 18px;
+    color: white;
+}
+
+.delete-account-modal-buttons-wrapper{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 35px;
+}
+
+.delete-account-button{
+    width: 100px;
+    height: 40px;
+    font-size: 14px;
+    border-radius: 5px;
+    font-weight: 600;
+    border: none;
+    color: #e23838;
+    background-color: white;
+    cursor: pointer;
+    transition: all ease-in-out 0.2s;
+
+}
+
+.delete-account-button:hover{
+    transform: scale(1.05);
+}
+
+.delete-account-cancel-button{
+    background-color: #e23838;
+    color: white;
+    border: 2px solid white;
+}
+
+.delete-account-cancel-button:hover{
+    background-color: #e23838;
+}
+
+
+
+
+@media(max-width: 300px){
+    .delete-account-modal-buttons-wrapper{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+        margin-top: 35px;
+    }
+
+    .delete-account-button{
+        margin-top: 0;
+    }
+}

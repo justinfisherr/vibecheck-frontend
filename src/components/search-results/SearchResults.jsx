@@ -42,9 +42,7 @@ export default function SearchResults({
 							<div className='result-img-wrapper'>
 								<img src={defaultImg} className='result-img' alt='' />
 								<img
-									src={
-										user_info.profile_img ? user_info.profile_img : defaultImg
-									}
+									src={user_info.profile_img}
 									className='result-img'
 									alt=''
 								/>

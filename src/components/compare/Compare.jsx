@@ -7,12 +7,15 @@ import CompareImages from '../compare-images/CompareImages';
 import UsernameModal from '../username-modal/UsernameModal';
 import useSubmit from '../../hooks/useSubmit/useSubmit';
 import Invite from '../invite/Invite';
+import DeleteAccountModal from '../delete-account-modal/DeleteAccountModal';
+import ProfileDropdown from '../profile-dropdown/ProfileDropdown';
 import { Helmet } from 'react-helmet-async';
 import './compare.css';
 
 function Compare() {
 	const [openModal, setOpenModal] = useState(false);
 	const [responseData, setResponseData] = useState(null);
+
 	const [userData, setUserData] = useState(
 		JSON.parse(localStorage.getItem('userData'))
 	);
@@ -24,6 +27,8 @@ function Compare() {
 	const [userImg] = useState(userData ? userData.userImg : urlUserImg);
 
 	const sumbitCompare = useSubmit(vibeId, setResponseData);
+	const [showDeleteModal, setShowDeleteModal] = useState(false);
+	const [showDropdown, setShowDropdown] = useState(false);
 
 	useEffect(() => {
 		const invite = JSON.parse(localStorage.getItem('invite'));
@@ -39,8 +44,14 @@ function Compare() {
 		setOpenModal(true);
 	}
 
+	function handleCompareClick({ target }) {
+		if (showDropdown && target.id !== 'avatar') {
+			setShowDropdown(false);
+		}
+	}
+
 	return responseData == null ? (
-		<div className='compare-page'>
+		<div className='compare-page' onClick={(e) => handleCompareClick(e)}>
 			<Helmet>
 				<title>Vibe Check</title>
 				<meta
@@ -50,7 +61,7 @@ function Compare() {
 				<link rel='canonical' href='https://thevibecheck.io/compare' />
 				<meta name='robots' content='noindex' />
 			</Helmet>
-			<Background>
+			<Background setShowDeleteModal={setShowDeleteModal}>
 				<UsernameModal
 					openModal={openModal}
 					setOpenModal={setOpenModal}
@@ -58,7 +69,20 @@ function Compare() {
 					setUserData={setUserData}
 					setVibeId={setVibeId}
 				/>
+
+				<DeleteAccountModal
+					userData={userData}
+					showDeleteModal={showDeleteModal}
+					setShowDeleteModal={setShowDeleteModal}
+				/>
 				<div className='content compare-content'>
+					<ProfileDropdown
+						profileImg={userImg}
+						setShowDeleteModal={setShowDeleteModal}
+						showDropdown={showDropdown}
+						setShowDropdown={setShowDropdown}
+					/>
+
 					<h1 className='compare-heading'>COMPARE WITH?</h1>
 					<div className='id-container' onClick={() => handleChangeUsername()}>
 						<p className='compare-your-id'>Your ID: {vibeId}</p>

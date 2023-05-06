@@ -1,4 +1,5 @@
 .invite-wrapper{
+    z-index: 3;
 }
 
 .invite-button{

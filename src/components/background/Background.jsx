@@ -19,14 +19,9 @@ import spinBurst from '../../images/spin-burst.png';
 import vibecheckLogo from '../../images/logo.svg';
 import vibecheckLogoNoText from '../../images/logo-no-text.svg';
 
-export default function Background({ children, currentScreen, setLoggedIn }) {
+export default function Background({ children, currentScreen }) {
 	const windowSize = useWindowSize();
 	const [userData, setUserData] = useState(null);
-
-	// const url =
-	// 	process.env.NODE_ENV === 'production'
-	// 		? 'https://thevibecheck.io/'
-	// 		: 'http://localhost:3000/';
 
 	useEffect(() => {
 		const userData = localStorage.getItem('userData');
@@ -34,11 +29,6 @@ export default function Background({ children, currentScreen, setLoggedIn }) {
 	}, [windowSize]);
 
 	function handleLogoClick() {
-		window.location.replace(window.location.origin);
-	}
-
-	function handleLogout() {
-		localStorage.removeItem('userData');
 		window.location.replace(window.location.origin);
 	}
 
@@ -51,11 +41,6 @@ export default function Background({ children, currentScreen, setLoggedIn }) {
 					alt='vibecheck logo'
 				/>
 			</div>
-			{userData && (
-				<button className='button logout-button' onClick={() => handleLogout()}>
-					LOGOUT
-				</button>
-			)}
 			<a
 				href='https://open.spotify.com/'
 				target='_blank'

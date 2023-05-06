@@ -49,13 +49,14 @@
     justify-content: center;
     align-items: center;
     position: relative;
-
 }
 
 .result-img{
     object-fit: cover;
     position: absolute;
+
 }
+
 
 .result-info-wrapper{
     color: white;
