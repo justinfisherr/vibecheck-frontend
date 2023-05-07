@@ -100,29 +100,6 @@
     width: 100%;
 }
 
-.invite-modal-button{
-    width: 100px;
-    height: 40px;
-    font-size: 14px;
-    border-radius: 5px;
-    font-weight: 600;
-    border: none;
-    color: #e23838;
-    background-color: white;
-    cursor: pointer;
-    transition: all ease-in-out 0.2s;
-}
-
-.invite-modal-button:hover{
-    transform: scale(1.05);
-}
-
-.cancel-button{
-    background-color: #e23838;
-    color: white;
-    border: 2px solid white;
-}
-
 @media(min-width: 450px) {
     .invite-modal-buttons-wrapper{
         flex-direction: row;

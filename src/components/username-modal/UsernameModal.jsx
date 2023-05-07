@@ -97,14 +97,14 @@ export default function UsernameModal({
 
 					<div className='change-username-modal-button-wrapper'>
 						<button
-							className='save-username-button cancel-button'
+							className='cancel-button'
 							type='submit'
 							id='allow-close'
 							onClick={(e) => handleCloseModal(e)}>
 							Cancel
 						</button>
 						<button
-							className='save-username-button'
+							className='button'
 							type='submit'
 							onClick={() => handleSaveNewUsername(currentInputValue)}>
 							{loading ? <Spinner /> : 'Save'}

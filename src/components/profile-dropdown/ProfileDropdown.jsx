@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import defaultImg from '../../images/default-user-image.svg';
 import logoutIcon from '../../images/right-from-bracket-solid.svg';
 import trashIcon from '../../images/trash-can-solid.svg';
@@ -39,7 +39,11 @@ function ProfileDropdown({
 				className='profile-dropdown-image-wrapper'
 				id='avatar'
 				onClick={handleAvatarClick}>
-				<img className='user-avatar' src={profileImg} alt='User Avatar' />
+				<img
+					className='user-avatar'
+					src={profileImg ? profileImg : defaultImg}
+					alt='User Avatar'
+				/>
 			</div>
 
 			{showDropdown && (

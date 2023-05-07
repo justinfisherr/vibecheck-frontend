@@ -7,7 +7,38 @@
     min-height: var(--min-height);
 }
 
+.button, .cancel-button{
+  min-width: 100px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  color: #e23838;
+  background-color: white;
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+}
 
+.button:hover, .cancel-button:hover{
+  transform: scale(1.05);
+}
+
+.cancel-button{
+  background-color: #e23838;
+  color: white;
+  border: 2px solid white;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
 
 body::-webkit-scrollbar {
   width: 1em;

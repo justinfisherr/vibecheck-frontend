@@ -1,4 +1,4 @@
-.delete-account-modal-container{
+.user-exists-modal-container{
     position: absolute;
     width: 100%;
     top: 0;
@@ -11,7 +11,7 @@
     padding-inline: 20px;
 }
 
-.delete-account-modal{
+.user-exists-modal {
     max-width: 600px;
     width: 100%;
     background-color: #e23838;
@@ -29,7 +29,7 @@
     height: 80px;
 }
 
-.delete-account-heading{
+.user-exists-modal-heading{
     text-align: center;
     font-size: 30px;
     font-weight: 700;
@@ -37,29 +37,14 @@
     margin-block: 20px;
 }
 
-.delete-account-subtext{
+.user-exists-modal-subtext{
     text-align: center;
     font-size: 18px;
     color: white;
 }
 
-.delete-account-modal-buttons-wrapper{
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+.user-exists-modal-button{
     margin-top: 35px;
-}
-
-
-@media(max-width: 300px){
-    .delete-account-modal-buttons-wrapper{
-        justify-content: center;
-        align-items: center;
-        flex-direction: column-reverse;
-        margin-top: 35px;
-    }
-
-    .delete-account-button{
-        margin-top: 0;
-    }
+    display: block;
+    margin-inline: auto;
 }

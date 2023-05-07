@@ -3,7 +3,7 @@ import './delete-account-modal.css';
 import axios from 'axios';
 import errorIcon from '../../images/triangle-exclamation-solid.svg';
 
-function DeleteAccountModal({ userData, showDeleteModal, setShowDeleteModal }) {
+function DeleteAccountModal({ vibeId, showDeleteModal, setShowDeleteModal }) {
 	function handleCloseModal({ target }) {
 		if (target.id === 'allow-close') {
 			setShowDeleteModal(false);
@@ -22,7 +22,7 @@ function DeleteAccountModal({ userData, showDeleteModal, setShowDeleteModal }) {
 					'Content-Type': 'application/json',
 				},
 				data: {
-					vibe_id: userData.vibeId,
+					vibe_id: vibeId,
 				},
 			})
 			.then(() => {
@@ -49,12 +49,12 @@ function DeleteAccountModal({ userData, showDeleteModal, setShowDeleteModal }) {
 					</p>
 					<div className='delete-account-modal-buttons-wrapper'>
 						<button
-							className='delete-account-button delete-account-cancel-button'
+							className='cancel-button'
 							id='allow-close'
 							onClick={(e) => handleCloseModal(e)}>
 							Cancel
 						</button>
-						<button className='delete-account-button' onClick={deleteAccount}>
+						<button className='button' onClick={deleteAccount}>
 							Delete
 						</button>
 					</div>

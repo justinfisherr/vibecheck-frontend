@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './background.css';
 
 import StipleImage from '../stiple-image/StipleImage';
@@ -21,12 +21,8 @@ import vibecheckLogoNoText from '../../images/logo-no-text.svg';
 
 export default function Background({ children, currentScreen }) {
 	const windowSize = useWindowSize();
-	const [userData, setUserData] = useState(null);
 
-	useEffect(() => {
-		const userData = localStorage.getItem('userData');
-		setUserData(JSON.parse(userData));
-	}, [windowSize]);
+	useEffect(() => {}, [windowSize]);
 
 	function handleLogoClick() {
 		window.location.replace(window.location.origin);
@@ -100,10 +96,10 @@ export default function Background({ children, currentScreen }) {
 				<div className='absolute stiple-img-container-4'>
 					<StipleImage currentScreen={currentScreen} src={stipleBottomRight} />
 				</div>
-				<div className='absolute star star1'>
+				<div className='absolute noselect star star1'>
 					<img className='stiple-img' src={star} alt='' />
 				</div>
-				<div className='absolute star star2'>
+				<div className='absolute noselect star star2'>
 					<img className='stiple-img' src={star} alt='' />
 				</div>
 			</div>

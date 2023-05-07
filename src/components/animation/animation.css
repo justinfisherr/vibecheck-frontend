@@ -8,6 +8,13 @@
     /* transition: all 0.1s ease-in-out; */
 }
 
+.back-button{
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    color: black;
+}
+
 .animation-content-wrapper{
     z-index: 1;
     padding-inline: 20px;
@@ -23,7 +30,6 @@
     font-size: 18px;
     font-weight: 500;
     color: white;
-    
 }
 
 

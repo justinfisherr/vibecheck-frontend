@@ -9,6 +9,7 @@ import useSubmit from '../../hooks/useSubmit/useSubmit';
 import Invite from '../invite/Invite';
 import DeleteAccountModal from '../delete-account-modal/DeleteAccountModal';
 import ProfileDropdown from '../profile-dropdown/ProfileDropdown';
+import UserExistsModal from '../user-exists-modal/UserExistsModal';
 import { Helmet } from 'react-helmet-async';
 import './compare.css';
 
@@ -25,19 +26,23 @@ function Compare() {
 
 	const [vibeId, setVibeId] = useState(userData ? userData.vibeId : urlVibeId);
 	const [userImg] = useState(userData ? userData.userImg : urlUserImg);
-
-	const sumbitCompare = useSubmit(vibeId, setResponseData);
+	const [displayExistsModal, setExistsDisplayModal] = useState(false);
 	const [showDeleteModal, setShowDeleteModal] = useState(false);
 	const [showDropdown, setShowDropdown] = useState(false);
+
+	const sumbitCompare = useSubmit(
+		vibeId,
+		setResponseData,
+		setExistsDisplayModal
+	);
 
 	useEffect(() => {
 		const invite = JSON.parse(localStorage.getItem('invite'));
 		if (invite) {
 			localStorage.removeItem('invite');
 			sumbitCompare(invite.otherVibeId);
-		} else {
-			window.history.replaceState(null, 'Vibe Check', window.location.pathname);
 		}
+		window.history.replaceState(null, 'Vibe Check', window.location.pathname);
 	}, []);
 
 	function handleChangeUsername() {
@@ -71,9 +76,13 @@ function Compare() {
 				/>
 
 				<DeleteAccountModal
-					userData={userData}
+					vibeId={vibeId}
 					showDeleteModal={showDeleteModal}
 					setShowDeleteModal={setShowDeleteModal}
+				/>
+				<UserExistsModal
+					displayExistsModal={displayExistsModal}
+					setExistsDisplayModal={setExistsDisplayModal}
 				/>
 				<div className='content compare-content'>
 					<ProfileDropdown
@@ -95,7 +104,11 @@ function Compare() {
 					<p className='compare-subheading'>
 						Enter the other users Vibe Check ID
 					</p>
-					<UsernameInput setResponseData={setResponseData} vibeId={vibeId} />
+					<UsernameInput
+						setResponseData={setResponseData}
+						vibeId={vibeId}
+						setExistsDisplayModal={setExistsDisplayModal}
+					/>
 					<Invite vibeId={vibeId} />
 				</div>
 			</Background>

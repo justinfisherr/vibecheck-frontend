@@ -1,5 +1,6 @@
 .stiple-img{
     /* transition: all 0.1s ease-in-out; */
+    pointer-events: none;
 }
 
 .stiple-img-intro{

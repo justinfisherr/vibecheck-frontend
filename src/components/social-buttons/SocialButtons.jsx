@@ -16,7 +16,6 @@ export default function SocialButtons() {
 	const modalShareClicked = useRef(false);
 	const myRef = useRef();
 	const animationData = useContext(animationContext);
-	console.log(animationData);
 
 	useEffect(() => {
 		const captureElement = async (element) => {

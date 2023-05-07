@@ -53,15 +53,16 @@ function Animation() {
 				<meta name='robots' content='noindex' />
 			</Helmet>
 			<Background currentScreen={styles[index]}>
+				<button className='button back-button' onClick={handleRedo}>
+					Back
+				</button>
 				<div className='animation-content-wrapper'>
 					<div className='screens'>{screens[index]}</div>
 					<div
 						className={`buttons ${
 							index === screens.length - 1 ? 'buttons-three' : ''
 						}`}>
-						<button
-							className='animation-button back-button'
-							onClick={() => prevScreen()}>
+						<button className='animation-button' onClick={() => prevScreen()}>
 							<img className='carret' src={leftCarret} alt='' />
 						</button>
 						{index === screens.length - 1 ? (

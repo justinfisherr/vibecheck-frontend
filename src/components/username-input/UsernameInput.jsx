@@ -5,7 +5,11 @@ import SearchResults from '../search-results/SearchResults';
 import useSubmit from '../../hooks/useSubmit/useSubmit';
 import useFetch from '../../hooks/useFetch/useFetch';
 
-export default function UsernameInput({ setResponseData, vibeId }) {
+export default function UsernameInput({
+	setResponseData,
+	vibeId,
+	setExistsDisplayModal,
+}) {
 	// State
 	const currentInputValue = useRef();
 	const [userInput, setInput] = useState('');
@@ -13,7 +17,11 @@ export default function UsernameInput({ setResponseData, vibeId }) {
 	const [searchResults, setSearchResults] = useState([]);
 
 	// Custom Hooks
-	const sumbitCompare = useSubmit(vibeId, setResponseData);
+	const sumbitCompare = useSubmit(
+		vibeId,
+		setResponseData,
+		setExistsDisplayModal
+	);
 	const getSearchResultsFor = useFetch(setSearchLoading, setSearchResults);
 
 	// Handler Functions
