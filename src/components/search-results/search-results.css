@@ -9,6 +9,7 @@
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     z-index: 5;
+    box-shadow: -5px 5px 20px rgba(0,0,0,0.4);
 }
 
 .result{
