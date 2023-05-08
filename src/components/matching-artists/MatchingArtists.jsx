@@ -1,14 +1,18 @@
-import './screen3.css';
+import './matching-artists.css';
 
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import sunBurst from '../../images/sun-burst.png';
 
-function Screen3({ animationData }) {
+function MatchingArtists({ animationData }) {
+	const oneMatchingArtist =
+		animationData.match_profile.matching_artists.length === 1;
+
 	return (
 		<div className='screen3-content fade-in'>
 			<h1 className='screen3-title fade-in'>Matching Artists Are</h1>
-			<div className='artist-grid'>
+			<div className={`artist-grid ${oneMatchingArtist ? 'one-match' : ''}`}>
 				<div className='top-artist'>
 					<div className='top-artists-wrapper'>
 						<div className='top-artist-img-wrapper'>
@@ -24,21 +28,22 @@ function Screen3({ animationData }) {
 						</div>
 					</div>
 				</div>
-
-				<div className='remaining-artist'>
-					{animationData.match_profile.matching_artists
-						.slice(1, 5)
-						.map(({ artist_img }, index) => (
-							<div className='artist' key={index}>
-								<img
-									className={`remaining-artist-img artist-img-${index + 2}`}
-									src={artist_img}
-									alt=''
-								/>
-							</div>
-						))}
-				</div>
-				<div className='names'>
+				{!oneMatchingArtist && (
+					<div className='remaining-artist'>
+						{animationData.match_profile.matching_artists
+							.slice(1, 5)
+							.map(({ artist_img }, index) => (
+								<div className='artist' key={index}>
+									<img
+										className={`remaining-artist-img artist-img-${index + 2}`}
+										src={artist_img}
+										alt=''
+									/>
+								</div>
+							))}
+					</div>
+				)}
+				<div className={`names ${oneMatchingArtist ? 'one-match-names' : ''}`}>
 					{animationData.match_profile.matching_artists.map(
 						({ artist_name }, index) => (
 							<div
@@ -55,4 +60,8 @@ function Screen3({ animationData }) {
 	);
 }
 
-export default Screen3;
+MatchingArtists.propTypes = {
+	animationData: PropTypes.object,
+};
+
+export default MatchingArtists;

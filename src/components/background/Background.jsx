@@ -34,7 +34,7 @@ function Background({ children, currentScreenName }) {
 	// If the user hits a key when the logo is in focus this checks to see if
 	// the key pressed was the enter, if it was redirect them to the homepage
 	function handleKeyDown(e) {
-		if (e.code === 'Enter' || event.code === 'NumpadEnter') {
+		if (e.code === 'Enter' || e.code === 'NumpadEnter') {
 			handleLogoClick();
 		}
 	}

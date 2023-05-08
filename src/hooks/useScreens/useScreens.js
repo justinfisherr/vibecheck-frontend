@@ -2,10 +2,10 @@ import React, { useContext } from 'react';
 
 import Screen2 from '../../components//screen2/Screen2';
 import ButHere from '../../components/but-here/ButHere';
+import MatchingArtists from '../../components/matching-artists/MatchingArtists';
 import NoMatches from '../../components/no-matches/NoMatches';
 import RecommendedArtists from '../../components/recommended-artists/RecommendedArtists';
 import Screen1 from '../../components/screen1/Screen1';
-import Screen3 from '../../components/screen3/Screen3';
 import Screen4 from '../../components/screen4/Screen4';
 import Screen5 from '../../components/screen5/Screen5';
 import { animationContext } from '../../context/animationContext';
@@ -82,7 +82,7 @@ export default function useScreens() {
 			);
 		} else {
 			styles.push('artists');
-			screens.push(<Screen3 animationData={animationData.current} />);
+			screens.push(<MatchingArtists animationData={animationData.current} />);
 		}
 
 		styles.push('but-here-artists');
