@@ -36,10 +36,6 @@
 	height: fit-content !important;
 }
 
-.animation-page-artists {
-	background-color: #8449a6;
-}
-
 .top-artist {
 	grid-area: top-artist;
 	max-width: 100%;

@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 
 import Screen2 from '../../components//screen2/Screen2';
-import ButHere from '../../components/but-here/ButHere';
 import MatchingArtists from '../../components/matching-artists/MatchingArtists';
 import NoMatches from '../../components/no-matches/NoMatches';
+import RecommendationText from '../../components/recommendation-text/RecommendationText';
 import RecommendedArtists from '../../components/recommended-artists/RecommendedArtists';
 import Screen1 from '../../components/screen1/Screen1';
 import Screen4 from '../../components/screen4/Screen4';
@@ -86,7 +86,9 @@ export default function useScreens() {
 		}
 
 		styles.push('but-here-artists');
-		screens.push(<ButHere type={'Artists'} words={artistsWords} />);
+		screens.push(
+			<RecommendationText wordsToDisplay={artistsWords} wordsType={'Artists'} />
+		);
 
 		styles.push('recommended-artists');
 		screens.push(
@@ -108,7 +110,9 @@ export default function useScreens() {
 		}
 
 		styles.push('but-here-songs');
-		screens.push(<ButHere words={songWords} type={'Songs'} />);
+		screens.push(
+			<RecommendationText wordsToDisplay={songWords} wordsType={'Songs'} />
+		);
 
 		styles.push('recommended-songs');
 		screens.push(

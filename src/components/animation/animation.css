@@ -19,6 +19,24 @@
 	z-index: 1;
 }
 
+/*  ======================
+	=== Artists Layout ===
+	====================== */
+.animation-page-artists,
+.animation-page-but-here-artists,
+.animation-page-recommended-artists {
+	background-color: #8449a6;
+}
+
+/*  ====================
+	=== Songs Layout ===
+	==================== */
+.animation-page-songs,
+.animation-page-but-here-songs,
+.animation-page-recommended-songs {
+	background-color: #9a2f5a;
+}
+
 /*  =====================
 	=== Button Layout ===
 	===================== */
