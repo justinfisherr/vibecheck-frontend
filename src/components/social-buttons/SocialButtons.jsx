@@ -109,7 +109,7 @@ export default function SocialButtons() {
 
 	return (
 		<div className='social-buttons-container'>
-			<button className='share-button' onClick={() => toggleModal()}>
+			<button className='button social-button' onClick={() => toggleModal()}>
 				SHARE
 			</button>
 

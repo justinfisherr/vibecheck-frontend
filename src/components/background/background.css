@@ -1,81 +1,104 @@
+/*  =====================
+	=== Page Layout ===
+	===================== */
 :root {
-	--spin-up-scale: 3;
 	--spin-down-scale: 2.5;
+	--spin-up-scale: 3;
 }
 
 .background-container {
-	height: 100vh;
-	min-height: var(--min-height);
-	width: 100%;
-	display: flex;
-	justify-content: center;
 	align-items: center;
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	min-height: var(--min-height);
 	position: relative;
+	width: 100%;
 }
 
 .background-wrapper {
-	width: 100vw;
-	height: 100%;
-	position: absolute;
-	overflow: hidden;
 	display: flex;
+	height: 100%;
 	justify-content: center;
+	overflow: hidden;
 	pointer-events: none;
+	position: absolute;
+	width: 100vw;
 }
 
 .absolute {
-	position: absolute;
 	pointer-events: none;
+	position: absolute;
 }
 
+/*  =============
+	=== Logos ===
+	============= */
 .logo-container {
-	top: 25px;
-	left: 30px;
-	height: 40px;
 	cursor: pointer;
+	height: 40px;
+	left: 30px;
 	position: absolute;
+	top: 25px;
 	z-index: 1;
 }
 
 .vibecheck-logo {
+	border: none;
 	height: 40px;
 	object-fit: cover;
-	border: none;
 }
 
+.spotify-logo {
+	align-items: center;
+	bottom: 25px;
+	display: flex;
+	height: 35px;
+	position: absolute;
+	right: 25px;
+	width: 100px;
+	z-index: 1;
+}
+
+/*  =====================
+	=== Stiple Images ===
+	===================== */
 .stiple-img {
 	width: 100%;
 }
 
 .stiple-img-container-1 {
-	left: -100px;
 	bottom: -100px;
-	width: 400px;
+	left: -100px;
 	transform: rotate(-10deg);
+	width: 400px;
 }
 
 .stiple-img-container-2 {
+	display: none;
 	left: -50px;
 	top: -50px;
-	width: 250px;
 	transform: rotate(25deg);
-	display: none;
+	width: 250px;
 }
 
 .stiple-img-container-3 {
 	right: -25px;
 	top: -80px;
-	width: 300px;
 	transform: rotate(-35deg);
+	width: 300px;
 }
 
 .stiple-img-container-4 {
-	right: -80px;
 	bottom: -50px;
-	width: 250px;
 	display: none;
+	right: -80px;
+	width: 250px;
 }
 
+/*  ===================
+	=== Star Images ===
+	=================== */
 .star {
 	width: 70px;
 }
@@ -86,58 +109,27 @@
 }
 
 .star2 {
-	left: 10px;
 	bottom: 100px;
+	left: 10px;
 }
 
+/*  ==========================
+	=== Final Screen Burst ===
+	========================== */
 .spin-bursts-wrapper {
-	right: 0;
-	left: 0;
-	top: 0;
+	align-items: center;
+	animation: burst-fade-in 0.8s ease-in-out 0.8s forwards;
 	bottom: 0;
-	width: 100%;
+	display: flex;
 	height: 100%;
-	position: relative;
-	display: flex;
 	justify-content: center;
-	align-items: center;
-	transform: scale(var(--spin-up-scale));
+	left: 0;
 	opacity: 0;
-	animation: drop-in 0.8s ease-in-out 0.8s forwards;
-}
-
-/* .logout-button{
-    position: absolute;
-    top: 25px;
-    right: 30px;
-    z-index: 1;
-    color: black !important;
-    height: 40px !important;
-    width: 100px !important;
-    margin: 0 !important;
-    font-size: 14px !important;
-} */
-
-.spotify-logo {
-	position: absolute;
-	display: flex;
-	align-items: center;
-	width: 100px;
-	bottom: 25px;
-	right: 25px;
-	height: 35px;
-	z-index: 1;
-}
-
-@keyframes drop-in {
-	from {
-		opacity: 0;
-		/* transform: scale(var(--spin-up-scale)); */
-	}
-	to {
-		opacity: 1;
-		/* transform: scale(var(--spin-down-scale)); */
-	}
+	position: relative;
+	right: 0;
+	top: 0;
+	transform: scale(var(--spin-up-scale));
+	width: 100%;
 }
 
 .spin-burst {
@@ -145,9 +137,30 @@
 }
 
 .spin-burst-1 {
-	opacity: 0.2;
-	/* transform: scale(1.2); */
 	animation: spin-1 10s linear infinite;
+	opacity: 0.2;
+}
+
+.spin-burst-2 {
+	animation: spin-2 10s linear infinite;
+	transform: scale(2);
+}
+
+.spin-burst-3 {
+	animation: spin-3 10s linear infinite;
+	transform: scale(3);
+}
+
+/*  ==================
+	=== Animations ===
+	================== */
+@keyframes burst-fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
 
 @keyframes spin-1 {
@@ -159,11 +172,6 @@
 	}
 }
 
-.spin-burst-2 {
-	transform: scale(2);
-	animation: spin-2 10s linear infinite;
-}
-
 @keyframes spin-2 {
 	from {
 		transform: scale(2) rotate(0);
@@ -171,11 +179,6 @@
 	to {
 		transform: scale(2) rotate(-90deg);
 	}
-}
-
-.spin-burst-3 {
-	transform: scale(3);
-	animation: spin-3 10s linear infinite;
 }
 
 @keyframes spin-3 {
@@ -187,7 +190,10 @@
 	}
 }
 
-@media screen and (min-width: 480px) {
+/*  =====================
+	=== Media Queries ===
+	===================== */
+@media (min-width: 480px) {
 	:root {
 		--spin-up-scale: 2.5;
 	}
@@ -210,7 +216,7 @@
 	}
 }
 
-@media screen and (min-width: 650px) {
+@media (min-width: 650px) {
 	:root {
 		--spin-up-scale: 2;
 	}
@@ -247,7 +253,7 @@
 	}
 }
 
-@media screen and (min-width: 750px) {
+@media (min-width: 750px) {
 	.stiple-img-container-1 {
 		left: -80px;
 		bottom: -150px;
@@ -273,7 +279,7 @@
 	}
 }
 
-@media screen and (min-width: 1000px) {
+@media (min-width: 1000px) {
 	.stiple-img-container-1 {
 		left: 0px;
 		width: 600px;
@@ -311,7 +317,7 @@
 	}
 }
 
-@media screen and (min-width: 1200px) {
+@media (min-width: 1200px) {
 	:root {
 		--spin-up-scale: 1;
 	}
@@ -339,7 +345,7 @@
 	}
 }
 
-@media screen and (min-width: 1600px) {
+@media (min-width: 1600px) {
 	.stiple-img-container-1 {
 		left: 0px;
 		bottom: -300px;

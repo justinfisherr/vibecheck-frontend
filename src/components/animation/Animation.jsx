@@ -95,7 +95,7 @@ function Animation() {
 									aria-label='Compare again'
 									type='button'
 									tabIndex='0'
-									className='redo-button'
+									className='button redo-button'
 									onClick={handleRedo}>
 									<img className='redo-icon' src={redoIcon} alt='' />
 								</button>

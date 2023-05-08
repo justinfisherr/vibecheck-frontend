@@ -5,9 +5,6 @@
 	align-items: center;
 }
 
-.social-buttons {
-}
-
 .share-button {
 	/* margin-top: ; */
 	height: 45px;
@@ -120,6 +117,10 @@
 
 .plug-link {
 	color: #1e4651;
+}
+
+.social-button {
+	color: black !important;
 }
 
 @media (min-width: 300px) {
