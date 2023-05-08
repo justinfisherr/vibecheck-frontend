@@ -1,5 +1,6 @@
-import React from 'react';
 import './screen4.css';
+
+import React from 'react';
 
 function Screen4({ animationData }) {
 	return (

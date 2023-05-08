@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import defaultImg from '../../images/default-user-image.svg';
-import useWindowSize from '../../hooks/window-size/useWindowSize';
 import './search-results.css';
+
+import React, { useEffect, useState } from 'react';
+
+import useWindowSize from '../../hooks/window-size/useWindowSize';
+import defaultImg from '../../images/default-user-image.svg';
 
 export default function SearchResults({
 	results,

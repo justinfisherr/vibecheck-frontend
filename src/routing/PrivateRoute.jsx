@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
+
 import { authContext } from '../context/authContext';
 
-function PrivateRoute({ children, responseData }) {
+function PrivateRoute({ children }) {
 	const auth = useContext(authContext);
 	const queryParameters = new URLSearchParams(window.location.search);
 	const urlUsername = queryParameters.get('username');

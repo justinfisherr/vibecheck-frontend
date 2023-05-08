@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
 import './temp-alert.css';
+
+import React, { useEffect, useState } from 'react';
+
 import exclamation from '../../images/circle-exclamation-solid.svg';
 
 export default function useTempAlert() {

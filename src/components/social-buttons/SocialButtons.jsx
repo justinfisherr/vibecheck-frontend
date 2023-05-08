@@ -1,11 +1,11 @@
-import React, { useRef, useEffect, useState, useContext } from 'react';
+import './social-button.css';
+
+import html2canvas from 'html2canvas';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import { animationContext } from '../../context/animationContext';
-import ShareScreen from '../share-screen/ShareScreen';
-import html2canvas from 'html2canvas';
 import xIcon from '../../images/x-solid.svg';
-
-import './social-button.css';
+import ShareScreen from '../share-screen/ShareScreen';
 
 export default function SocialButtons() {
 	const shareUrl = 'thevibecheck.io';
@@ -47,7 +47,7 @@ export default function SocialButtons() {
 			if (downloadClicked.current) {
 				const link = document.createElement('a');
 				link.href = canvas.toDataURL('image/png');
-				link.setAttribute('download', `Vibecheck.png`);
+				link.setAttribute('download', 'Vibecheck.png');
 				document.body.appendChild(link);
 				link.click();
 				link.parentNode.removeChild(link);
@@ -60,20 +60,16 @@ export default function SocialButtons() {
 		};
 
 		async function test(blob) {
-			try {
-				await navigator.share({
-					url: shareUrl,
-					title: 'thevibecheck.io',
-					text: `${animationData.current.users.user2.username} and I are a ${animationData.current.match_profile.match_percent}% match according to our music taste! Test your compatibility at thevibecheck.io`,
-					files: [
-						new File([blob], 'image.png', {
-							type: 'image/png',
-						}),
-					],
-				});
-			} catch (err) {
-				console.log(err);
-			}
+			await navigator.share({
+				url: shareUrl,
+				title: 'thevibecheck.io',
+				text: `${animationData.current.users.user2.username} and I are a ${animationData.current.match_profile.match_percent}% match according to our music taste! Test your compatibility at thevibecheck.io`,
+				files: [
+					new File([blob], 'image.png', {
+						type: 'image/png',
+					}),
+				],
+			});
 		}
 
 		if (shareButtonClicked.current) {

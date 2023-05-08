@@ -1,5 +1,6 @@
-import React from 'react';
 import './no-matches.css';
+
+import React from 'react';
 
 export default function NoMatches({ animationData, type }) {
 	const words = [

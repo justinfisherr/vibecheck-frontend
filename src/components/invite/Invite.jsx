@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import envelope from '../../images/envelope.svg';
-import useTempAlert from '../../hooks/useTempAlert/useTempAlert';
 import './invite.css';
+
+import React, { useEffect, useState } from 'react';
+
+import useTempAlert from '../../hooks/useTempAlert/useTempAlert';
+import envelope from '../../images/envelope.svg';
 
 function Invite({ vibeId }) {
 	const [showModal, setShowModal] = useState(false);

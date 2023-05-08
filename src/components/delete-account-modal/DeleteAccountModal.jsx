@@ -1,6 +1,8 @@
-import React from 'react';
 import './delete-account-modal.css';
+
 import axios from 'axios';
+import React from 'react';
+
 import errorIcon from '../../images/triangle-exclamation-solid.svg';
 
 function DeleteAccountModal({ vibeId, showDeleteModal, setShowDeleteModal }) {

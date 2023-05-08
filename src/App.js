@@ -1,13 +1,14 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Homepage from './components/homepage/Homepage';
-import Compare from './components/compare/Compare';
 import Animation from './components/animation/Animation';
-import PrivateRoute from './routing/PrivateRoute';
+import Compare from './components/compare/Compare';
+import Homepage from './components/homepage/Homepage';
 import { AnimationDataProvider } from './context/animationContext';
 import { AuthProvider } from './context/authContext';
+import PrivateRoute from './routing/PrivateRoute';
+
+import './App.css';
 
 function App() {
 	return (

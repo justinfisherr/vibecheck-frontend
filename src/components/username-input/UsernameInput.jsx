@@ -1,9 +1,11 @@
-import React, { useState, useRef, useEffect } from 'react';
 import './username-input.css';
+
+import React, { useEffect, useRef, useState } from 'react';
+
+import useFetch from '../../hooks/useFetch/useFetch';
+import useSubmit from '../../hooks/useSubmit/useSubmit';
 import arrow from '../../images/arrow-right-solid.svg';
 import SearchResults from '../search-results/SearchResults';
-import useSubmit from '../../hooks/useSubmit/useSubmit';
-import useFetch from '../../hooks/useFetch/useFetch';
 
 export default function UsernameInput({
 	setResponseData,

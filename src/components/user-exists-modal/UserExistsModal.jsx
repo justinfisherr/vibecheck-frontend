@@ -1,6 +1,8 @@
-import React from 'react';
-import errorIcon from '../../images/triangle-exclamation-solid.svg';
 import './user-exists-modal.css';
+
+import React from 'react';
+
+import errorIcon from '../../images/triangle-exclamation-solid.svg';
 
 function UserExistsModal({ displayExistsModal, setExistsDisplayModal }) {
 	function handleCloseModal({ target }) {

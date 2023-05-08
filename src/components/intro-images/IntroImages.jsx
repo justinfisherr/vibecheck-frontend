@@ -1,7 +1,9 @@
+import './intro-image.css';
+
 import React from 'react';
+
 import defaultImg from '../../images/default-user-image-green.svg';
 import threeStar from '../../images/three-star.svg';
-import './intro-image.css';
 
 export default function IntroImages({ animationData }) {
 	return (

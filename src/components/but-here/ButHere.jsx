@@ -1,5 +1,6 @@
-import React from 'react';
 import './but-here.css';
+
+import React from 'react';
 
 export default function ButHere({ words, type }) {
 	return (

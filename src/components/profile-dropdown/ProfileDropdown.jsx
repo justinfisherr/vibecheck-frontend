@@ -1,9 +1,10 @@
+import './profile-dropdown.css';
+
 import React from 'react';
+
 import defaultImg from '../../images/default-user-image.svg';
 import logoutIcon from '../../images/right-from-bracket-solid.svg';
 import trashIcon from '../../images/trash-can-solid.svg';
-
-import './profile-dropdown.css';
 
 function ProfileDropdown({
 	profileImg,

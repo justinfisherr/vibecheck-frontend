@@ -18,7 +18,7 @@ export default function useFetcher(setSearchLoading, setSearchResults) {
 				.then((res) => {
 					setSearchResults(res.data.data);
 				})
-				.catch((res) => {
+				.catch(() => {
 					setSearchResults([]);
 				})
 				.finally(() => {

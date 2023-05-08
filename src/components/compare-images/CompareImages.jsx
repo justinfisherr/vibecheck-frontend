@@ -1,5 +1,7 @@
-import React from 'react';
 import './compare-images.css';
+
+import React from 'react';
+
 import defaultImg from '../../images/default-user-image.svg';
 import questionMark from '../../images/question-mark.svg';
 

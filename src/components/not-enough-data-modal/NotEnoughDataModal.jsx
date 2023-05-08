@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
 import './not-enough-data-modal.css';
+
+import React, { useState } from 'react';
+
 import errorIcon from '../../images/triangle-exclamation-solid.svg';
 
 function NotEnoughDataModal() {

@@ -1,10 +1,12 @@
-import React, { useRef, useState } from 'react';
 import './username-modal.css';
+
+import React, { useRef, useState } from 'react';
+
 import useSubmitVibeId from '../../hooks/useSubmitVibeId/useSubmitVibeId';
-import editIcon from '../../images/edit-icon.svg';
 import useTempAlert from '../../hooks/useTempAlert/useTempAlert';
-import Spinner from '../spinner/Spinner';
 import copy from '../../images/copy.svg';
+import editIcon from '../../images/edit-icon.svg';
+import Spinner from '../spinner/Spinner';
 
 export default function UsernameModal({
 	openModal,

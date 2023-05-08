@@ -1,17 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import './compare.css';
+
+import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Navigate } from 'react-router-dom';
-import Background from '../background/Background';
-import UsernameInput from '../username-input/UsernameInput';
-import editIcon from '../../images/edit-icon.svg';
-import CompareImages from '../compare-images/CompareImages';
-import UsernameModal from '../username-modal/UsernameModal';
+
 import useSubmit from '../../hooks/useSubmit/useSubmit';
-import Invite from '../invite/Invite';
+import editIcon from '../../images/edit-icon.svg';
+import Background from '../background/Background';
+import CompareImages from '../compare-images/CompareImages';
 import DeleteAccountModal from '../delete-account-modal/DeleteAccountModal';
+import Invite from '../invite/Invite';
 import ProfileDropdown from '../profile-dropdown/ProfileDropdown';
 import UserExistsModal from '../user-exists-modal/UserExistsModal';
-import { Helmet } from 'react-helmet-async';
-import './compare.css';
+import UsernameInput from '../username-input/UsernameInput';
+import UsernameModal from '../username-modal/UsernameModal';
 
 function Compare() {
 	const [openModal, setOpenModal] = useState(false);
@@ -114,7 +116,7 @@ function Compare() {
 			</Background>
 		</div>
 	) : (
-		<Navigate to={`/animation`} responseData={responseData} />
+		<Navigate to={'/animation'} responseData={responseData} />
 	);
 }
 

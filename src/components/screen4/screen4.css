@@ -1,338 +1,363 @@
-.animation-page-songs, .animation-page-but-here-songs, .animation-page-recommended-songs{
-    background-color: #9a2f5a;
+.animation-page-songs,
+.animation-page-but-here-songs,
+.animation-page-recommended-songs {
+	background-color: #9a2f5a;
 }
 
-.screen4-content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.screen4-content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
-.screen4-title{
-    font-size: 35px;
-    line-height: 40px;
-    text-align: center;
-    color: #ffd1eb;
+.screen4-title {
+	font-size: 35px;
+	line-height: 40px;
+	text-align: center;
+	color: #ffd1eb;
 }
 
 :root {
-    --img-width: 90px;
+	--img-width: 90px;
 
-    --wrapper1-width: calc(var(--img-width) * 0.85 );
-    --wrapper1-offset: calc(var(--wrapper1-width) * 0.75);
+	--wrapper1-width: calc(var(--img-width) * 0.85);
+	--wrapper1-offset: calc(var(--wrapper1-width) * 0.75);
 
-    --wrapper2-width: calc(var(--img-width) * 0.85 * 0.85 );
-    --wrapper2-offset: calc(var(--wrapper1-offset) + var(--wrapper2-width) * 0.75);
+	--wrapper2-width: calc(var(--img-width) * 0.85 * 0.85);
+	--wrapper2-offset: calc(
+		var(--wrapper1-offset) + var(--wrapper2-width) * 0.75
+	);
 
-    --wrapper3-width: calc(var(--img-width) * 0.85 * 0.85 * 0.85 );
-    --wrapper3-offset: calc(var(--wrapper2-offset) + (var(--wrapper3-width) * 0.75));
+	--wrapper3-width: calc(var(--img-width) * 0.85 * 0.85 * 0.85);
+	--wrapper3-offset: calc(
+		var(--wrapper2-offset) + (var(--wrapper3-width) * 0.75)
+	);
 
-    --wrapper4-width: calc(var(--img-width) * 0.85 * 0.85 * 0.85 * 0.85 );
-    --wrapper4-offset: calc(var(--wrapper3-offset) + (var(--wrapper4-width) * 0.75));
+	--wrapper4-width: calc(var(--img-width) * 0.85 * 0.85 * 0.85 * 0.85);
+	--wrapper4-offset: calc(
+		var(--wrapper3-offset) + (var(--wrapper4-width) * 0.75)
+	);
 
-    --width-test: calc(var(--wrapper4-width) + var(--wrapper4-offset))
+	--width-test: calc(var(--wrapper4-width) + var(--wrapper4-offset));
 }
 
-
-.artist-covers{
-    position: relative;
-    width: var(--width-test);
-    height: var(--img-width);
-    display: flex;
-    align-items: center;
-    margin-top: 30px;
+.artist-covers {
+	position: relative;
+	width: var(--width-test);
+	height: var(--img-width);
+	display: flex;
+	align-items: center;
+	margin-top: 30px;
 }
 
-
-
-.overlap-img-wrapper{
-    width: var(--img-width);
-    height: var(--img-width);
-    position: absolute;
-    opacity: 0;
+.overlap-img-wrapper {
+	width: var(--img-width);
+	height: var(--img-width);
+	position: absolute;
+	opacity: 0;
 }
 
-.overlap-img-wrapper-1{
-    width: var(--img-width);
-    height: var(--img-width);
-    z-index: 5;
-    border: 5px solid #1200ff;
-    opacity: 0;
-    animation: cascade-1 0.5s ease-in-out forwards;
-    animation-delay: 0.3s;
+.overlap-img-wrapper-1 {
+	width: var(--img-width);
+	height: var(--img-width);
+	z-index: 5;
+	border: 5px solid #1200ff;
+	opacity: 0;
+	animation: cascade-1 0.5s ease-in-out forwards;
+	animation-delay: 0.3s;
 }
 
 @keyframes cascade-1 {
-    from{ opacity: 0;}
-    to{ opacity: 1;}
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
 
-.overlap-img-wrapper-2{
-    width: var(--wrapper1-width);
-    height: var(--wrapper1-width);
-    /* transform: translateX(var(--wrapper1-offset));  */
-    z-index: 4;
-    border: 4px solid #f15aff;
-    animation: cascade-2 0.5s ease-in-out forwards;
-    animation-delay: 0.3s;
+.overlap-img-wrapper-2 {
+	width: var(--wrapper1-width);
+	height: var(--wrapper1-width);
+	/* transform: translateX(var(--wrapper1-offset));  */
+	z-index: 4;
+	border: 4px solid #f15aff;
+	animation: cascade-2 0.5s ease-in-out forwards;
+	animation-delay: 0.3s;
 }
 
 @keyframes cascade-2 {
-    from{ 
-        transform: translateX(0); 
-        opacity: 0;
-    }
-    to{ 
-        transform: translateX(var(--wrapper1-offset)); 
-        opacity: 1;
-    }
+	from {
+		transform: translateX(0);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(var(--wrapper1-offset));
+		opacity: 1;
+	}
 }
 
-
-.overlap-img-wrapper-3{
-    width: var(--wrapper2-width);
-    height: var(--wrapper2-width);
-    /* transform: translateX(var(--wrapper2-offset));  */
-    z-index: 3;
-    border: 4px solid #6826b2;
-    animation: cascade-3 0.5s ease-in-out forwards;
-    animation-delay: 0.3s;
+.overlap-img-wrapper-3 {
+	width: var(--wrapper2-width);
+	height: var(--wrapper2-width);
+	/* transform: translateX(var(--wrapper2-offset));  */
+	z-index: 3;
+	border: 4px solid #6826b2;
+	animation: cascade-3 0.5s ease-in-out forwards;
+	animation-delay: 0.3s;
 }
 
 @keyframes cascade-3 {
-    from{ 
-        transform: translateX(0); 
-        opacity: 0;
-    }
-    to{ 
-        transform: translateX(var(--wrapper2-offset)); 
-        opacity: 1;
-    }
+	from {
+		transform: translateX(0);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(var(--wrapper2-offset));
+		opacity: 1;
+	}
 }
 
-
-.overlap-img-wrapper-4{
-    width: var(--wrapper3-width);
-    height: var(--wrapper3-width);
-    /* transform: translateX(var(--wrapper3-offset));  */
-    z-index: 2;
-    border: 3px solid #d30f41;
-    animation: cascade-4 0.5s ease-in-out forwards;
-    animation-delay: 0.3s;
+.overlap-img-wrapper-4 {
+	width: var(--wrapper3-width);
+	height: var(--wrapper3-width);
+	/* transform: translateX(var(--wrapper3-offset));  */
+	z-index: 2;
+	border: 3px solid #d30f41;
+	animation: cascade-4 0.5s ease-in-out forwards;
+	animation-delay: 0.3s;
 }
 
 @keyframes cascade-4 {
-    from{ 
-        transform: translateX(0); 
-        opacity: 0;
-    }
-    to{ 
-        transform: translateX(var(--wrapper3-offset)); 
-        opacity: 1;
-    }
+	from {
+		transform: translateX(0);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(var(--wrapper3-offset));
+		opacity: 1;
+	}
 }
 
-
-.overlap-img-wrapper-5{
-    width: var(--wrapper4-width);
-    height: var(--wrapper4-width);
-    /* transform: translateX(var(--wrapper4-offset));  */
-    z-index: 1;
-    border: 2px solid #e593bf;
-    animation: cascade-5 0.5s ease-in-out forwards;
-    animation-delay: 0.3s;
+.overlap-img-wrapper-5 {
+	width: var(--wrapper4-width);
+	height: var(--wrapper4-width);
+	/* transform: translateX(var(--wrapper4-offset));  */
+	z-index: 1;
+	border: 2px solid #e593bf;
+	animation: cascade-5 0.5s ease-in-out forwards;
+	animation-delay: 0.3s;
 }
 
 @keyframes cascade-5 {
-    from{ 
-        transform: translateX(0); 
-        opacity: 0;
-    }
-    to{ 
-        transform: translateX(var(--wrapper4-offset)); 
-        opacity: 1;
-    }
+	from {
+		transform: translateX(0);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(var(--wrapper4-offset));
+		opacity: 1;
+	}
 }
 
-.song-data{
-    display: grid;
-    grid-template-rows: repeat(5, 1fr);
-    row-gap: 10px;
-    width: fit-content;
-    margin-top: 20px;
-    animation: song-fade-in 0.5s ease-in-out 1s forwards;
-    opacity: 0;
-    width: 80%;
+.song-data {
+	display: grid;
+	grid-template-rows: repeat(5, 1fr);
+	row-gap: 10px;
+	width: fit-content;
+	margin-top: 20px;
+	animation: song-fade-in 0.5s ease-in-out 1s forwards;
+	opacity: 0;
+	width: 80%;
 }
 
-.single-song-data-wrapper{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 40px 1fr;
-    column-gap: 10px;
-    color: #dafbff;
+.single-song-data-wrapper {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 40px 1fr;
+	column-gap: 10px;
+	color: #dafbff;
 }
 
-.song-index{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 25px;
-    font-weight: 700;
+.song-index {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 25px;
+	font-weight: 700;
 }
 
-.single-song-text{
-    overflow: hidden;
+.single-song-text {
+	overflow: hidden;
 }
 
-.single-song-name{
-    font-size: 22px;
-    line-height: 25px;
-    font-weight: 700;
+.single-song-name {
+	font-size: 22px;
+	line-height: 25px;
+	font-weight: 700;
 }
 
-.single-artist-name{
-font-size: 14px;
+.single-artist-name {
+	font-size: 14px;
 }
 
-@keyframes song-fade-in{
-    from{
-        opacity: 0;
-    }to{
-        opacity: 1;
-    }
+@keyframes song-fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
 
-@media (min-width: 300px){
-    :root {
-        --img-width: 100px;
-    }
+@media (min-width: 300px) {
+	:root {
+		--img-width: 100px;
+	}
 
-  .screen4-title{
-        font-size: 40px;
-        line-height: 45px;
-    }
+	.screen4-title {
+		font-size: 40px;
+		line-height: 45px;
+	}
 }
 
-@media (min-width: 350px){
-    :root {
-        --img-width: 120px;
-    }
+@media (min-width: 350px) {
+	:root {
+		--img-width: 120px;
+	}
 
-  .screen4-title{
-        font-size: 45px;
-        line-height: 50px;
-    }
+	.screen4-title {
+		font-size: 45px;
+		line-height: 50px;
+	}
 }
 
-@media (min-width: 480px){
-    :root {
-        --img-width: 150px;
-    }
+@media (min-width: 480px) {
+	:root {
+		--img-width: 150px;
+	}
 
-  .screen4-title{
-        font-size: 50px;
-        line-height: 55px;
-    }
+	.screen4-title {
+		font-size: 50px;
+		line-height: 55px;
+	}
 
-    .overlap-img-wrapper-1{ border-width: 8px; }
-    .overlap-img-wrapper-2{ border-width: 7px; }
-    .overlap-img-wrapper-3{ border-width: 7px; }
-    .overlap-img-wrapper-4{ border-width: 5px; }
-    .overlap-img-wrapper-5{ border-width: 5px; }
-    
+	.overlap-img-wrapper-1 {
+		border-width: 8px;
+	}
+	.overlap-img-wrapper-2 {
+		border-width: 7px;
+	}
+	.overlap-img-wrapper-3 {
+		border-width: 7px;
+	}
+	.overlap-img-wrapper-4 {
+		border-width: 5px;
+	}
+	.overlap-img-wrapper-5 {
+		border-width: 5px;
+	}
 
-    .song-data{
-        width: 70%;
-    }
+	.song-data {
+		width: 70%;
+	}
 
-    .single-song-data-wrapper{
-        column-gap: 20px;
-    }
+	.single-song-data-wrapper {
+		column-gap: 20px;
+	}
 
-    .song-index{
-        font-size: 30px;
-    }
+	.song-index {
+		font-size: 30px;
+	}
 
-    .single-song-name{
-        font-size: 25px;
-        line-height: 30px;
-    }
-    
-    .single-artist-name{
-    font-size: 16px;
-    }
+	.single-song-name {
+		font-size: 25px;
+		line-height: 30px;
+	}
+
+	.single-artist-name {
+		font-size: 16px;
+	}
 }
 
+@media (min-width: 600px) {
+	:root {
+		--img-width: 180px;
+	}
 
-@media (min-width: 600px){
-    :root {
-        --img-width: 180px;
-    }
+	.screen4-title {
+		font-size: 50px;
+		line-height: 55px;
+	}
 
-  .screen4-title{
-        font-size: 50px;
-        line-height: 55px;
-    }
+	.song-data {
+		width: 70%;
+	}
 
-    .song-data{
-        width: 70%;
-    }
+	.single-song-data-wrapper {
+		column-gap: 20px;
+	}
 
-    .single-song-data-wrapper{
-        column-gap: 20px;
-    }
+	.song-index {
+		font-size: 30px;
+	}
 
-    .song-index{
-        font-size: 30px;
-    }
+	.single-song-name {
+		font-size: 25px;
+		line-height: 30px;
+	}
 
-    .single-song-name{
-        font-size: 25px;
-        line-height: 30px;
-    }
-    
-    .single-artist-name{
-    font-size: 16px;
-    }
+	.single-artist-name {
+		font-size: 16px;
+	}
 }
 
-@media (min-width: 750px){
-    :root {
-        --img-width: 200px;
-    }
+@media (min-width: 750px) {
+	:root {
+		--img-width: 200px;
+	}
 
-  .screen4-title{
-        font-size: 60px;
-        line-height: 65px;
-    }
+	.screen4-title {
+		font-size: 60px;
+		line-height: 65px;
+	}
 
-    .overlap-img-wrapper-1{ border-width: 10px; }
-    .overlap-img-wrapper-2{ border-width: 9px; }
-    .overlap-img-wrapper-3{ border-width: 9px; }
-    .overlap-img-wrapper-4{ border-width: 7px; }
-    .overlap-img-wrapper-5{ border-width: 7px; }
+	.overlap-img-wrapper-1 {
+		border-width: 10px;
+	}
+	.overlap-img-wrapper-2 {
+		border-width: 9px;
+	}
+	.overlap-img-wrapper-3 {
+		border-width: 9px;
+	}
+	.overlap-img-wrapper-4 {
+		border-width: 7px;
+	}
+	.overlap-img-wrapper-5 {
+		border-width: 7px;
+	}
 
-    .song-data{
-        margin-top: 40px;
-        width: 60%;
-    }
+	.song-data {
+		margin-top: 40px;
+		width: 60%;
+	}
 
-    .single-song-data-wrapper{
-        column-gap: 20px;
-    }
+	.single-song-data-wrapper {
+		column-gap: 20px;
+	}
 
-    .song-index{
-        font-size: 30px;
-    }
+	.song-index {
+		font-size: 30px;
+	}
 
-    .single-song-name{
-        font-size: 25px;
-        line-height: 30px;
-    }
-    
-    .single-artist-name{
-    font-size: 16px;
-    }
+	.single-song-name {
+		font-size: 25px;
+		line-height: 30px;
+	}
+
+	.single-artist-name {
+		font-size: 16px;
+	}
 }

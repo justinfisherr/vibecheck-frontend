@@ -1,109 +1,109 @@
-:root{
-    --spin-up-scale: 3;
-    --spin-down-scale: 2.5;
+:root {
+	--spin-up-scale: 3;
+	--spin-down-scale: 2.5;
 }
 
-.background-container{
-    height: 100vh;
-    min-height: var(--min-height);
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+.background-container {
+	height: 100vh;
+	min-height: var(--min-height);
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
 }
 
-.background-wrapper{
-    width: 100vw;
-    height: 100%;
-    position: absolute;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    pointer-events: none;
+.background-wrapper {
+	width: 100vw;
+	height: 100%;
+	position: absolute;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	pointer-events: none;
 }
 
-.absolute{
-    position: absolute;
-    pointer-events: none;
+.absolute {
+	position: absolute;
+	pointer-events: none;
 }
 
-.logo-container{
-    top:25px;
-    left:30px;
-    height: 40px;
-    cursor: pointer;
-    position: absolute;
-    z-index: 1;
+.logo-container {
+	top: 25px;
+	left: 30px;
+	height: 40px;
+	cursor: pointer;
+	position: absolute;
+	z-index: 1;
 }
 
-.vibecheck-logo{
-    height: 40px;
-    object-fit: cover;
+.vibecheck-logo {
+	height: 40px;
+	object-fit: cover;
+	border: none;
 }
 
-.stiple-img{
-    width: 100%;
+.stiple-img {
+	width: 100%;
 }
 
-.stiple-img-container-1{
-    left: -100px;
-    bottom: -100px;
-    width: 400px;
-    transform: rotate(-10deg);
+.stiple-img-container-1 {
+	left: -100px;
+	bottom: -100px;
+	width: 400px;
+	transform: rotate(-10deg);
 }
 
-.stiple-img-container-2{
-    left: -50px;
-    top: -50px;
-    width: 250px;
-    transform: rotate(25deg);
-    display: none;
+.stiple-img-container-2 {
+	left: -50px;
+	top: -50px;
+	width: 250px;
+	transform: rotate(25deg);
+	display: none;
 }
 
-.stiple-img-container-3{
-    right: -25px;
-    top: -80px;
-    width: 300px;
-    transform: rotate(-35deg);
+.stiple-img-container-3 {
+	right: -25px;
+	top: -80px;
+	width: 300px;
+	transform: rotate(-35deg);
 }
 
-.stiple-img-container-4{
-    right: -80px;
-    bottom: -50px;
-    width: 250px;
-    display: none;
+.stiple-img-container-4 {
+	right: -80px;
+	bottom: -50px;
+	width: 250px;
+	display: none;
 }
 
-.star{
-    width: 70px;
-    
+.star {
+	width: 70px;
 }
 
-.star1{
-    right: 10px;
-    top: 80px;
+.star1 {
+	right: 10px;
+	top: 80px;
 }
 
-.star2{
-    left: 10px;
-    bottom: 100px;
+.star2 {
+	left: 10px;
+	bottom: 100px;
 }
 
-.spin-bursts-wrapper{
-    right: 0;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: scale(var(--spin-up-scale));
-    opacity: 0;
-    animation: drop-in 0.8s ease-in-out 0.8s forwards;
+.spin-bursts-wrapper {
+	right: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform: scale(var(--spin-up-scale));
+	opacity: 0;
+	animation: drop-in 0.8s ease-in-out 0.8s forwards;
 }
 
 /* .logout-button{
@@ -118,272 +118,266 @@
     font-size: 14px !important;
 } */
 
-.spotify-logo{
-    position: absolute;
-    bottom: 25px;
-    right: 25px;
-    height: 35px;
-    z-index: 1;
+.spotify-logo {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	width: 100px;
+	bottom: 25px;
+	right: 25px;
+	height: 35px;
+	z-index: 1;
 }
 
 @keyframes drop-in {
-    from{
-        opacity: 0;
-        /* transform: scale(var(--spin-up-scale)); */
-    }to{
-        opacity: 1;
-        /* transform: scale(var(--spin-down-scale)); */
-    }
+	from {
+		opacity: 0;
+		/* transform: scale(var(--spin-up-scale)); */
+	}
+	to {
+		opacity: 1;
+		/* transform: scale(var(--spin-down-scale)); */
+	}
 }
 
-.spin-burst{
-    opacity: 0.2;
+.spin-burst {
+	opacity: 0.2;
 }
 
-.spin-burst-1{
-    opacity: 0.2;
-    /* transform: scale(1.2); */
-    animation: spin-1 10s linear infinite;
+.spin-burst-1 {
+	opacity: 0.2;
+	/* transform: scale(1.2); */
+	animation: spin-1 10s linear infinite;
 }
 
 @keyframes spin-1 {
-    from{
-        transform: scale(1.2) rotate(0);
-    }to{
-        transform: scale(1.2) rotate(90deg);
-    }
+	from {
+		transform: scale(1.2) rotate(0);
+	}
+	to {
+		transform: scale(1.2) rotate(90deg);
+	}
 }
 
-.spin-burst-2{
-    transform: scale(2);
-    animation: spin-2 10s linear infinite;
+.spin-burst-2 {
+	transform: scale(2);
+	animation: spin-2 10s linear infinite;
 }
 
 @keyframes spin-2 {
-    from{
-        transform: scale(2) rotate(0);
-    }to{
-        transform: scale(2) rotate(-90deg);
-    }
+	from {
+		transform: scale(2) rotate(0);
+	}
+	to {
+		transform: scale(2) rotate(-90deg);
+	}
 }
 
-.spin-burst-3{
-    transform: scale(3);
-    animation: spin-3 10s linear infinite;
+.spin-burst-3 {
+	transform: scale(3);
+	animation: spin-3 10s linear infinite;
 }
 
 @keyframes spin-3 {
-    from{
-        transform: scale(3) rotate(0);
-    }to{
-        transform: scale(3) rotate(90deg);
-    }
+	from {
+		transform: scale(3) rotate(0);
+	}
+	to {
+		transform: scale(3) rotate(90deg);
+	}
 }
 
-
-
-
 @media screen and (min-width: 480px) {
-    :root{
-        --spin-up-scale: 2.5;
-    }
+	:root {
+		--spin-up-scale: 2.5;
+	}
 
-    .stiple-img-container-2{
-        display: block;
-    }
-    .stiple-img-container-4{
-        display: block;
-    }
-    
-    .star1{
-        right: 120px;
-        top: 180px;
-    }
-    
-    .star2{
-        left: 100px;
-        bottom: 170px;
-    }
+	.stiple-img-container-2 {
+		display: block;
+	}
+	.stiple-img-container-4 {
+		display: block;
+	}
+
+	.star1 {
+		right: 120px;
+		top: 180px;
+	}
+
+	.star2 {
+		left: 100px;
+		bottom: 170px;
+	}
 }
 
 @media screen and (min-width: 650px) {
-    :root{
-        --spin-up-scale: 2;
-    }
+	:root {
+		--spin-up-scale: 2;
+	}
 
-    .stiple-img-container-1{
-        left: 0px;
-        bottom: -100px;
-        width: 400px;
-    }
-    
-    .stiple-img-container-2{
-        left: -50px;
-        top: -40px;
-        width: 300px;
-    }
-    
+	.stiple-img-container-1 {
+		left: 0px;
+		bottom: -100px;
+		width: 400px;
+	}
 
-    .stiple-img-container-4{
-        right: 40px;
-        width: 270px;
-    }
+	.stiple-img-container-2 {
+		left: -50px;
+		top: -40px;
+		width: 300px;
+	}
 
-    .star{
-        width: 100px;
-    }
-    
-    .star1{
-        right: 120px;
-        top: 150px;
-    }
-    
-    .star2{
-        left: 200px;
-        bottom: 150px;
-    }
+	.stiple-img-container-4 {
+		right: 40px;
+		width: 270px;
+	}
+
+	.star {
+		width: 100px;
+	}
+
+	.star1 {
+		right: 120px;
+		top: 150px;
+	}
+
+	.star2 {
+		left: 200px;
+		bottom: 150px;
+	}
 }
 
 @media screen and (min-width: 750px) {
-    .stiple-img-container-1{
-        left: -80px;
-        bottom: -150px;
-        width: 550px;
-        transform: rotate(-15deg);
-    }
-    
-    .stiple-img-container-2{
-        left: -50px;
-        top: -80px;
-        width: 400px;
-    }
-    .stiple-img-container-3{
-        right: -0px;
-        top: -140px;
-        width: 400px;
-    }
+	.stiple-img-container-1 {
+		left: -80px;
+		bottom: -150px;
+		width: 550px;
+		transform: rotate(-15deg);
+	}
 
-    .stiple-img-container-4{
-        right: -40px;
-        bottom: -80px;
-        width: 350px;
-    }
+	.stiple-img-container-2 {
+		left: -50px;
+		top: -80px;
+		width: 400px;
+	}
+	.stiple-img-container-3 {
+		right: -0px;
+		top: -140px;
+		width: 400px;
+	}
+
+	.stiple-img-container-4 {
+		right: -40px;
+		bottom: -80px;
+		width: 350px;
+	}
 }
 
 @media screen and (min-width: 1000px) {
+	.stiple-img-container-1 {
+		left: 0px;
+		width: 600px;
+	}
 
+	.stiple-img-container-2 {
+		left: -50px;
+		top: -80px;
+		width: 450px;
+	}
+	.stiple-img-container-3 {
+		right: -0px;
+		top: -100px;
+		width: 400px;
+	}
 
-    .stiple-img-container-1{
-        left: 0px;
-        width: 600px;
-    }
+	.stiple-img-container-4 {
+		right: 50px;
+		bottom: -50px;
+		width: 400px;
+	}
 
-    .stiple-img-container-2{
-        left: -50px;
-        top: -80px;
-        width: 450px;
-    }
-    .stiple-img-container-3{
-        right: -0px;
-        top: -100px;
-        width: 400px;
-    }
+	.star {
+		width: 120px;
+	}
 
-    .stiple-img-container-4{
-        right: 50px;
-        bottom: -50px;
-        width: 400px;
-    }
+	.star1 {
+		right: 200px;
+		top: 50px;
+	}
 
-    .star{
-        width: 120px;
-    }
-
-    .star1{
-        right: 200px;
-        top: 50px;
-    }
-    
-    .star2{
-        left: 120px;
-        bottom: 150px;
-    }
+	.star2 {
+		left: 120px;
+		bottom: 150px;
+	}
 }
 
 @media screen and (min-width: 1200px) {
-    :root{
-        --spin-up-scale: 1;
-    }
-    .stiple-img-container-1{
-        left: 0px;
-        bottom: -250px;
-        width: 700px;
-    }
+	:root {
+		--spin-up-scale: 1;
+	}
+	.stiple-img-container-1 {
+		left: 0px;
+		bottom: -250px;
+		width: 700px;
+	}
 
-    .stiple-img-container-2{
-        left: -100px;
-        top: -80px;
-        width: 550px;
-    }
-    .stiple-img-container-3{
-        right: -50px;
-        top: -100px;
-        width: 500px;
-    }
+	.stiple-img-container-2 {
+		left: -100px;
+		top: -80px;
+		width: 550px;
+	}
+	.stiple-img-container-3 {
+		right: -50px;
+		top: -100px;
+		width: 500px;
+	}
 
-    .stiple-img-container-4{
-        right: 50px;
-        bottom: -150px;
-        width: 500px;
-    }
-
-
+	.stiple-img-container-4 {
+		right: 50px;
+		bottom: -150px;
+		width: 500px;
+	}
 }
-
-
 
 @media screen and (min-width: 1600px) {
-    .stiple-img-container-1{
-        left: 0px;
-        bottom: -300px;
-        width: 850px;
-        transform: rotate(-15deg);
-    }
-    
-    .stiple-img-container-2{
-        left: -100px;
-        top: -100px;
-        width: 600px;
-        transform: rotate(25deg);
-    }
-    
-    
-    .stiple-img-container-3{
-        right: -0px;
-        top: -100px;
-        width: 600px;
-        transform: rotate(-40deg);
-    }
-    
-    .stiple-img-container-4{
-        right: 100px;
-        bottom: -200px;
-        width: 600px;
-    }
-    
-    .star{
-        width: 125px;
-    }
-    
-    .star1{
-        right: 380px;
-        top: 80px;
-    }
-    
-    .star2{
-        left: 200px;
-        bottom: 150px;
-    }
+	.stiple-img-container-1 {
+		left: 0px;
+		bottom: -300px;
+		width: 850px;
+		transform: rotate(-15deg);
+	}
+
+	.stiple-img-container-2 {
+		left: -100px;
+		top: -100px;
+		width: 600px;
+		transform: rotate(25deg);
+	}
+
+	.stiple-img-container-3 {
+		right: -0px;
+		top: -100px;
+		width: 600px;
+		transform: rotate(-40deg);
+	}
+
+	.stiple-img-container-4 {
+		right: 100px;
+		bottom: -200px;
+		width: 600px;
+	}
+
+	.star {
+		width: 125px;
+	}
+
+	.star1 {
+		right: 380px;
+		top: 80px;
+	}
+
+	.star2 {
+		left: 200px;
+		bottom: 150px;
+	}
 }
-
-

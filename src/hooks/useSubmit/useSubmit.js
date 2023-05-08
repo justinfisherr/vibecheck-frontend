@@ -1,6 +1,7 @@
 import { useContext } from 'react';
-import { animationContext } from '../../context/animationContext';
 import axios from 'axios';
+
+import { animationContext } from '../../context/animationContext';
 
 export default function useSubmit(
 	username,
