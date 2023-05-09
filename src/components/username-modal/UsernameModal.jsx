@@ -86,7 +86,8 @@ export default function UsernameModal({
 						spellCheck='false'
 					/>
 					<div
-						className='copy-vibe-id-icon-wrapper'
+						className='copy-vibe-id-icon-wrapper focus-outline'
+						tabIndex='0'
 						onClick={() => handleCopyClick()}>
 						<img className='copy-icon' src={copy} alt='' />
 					</div>
@@ -99,17 +100,19 @@ export default function UsernameModal({
 
 					<div className='change-username-modal-button-wrapper'>
 						<button
-							className='cancel-button'
+							className='cancel-button focus-outline'
+							tabIndex='0'
 							type='submit'
 							id='allow-close'
 							onClick={(e) => handleCloseModal(e)}>
 							Cancel
 						</button>
 						<button
-							className='button'
+							className='button focus-outline'
+							tabIndex='0'
 							type='submit'
 							onClick={() => handleSaveNewUsername(currentInputValue)}>
-							{loading ? <Spinner /> : 'Save'}
+							{loading ? <Spinner color={'#e23838'} /> : 'Save'}
 						</button>
 					</div>
 				</div>

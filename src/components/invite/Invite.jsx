@@ -37,7 +37,10 @@ function Invite({ vibeId }) {
 
 	return (
 		<div className='invite-wrapper'>
-			<button className='button invite-button' onClick={() => handleInvite()}>
+			<button
+				className='button invite-button focus-outline'
+				tabIndex='0'
+				onClick={() => handleInvite()}>
 				Invite
 			</button>
 			{showModal && (
@@ -64,12 +67,16 @@ function Invite({ vibeId }) {
 							{tempAlertActive && tempAlert}
 							<div className='invite-modal-buttons-wrapper'>
 								<button
-									className='cancel-button'
+									className='cancel-button focus-outline'
 									id='allow-close'
+									tabIndex='0'
 									onClick={(e) => handleCloseModal(e)}>
 									Cancel
 								</button>
-								<button className='button' onClick={() => handleCopy()}>
+								<button
+									className='button focus-outline'
+									tabIndex='0'
+									onClick={() => handleCopy()}>
 									Copy
 								</button>
 							</div>

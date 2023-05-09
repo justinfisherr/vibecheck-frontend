@@ -43,9 +43,10 @@
 }
 
 .focus-outline:focus {
-	outline-width: 3px;
-	outline-style: solid;
-	outline-color: #9bd4ff;
+	outline-width: 2px;
+	outline-style: dotted;
+	outline-color: #000000;
+	border-radius: 5px;
 }
 
 body::-webkit-scrollbar {

@@ -71,6 +71,7 @@ export default function UsernameInput({
 				<p className='at-symbol'>ID</p>
 				<input
 					type='text'
+					tabIndex='0'
 					className='username-input'
 					value={userInput}
 					onChange={(e) => handleInputChange(e.target.value)}
@@ -78,7 +79,8 @@ export default function UsernameInput({
 				/>
 
 				<button
-					className='compare-button'
+					className='compare-button focus-outline'
+					tabIndex='0'
 					type='submit'
 					onClick={() => handleSend(userInput)}>
 					<img src={arrow} className='compare-arrow' alt='' />

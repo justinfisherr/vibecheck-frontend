@@ -3,6 +3,7 @@ import './share-screen.css';
 import React, { useContext } from 'react';
 
 import { animationContext } from '../../context/animationContext';
+import defaultImg from '../../images/default-user-image-green.png';
 import spinBurst from '../../images/spin-burst.png';
 import stiple1 from '../../images/Stiple1-modal.png';
 import stiple2 from '../../images/Stiple2-modal.png';
@@ -11,6 +12,9 @@ import stiple4 from '../../images/Stiple4-modal.png';
 
 export default function ShareScreen({ myRef }) {
 	const animationData = useContext(animationContext);
+	const userOneProfileImg = animationData.current.users.user1.profile_img;
+	const userTwoProfileImg = animationData.current.users.user2.profile_img;
+
 	return (
 		<div className='modal-wrapper' ref={myRef}>
 			<div className='modal-img-grid'>
@@ -30,8 +34,13 @@ export default function ShareScreen({ myRef }) {
 							<div className='outer-img-wrapper'>
 								<div className='modal-user-img-wrapper user1-img-wrapper'>
 									<img
+										className='modal-user-img modal-default-img'
+										src={defaultImg}
+										alt=''
+									/>
+									<img
 										className='modal-user-img'
-										src={animationData.current.users.user1.profile_img}
+										src={userOneProfileImg}
 										alt=''
 									/>
 								</div>
@@ -52,8 +61,13 @@ export default function ShareScreen({ myRef }) {
 								<div className='outer-img-wrapper'>
 									<div className='modal-user-img-wrapper user2-img-wrapper'>
 										<img
+											className='modal-user-img modal-default-img'
+											src={defaultImg}
+											alt=''
+										/>
+										<img
 											className='modal-user-img'
-											src={animationData.current.users.user2.profile_img}
+											src={userTwoProfileImg}
 											alt=''
 										/>
 									</div>

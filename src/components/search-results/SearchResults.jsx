@@ -38,11 +38,15 @@ export default function SearchResults({
 					}
 					return (
 						<div
-							className='result'
+							className='result focus-outline'
+							tabIndex='0'
 							onClick={() => handleSend(user_info.vibe_id)}
 							key={user_info.user_id}>
 							<div className='result-img-wrapper'>
-								<img src={defaultImg} className='result-img' alt='' />
+								<div className='default-result-img-wrapper'>
+									<img src={defaultImg} className='result-img' alt='' />
+								</div>
+
 								<img
 									src={user_info.profile_img}
 									className='result-img'

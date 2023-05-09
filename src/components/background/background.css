@@ -49,15 +49,19 @@
 	object-fit: cover;
 }
 
-.spotify-logo {
+.spotify-logo-wrapper {
 	align-items: center;
 	bottom: 25px;
 	display: flex;
 	height: 35px;
 	position: absolute;
 	right: 25px;
-	width: 100px;
+	width: 40px;
 	z-index: 1;
+}
+
+.spotify-logo {
+	width: 100%;
 }
 
 /*  =====================
@@ -213,6 +217,11 @@
 	.star2 {
 		left: 100px;
 		bottom: 170px;
+	}
+
+	.spotify-logo-wrapper {
+		height: 36px;
+		width: 120px;
 	}
 }
 

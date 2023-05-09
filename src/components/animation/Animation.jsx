@@ -70,7 +70,7 @@ function Animation() {
 					aria-label='Back'
 					type='button'
 					tabIndex='0'
-					className='button back-button'
+					className='button back-button focus-outline'
 					onClick={handleRedo}>
 					Back
 				</button>
@@ -84,7 +84,7 @@ function Animation() {
 							aria-label='Previous screen'
 							type='button'
 							tabIndex='0'
-							className='animation-button'
+							className='animation-button focus-outline'
 							onClick={prevScreen}>
 							<img className='carret' src={leftCarret} alt='' />
 						</button>
@@ -95,7 +95,7 @@ function Animation() {
 									aria-label='Compare again'
 									type='button'
 									tabIndex='0'
-									className='button redo-button'
+									className='button redo-button focus-outline'
 									onClick={handleRedo}>
 									<img className='redo-icon' src={redoIcon} alt='' />
 								</button>
@@ -105,7 +105,7 @@ function Animation() {
 								aria-label='Next screen'
 								type='button'
 								tabIndex='0'
-								className='animation-button'
+								className='animation-button focus-outline'
 								onClick={nextScreen}>
 								<img className='carret' src={rightCarret} alt='' />
 							</button>
