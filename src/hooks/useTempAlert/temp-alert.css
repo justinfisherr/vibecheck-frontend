@@ -1,0 +1,36 @@
+.temp-wrapper{
+    display: flex;
+    align-items: center;
+    animation: fade-out 0.2s ease-in-out 1.8s forwards;
+    margin-top: 20px;
+}
+
+.check-wrapper{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.temp-alert{
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    
+}
+
+@keyframes fade-out {
+    from {opacity: 1;}
+    to {opacity: 0;}
+  }
+
+
+  @media(min-width: 450px) {
+    .temp-wrapper{
+        margin-top: 0;
+    }
+    
+}

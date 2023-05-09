@@ -1,35 +1,43 @@
-.stiple-img{
-    /* transition: all 0.1s ease-in-out; */
+.stiple-img {
+	/* transition: all 0.1s ease-in-out; */
+	pointer-events: none;
 }
 
-.stiple-img-intro{
-    filter: invert(15%) sepia(43%) saturate(1420%) hue-rotate(193deg) brightness(95%) contrast(90%);
+.stiple-img-intro {
+	filter: invert(15%) sepia(43%) saturate(1420%) hue-rotate(193deg)
+		brightness(95%) contrast(90%);
 }
 
-.stiple-img-genres{
-    filter: invert(22%) sepia(21%) saturate(914%) hue-rotate(235deg) brightness(94%) contrast(92%);
+.stiple-img-genres {
+	filter: invert(22%) sepia(21%) saturate(914%) hue-rotate(235deg)
+		brightness(94%) contrast(92%);
 }
 
 .stiple-img-no-match {
-    filter: invert(36%) sepia(30%) saturate(527%) hue-rotate(172deg) brightness(94%) contrast(96%);
-}
-/* .stiple-img-but-here{
-filter: invert(88%) sepia(10%) saturate(5522%) hue-rotate(184deg) brightness(96%) contrast(119%);
-} */
-
-.stiple-img-artists,.stiple-img-but-here-artists, .stiple-img-recommended-artists{
-    filter: invert(79%) sepia(30%) saturate(287%) hue-rotate(277deg) brightness(105%) contrast(99%);
+	filter: invert(36%) sepia(30%) saturate(527%) hue-rotate(172deg)
+		brightness(94%) contrast(96%);
 }
 
-.stiple-img-percent
-{
-    filter: invert(14%) sepia(14%) saturate(4314%) hue-rotate(252deg) brightness(94%) contrast(96%);
+.stiple-img-artists,
+.stiple-img-but-here-artists,
+.stiple-img-recommended-artists {
+	filter: invert(79%) sepia(30%) saturate(287%) hue-rotate(277deg)
+		brightness(105%) contrast(99%);
 }
 
-.stiple-img-songs, .stiple-img-but-here-songs, .stiple-img-recommended-songs {
-    filter: invert(72%) sepia(4%) saturate(3225%) hue-rotate(190deg) brightness(122%) contrast(97%);
+.stiple-img-percent {
+	filter: invert(14%) sepia(14%) saturate(4314%) hue-rotate(252deg)
+		brightness(94%) contrast(96%);
 }
 
-.stiple-img-percent{
-    filter: invert(21%) sepia(48%) saturate(639%) hue-rotate(146deg) brightness(87%) contrast(85%);
+.stiple-img-songs,
+.stiple-img-but-here-songs,
+.stiple-img-recommended-songs {
+	filter: invert(72%) sepia(4%) saturate(3225%) hue-rotate(190deg)
+		brightness(122%) contrast(97%);
+}
+
+.stiple-img-percent {
+	filter: invert(21%) sepia(48%) saturate(639%) hue-rotate(146deg)
+		brightness(87%) contrast(85%);
 }

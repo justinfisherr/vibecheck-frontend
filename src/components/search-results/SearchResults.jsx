@@ -1,9 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import defaultImg from '../../images/default-user-image.svg';
-import useWindowSize from '../../hooks/window-size/useWindowSize';
 import './search-results.css';
 
-export default function SearchResults({ results, userId, input, handleSend }) {
+import React, { useEffect, useState } from 'react';
+
+import useWindowSize from '../../hooks/window-size/useWindowSize';
+import defaultImg from '../../images/default-user-image.svg';
+
+export default function SearchResults({
+	results,
+	vibeId,
+	userInput,
+	handleSend,
+	searchLoading,
+}) {
 	const windowSize = useWindowSize();
 	const [bottomOfScreen, setBottomOfScreen] = useState(0);
 
@@ -12,8 +20,8 @@ export default function SearchResults({ results, userId, input, handleSend }) {
 		const resultsWrapperTop = resultsWrapper.getBoundingClientRect().top;
 
 		const backgroundWrapper = document.querySelector('.background-wrapper');
-		const backgroundWrapperBottom = backgroundWrapper.getBoundingClientRect()
-			.bottom;
+		const backgroundWrapperBottom =
+			backgroundWrapper.getBoundingClientRect().bottom;
 
 		const bottomOfScreen = backgroundWrapperBottom - resultsWrapperTop - 20;
 		setBottomOfScreen(bottomOfScreen);
@@ -23,9 +31,9 @@ export default function SearchResults({ results, userId, input, handleSend }) {
 		<div
 			className='search-results-wrapper'
 			style={{ maxHeight: bottomOfScreen || 0 }}>
-			{results.success &&
-				results.data.map(({ user_info }) => {
-					if (user_info.vibe_id === userId) {
+			{results &&
+				results.map(({ user_info }) => {
+					if (user_info.vibe_id === vibeId) {
 						return null;
 					}
 					return (
@@ -34,10 +42,9 @@ export default function SearchResults({ results, userId, input, handleSend }) {
 							onClick={() => handleSend(user_info.vibe_id)}
 							key={user_info.user_id}>
 							<div className='result-img-wrapper'>
+								<img src={defaultImg} className='result-img' alt='' />
 								<img
-									src={
-										user_info.profile_img ? user_info.profile_img : defaultImg
-									}
+									src={user_info.profile_img}
 									className='result-img'
 									alt=''
 								/>
@@ -49,16 +56,10 @@ export default function SearchResults({ results, userId, input, handleSend }) {
 						</div>
 					);
 				})}
-			{!results.loading &&
-				results.success &&
-				results.data.length === 0 &&
-				input && <p className='no-result'>NO RESULT</p>}
-			{!results.loading &&
-				results.success &&
-				results.data.length === 1 &&
-				results.data[0].user_info.user_id === userId && (
-					<p className='no-result'>NO RESULT</p>
-				)}
+			{searchLoading && <p className='no-result'>Loading...</p>}
+			{!searchLoading && results.length === 0 && userInput && (
+				<p className='no-result'>NO RESULT</p>
+			)}
 		</div>
 	);
 }

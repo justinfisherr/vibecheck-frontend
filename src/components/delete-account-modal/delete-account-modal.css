@@ -1,0 +1,64 @@
+.delete-account-modal-container {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+	z-index: 3;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-inline: 20px;
+}
+
+.delete-account-modal {
+	max-width: 600px;
+	width: 100%;
+	background-color: #e23838;
+	border-radius: 10px;
+	position: relative;
+	padding: 35px;
+}
+
+.error-icon-wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+.error-icon {
+	height: 80px;
+}
+
+.delete-account-heading {
+	text-align: center;
+	font-size: 30px;
+	font-weight: 700;
+	color: white;
+	margin-block: 20px;
+}
+
+.delete-account-subtext {
+	text-align: center;
+	font-size: 18px;
+	color: white;
+}
+
+.delete-account-modal-buttons-wrapper {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	margin-top: 35px;
+}
+
+@media (max-width: 300px) {
+	.delete-account-modal-buttons-wrapper {
+		justify-content: center;
+		align-items: center;
+		flex-direction: column-reverse;
+		margin-top: 35px;
+	}
+
+	.delete-account-button {
+		margin-top: 0;
+	}
+}

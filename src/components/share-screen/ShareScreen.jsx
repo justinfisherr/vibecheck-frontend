@@ -1,6 +1,8 @@
-import React, { useContext } from 'react';
-import { animationContext } from '../../context/animationContext';
 import './share-screen.css';
+
+import React, { useContext } from 'react';
+
+import { animationContext } from '../../context/animationContext';
 import spinBurst from '../../images/spin-burst.png';
 import stiple1 from '../../images/Stiple1-modal.png';
 import stiple2 from '../../images/Stiple2-modal.png';

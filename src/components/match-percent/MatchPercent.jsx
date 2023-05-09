@@ -1,6 +1,8 @@
-import React from 'react';
-import threeStar from '../../images/three-star.png';
 import './match-percent.css';
+
+import React from 'react';
+
+import threeStar from '../../images/three-star.png';
 
 export default function MatchPercent({ animationData }) {
 	const matchPercent = animationData.match_profile.match_percent;

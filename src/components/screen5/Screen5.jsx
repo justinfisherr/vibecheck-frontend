@@ -1,5 +1,7 @@
-import React from 'react';
 import './screen5.css';
+
+import React from 'react';
+
 import MatchPercent from '../match-percent/MatchPercent';
 
 function Screen5({ animationData }) {

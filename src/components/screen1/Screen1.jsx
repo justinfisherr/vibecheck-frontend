@@ -1,5 +1,7 @@
-import React from 'react';
 import './screen1.css';
+
+import React from 'react';
+
 import IntroImages from '../intro-images/IntroImages';
 
 function Screen1({ animationData }) {

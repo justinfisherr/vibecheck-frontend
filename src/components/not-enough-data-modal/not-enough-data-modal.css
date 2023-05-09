@@ -1,0 +1,51 @@
+.not-enough-data-modal-container {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+	z-index: 3;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-inline: 20px;
+}
+
+.not-enough-data-modal {
+	max-width: 600px;
+	width: 100%;
+	background-color: #e23838;
+	border-radius: 10px;
+	position: relative;
+	padding: 35px;
+}
+
+.error-icon-wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+.error-icon {
+	height: 80px;
+}
+
+.not-enough-data-heading {
+	text-align: center;
+	font-size: 30px;
+	font-weight: 700;
+	color: white;
+	margin-block: 20px;
+}
+
+.not-enough-data-subtext {
+	text-align: center;
+	font-size: 18px;
+	color: white;
+}
+
+.not-enough-data-button {
+	display: block;
+	margin-inline: auto;
+	margin-top: 30px !important;
+	width: 125px !important;
+}

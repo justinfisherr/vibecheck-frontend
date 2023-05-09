@@ -1,58 +1,56 @@
 /* screen 1 */
-.screen1-content{
+.screen1-content {
 }
 
-.animation-page-intro{
-    background-color: #adefc4;
+.animation-page-intro {
+	background-color: #adefc4;
 }
 
-.screen1-text{
-    text-align: center;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: white;
-    font-size: 28px;
-    line-height: 30px;
+.screen1-text {
+	text-align: center;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: white;
+	font-size: 28px;
+	line-height: 30px;
 }
 
 @media (min-width: 300px) {
-    .screen1-text{
-        font-size: 30px;
-        line-height: 35px;
-    }
+	.screen1-text {
+		font-size: 30px;
+		line-height: 35px;
+	}
 }
 
 @media (min-width: 400px) {
-    .screen1-text{
-        font-size: 40px;
-        line-height: 45px;
-    }
+	.screen1-text {
+		font-size: 40px;
+		line-height: 45px;
+	}
 }
 
 @media (min-width: 480px) {
-    .screen1-text{
-        font-size: 50px;
-        line-height: 55px;
-    }
+	.screen1-text {
+		font-size: 50px;
+		line-height: 55px;
+	}
 }
 
 @media (min-width: 650px) {
-    .screen1-text{
-        font-size: 55px;
-        line-height: 55px;
-    }
+	.screen1-text {
+		font-size: 55px;
+		line-height: 55px;
+	}
 }
 
-
-
-.top-fade-in{
-    opacity: 0;
-    animation: fade-in 0.5s ease-in-out  forwards ;
-    animation-delay: 1s;
+.top-fade-in {
+	opacity: 0;
+	animation: fade-in 0.5s ease-in-out forwards;
+	animation-delay: 1s;
 }
 
-.bottom-fade-in{
-    opacity: 0;
-    animation: fade-in 0.5s ease-in-out  forwards ;
-    animation-delay: 2s;
+.bottom-fade-in {
+	opacity: 0;
+	animation: fade-in 0.5s ease-in-out forwards;
+	animation-delay: 2s;
 }

@@ -1,40 +1,64 @@
-import React, { useState, useRef } from 'react';
-import SearchResults from '../search-results/SearchResults';
-
-import arrow from '../../images/arrow-right-solid.svg';
 import './username-input.css';
+
+import React, { useEffect, useRef, useState } from 'react';
 
 import useFetch from '../../hooks/useFetch/useFetch';
 import useSubmit from '../../hooks/useSubmit/useSubmit';
+import arrow from '../../images/arrow-right-solid.svg';
+import SearchResults from '../search-results/SearchResults';
 
-export default function UsernameInput({ setResponseData, vibeId }) {
-	// Ref
+export default function UsernameInput({
+	setResponseData,
+	vibeId,
+	setExistsDisplayModal,
+}) {
+	// State
 	const currentInputValue = useRef();
+	const [userInput, setInput] = useState('');
+	const [searchLoading, setSearchLoading] = useState(false);
+	const [searchResults, setSearchResults] = useState([]);
 
 	// Custom Hooks
-	const sumbitCompare = useSubmit(vibeId, setResponseData);
-	const [searchResults, getSearchResults] = useFetch(currentInputValue);
-
-	// State
-	const [input, setInput] = useState('');
+	const sumbitCompare = useSubmit(
+		vibeId,
+		setResponseData,
+		setExistsDisplayModal
+	);
+	const getSearchResultsFor = useFetch(setSearchLoading, setSearchResults);
 
 	// Handler Functions
-	function handleSend(input) {
-		if (input) {
-			sumbitCompare(input);
+	function handleSend(chosenUser) {
+		if (chosenUser) {
+			sumbitCompare(chosenUser);
 			setInput('');
 		}
 	}
 
-	function handleInputChange(value) {
-		currentInputValue.current = value;
-		getSearchResults(value);
-		setInput(value);
+	useEffect(() => {
+		setSearchResults([]);
+		if (userInput) {
+			setSearchLoading(true);
+		}
+
+		const delayDebounceFn = setTimeout(() => {
+			getSearchResultsFor(userInput);
+		}, 500);
+
+		return () => {
+			setSearchLoading(false);
+			clearTimeout(delayDebounceFn);
+		};
+	}, [userInput]);
+
+	function handleInputChange(newUserInput) {
+		currentInputValue.current = newUserInput;
+		setInput(newUserInput);
 	}
 
 	function handleKeyDown({ code, target }) {
 		if (code === 'Enter' || code === 'NumpadEnter') {
-			handleSend(target.value);
+			const chosenUser = target.value;
+			handleSend(chosenUser);
 		}
 	}
 
@@ -42,13 +66,13 @@ export default function UsernameInput({ setResponseData, vibeId }) {
 		<div className='username-form'>
 			<div
 				className={`input-wrapper ${
-					searchResults.data.length !== 0 ? 'bottom-line' : ''
+					searchResults.length !== 0 ? 'bottom-line' : ''
 				}`}>
 				<p className='at-symbol'>ID</p>
 				<input
 					type='text'
 					className='username-input'
-					value={input}
+					value={userInput}
 					onChange={(e) => handleInputChange(e.target.value)}
 					onKeyDown={(e) => handleKeyDown(e)}
 				/>
@@ -56,7 +80,7 @@ export default function UsernameInput({ setResponseData, vibeId }) {
 				<button
 					className='compare-button'
 					type='submit'
-					onClick={() => handleSend(input)}>
+					onClick={() => handleSend(userInput)}>
 					<img src={arrow} className='compare-arrow' alt='' />
 				</button>
 			</div>
@@ -64,8 +88,9 @@ export default function UsernameInput({ setResponseData, vibeId }) {
 				<SearchResults
 					results={searchResults}
 					vibeId={vibeId}
-					input={input}
+					userInput={userInput}
 					handleSend={handleSend}
+					searchLoading={searchLoading}
 				/>
 			</div>
 		</div>

@@ -1,19 +1,32 @@
-import React from 'react';
-import Background from '../background/Background';
-import { Helmet } from 'react-helmet-async';
-import coverImg from '../../images/vibecheck-cover.png';
 import './homepage.css';
 
+import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { Navigate } from 'react-router-dom';
+
+import coverImg from '../../images/vibecheck-cover.png';
+import Background from '../background/Background';
+import NotEnoughDataModal from '../not-enough-data-modal/NotEnoughDataModal';
+
 function Home() {
+	const [allowRedirection, setAllowRedirection] = useState(false);
+
 	function redirectToSpotify() {
-		const url =
-			process.env.NODE_ENV === 'production'
-				? 'https://vibecheck-backend-production.up.railway.app/login'
-				: 'http://localhost:5000/login';
-		window.location.replace(url);
+		const userData = JSON.parse(localStorage.getItem('userData'));
+		if (userData) {
+			setAllowRedirection(true);
+		} else {
+			const url =
+				process.env.NODE_ENV === 'production'
+					? 'https://vibecheck-backend-production.up.railway.app/login'
+					: 'http://localhost:5000/login';
+			window.location.replace(url);
+		}
 	}
 
-	return (
+	return allowRedirection ? (
+		<Navigate to={'/compare'} />
+	) : (
 		<div className='homepage'>
 			<Helmet>
 				<title>Vibe Check</title>
@@ -48,9 +61,13 @@ function Home() {
 			</Helmet>
 			<Background>
 				<div className='content homepage-content'>
+					<NotEnoughDataModal />
 					<h1 className='homepage-heading'>VIBECHECK</h1>
 					<p className='homepage-subtext'>Check your music compatibility</p>
-					<button className='button' onClick={() => redirectToSpotify()}>
+					<button
+						className='button focus-outline'
+						tabIndex='0'
+						onClick={() => redirectToSpotify()}>
 						GET STARTED
 					</button>
 				</div>

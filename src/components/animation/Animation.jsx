@@ -1,35 +1,44 @@
-import React, { useState } from 'react';
-import useScreens from '../../hooks/useScreens/useScreens';
-import { Helmet } from 'react-helmet-async';
-import redoIcon from '../../images/rotate-right-solid.png';
 import './animation.css';
 
+import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { Navigate } from 'react-router-dom';
+
+import useScreens from '../../hooks/useScreens/useScreens';
+import leftCarret from '../../images/caret-left-solid.svg';
+import rightCarret from '../../images/caret-right-solid.svg';
+import redoIcon from '../../images/rotate-right-solid.png';
 import Background from '../background/Background';
 import SocialButtons from '../social-buttons/SocialButtons';
 
-import rightCarret from '../../images/caret-right-solid.svg';
-import leftCarret from '../../images/caret-left-solid.svg';
-
 function Animation() {
-	const [index, setIndex] = useState(0);
+	// Index used to keep track of the current animation screen
+	const [screenIndex, setScreenIndex] = useState(0);
+
+	// Used to send the user back to the compare screen
+	const [sendBackToCompare, setSendBackToCompare] = useState(false);
+
+	// Hook that generates the screens and the styles to display to the user based on the comparison data
 	const [screens, styles] = useScreens();
 
+	// Removes url parameters
+	window.history.replaceState(null, 'Vibe Check', '/animation');
+
+	const lastScreenIndex = screens.length - 1;
+
+	// Decrements the screenIndex variable to display the previous screen
 	function prevScreen() {
-		setIndex((currentScreen) => {
+		setScreenIndex((currentScreen) => {
 			if (currentScreen === 0) {
-				const url =
-					process.env.NODE_ENV === 'production'
-						? 'https://vibecheck-backend-production.up.railway.app/login'
-						: 'http://localhost:5000/login';
-				window.location.replace(url);
-				return currentScreen;
+				setSendBackToCompare(true);
 			}
 			return currentScreen - 1;
 		});
 	}
 
+	// Increments the screenIndex variable to display the next screen
 	function nextScreen() {
-		setIndex((currentScreen) => {
+		setScreenIndex((currentScreen) => {
 			if (currentScreen === screens.length - 1) {
 				return currentScreen;
 			}
@@ -37,16 +46,16 @@ function Animation() {
 		});
 	}
 
+	// Sends the user back to the compare screen
 	function handleRedo() {
-		const url =
-			process.env.NODE_ENV === 'production'
-				? 'https://vibecheck-backend-production.up.railway.app/login'
-				: 'http://localhost:5000/login';
-		window.location.replace(url);
+		setSendBackToCompare(true);
 	}
 
-	return (
-		<div className={`animation-page animation-page-${styles[index]}`}>
+	// If sendBackToCompare is set to true then the user will get navigated to the compare screen
+	return sendBackToCompare ? (
+		<Navigate to={'/compare'} />
+	) : (
+		<div className={`animation-page animation-page-${styles[screenIndex]}`}>
 			<Helmet>
 				<title>Vibe Check</title>
 				<meta
@@ -56,27 +65,48 @@ function Animation() {
 				<link rel='canonical' href='https://thevibecheck.io/animation' />
 				<meta name='robots' content='noindex' />
 			</Helmet>
-			<Background currentScreen={styles[index]}>
+			<Background currentScreenName={styles[screenIndex]}>
+				<button
+					aria-label='Back'
+					type='button'
+					tabIndex='0'
+					className='button back-button'
+					onClick={handleRedo}>
+					Back
+				</button>
 				<div className='animation-content-wrapper'>
-					<div className='screens'>{screens[index]}</div>
+					<div className='screens'>{screens[screenIndex]}</div>
 					<div
 						className={`buttons ${
-							index === screens.length - 1 ? 'buttons-three' : ''
+							screenIndex === lastScreenIndex ? 'buttons-three' : ''
 						}`}>
 						<button
-							className='animation-button back-button'
-							onClick={() => prevScreen()}>
+							aria-label='Previous screen'
+							type='button'
+							tabIndex='0'
+							className='animation-button'
+							onClick={prevScreen}>
 							<img className='carret' src={leftCarret} alt='' />
 						</button>
-						{index === screens.length - 1 ? (
+						{screenIndex === lastScreenIndex ? (
 							<>
 								<SocialButtons />
-								<button className='redo-button' onClick={() => handleRedo()}>
+								<button
+									aria-label='Compare again'
+									type='button'
+									tabIndex='0'
+									className='button redo-button'
+									onClick={handleRedo}>
 									<img className='redo-icon' src={redoIcon} alt='' />
 								</button>
 							</>
 						) : (
-							<button className='animation-button' onClick={() => nextScreen()}>
+							<button
+								aria-label='Next screen'
+								type='button'
+								tabIndex='0'
+								className='animation-button'
+								onClick={nextScreen}>
 								<img className='carret' src={rightCarret} alt='' />
 							</button>
 						)}

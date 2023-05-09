@@ -1,12 +1,21 @@
-import React from 'react';
 import './stiple-image.css';
 
-export default function Image1({ currentScreen, src }) {
+import PropTypes from 'prop-types';
+import React from 'react';
+
+function StipleImage({ currentScreenName, src }) {
 	return (
 		<img
-			className={`stiple-img stiple-img-${currentScreen}`}
+			className={`stiple-img noselect stiple-img-${currentScreenName}`}
 			src={src}
-			alt=''
+			alt='Background art'
 		/>
 	);
 }
+
+StipleImage.propTypes = {
+	currentScreenName: PropTypes.string.isRequired,
+	src: PropTypes.string.isRequired,
+};
+
+export default StipleImage;

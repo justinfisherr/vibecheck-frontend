@@ -1,15 +1,14 @@
 import React, { useContext } from 'react';
-import { animationContext } from '../../context/animationContext';
 
-import Screen1 from '../../components/screen1/Screen1';
 import Screen2 from '../../components//screen2/Screen2';
-import Screen3 from '../../components/screen3/Screen3';
+import MatchingArtists from '../../components/matching-artists/MatchingArtists';
+import NoMatches from '../../components/no-matches/NoMatches';
+import RecommendationText from '../../components/recommendation-text/RecommendationText';
+import RecommendedArtists from '../../components/recommended-artists/RecommendedArtists';
+import Screen1 from '../../components/screen1/Screen1';
 import Screen4 from '../../components/screen4/Screen4';
 import Screen5 from '../../components/screen5/Screen5';
-
-import NoMatches from '../../components/no-matches/NoMatches';
-import RecommendedArtists from '../../components/recommended-artists/RecommendedArtists';
-import ButHere from '../../components/but-here/ButHere';
+import { animationContext } from '../../context/animationContext';
 
 export default function useScreens() {
 	const animationData = useContext(animationContext);
@@ -83,11 +82,13 @@ export default function useScreens() {
 			);
 		} else {
 			styles.push('artists');
-			screens.push(<Screen3 animationData={animationData.current} />);
+			screens.push(<MatchingArtists animationData={animationData.current} />);
 		}
 
 		styles.push('but-here-artists');
-		screens.push(<ButHere type={'Artists'} words={artistsWords} />);
+		screens.push(
+			<RecommendationText wordsToDisplay={artistsWords} wordsType={'Artists'} />
+		);
 
 		styles.push('recommended-artists');
 		screens.push(
@@ -109,7 +110,9 @@ export default function useScreens() {
 		}
 
 		styles.push('but-here-songs');
-		screens.push(<ButHere words={songWords} type={'Songs'} />);
+		screens.push(
+			<RecommendationText wordsToDisplay={songWords} wordsType={'Songs'} />
+		);
 
 		styles.push('recommended-songs');
 		screens.push(

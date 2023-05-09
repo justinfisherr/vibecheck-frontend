@@ -1,0 +1,36 @@
+/*  ===================
+	=== Text layout ===
+	=================== */
+.recommened-page-content {
+	max-width: 100%;
+}
+
+.recommend-page-text {
+	text-align: center;
+}
+
+/*  ============
+	=== Text ===
+	============ */
+.word {
+	color: rgb(240, 217, 255);
+	font-size: min(10vw, 60px);
+	font-weight: 800;
+	line-height: min(10vw, 60px);
+	opacity: 0;
+	text-transform: uppercase;
+}
+
+.artists-color {
+	color: rgb(229, 147, 191) !important;
+}
+
+.song-color {
+	color: #dafbff !important;
+}
+
+@media (min-width: 600px) {
+	.recommened-page-content {
+		max-width: 600px;
+	}
+}

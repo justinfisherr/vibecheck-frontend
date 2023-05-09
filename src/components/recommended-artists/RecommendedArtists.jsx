@@ -1,7 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
-import playIcon from '../../images/play-solid.svg';
-import pauseIcon from '../../images/pause-solid.svg';
 import './recommended-artists.css';
+
+import React, { useEffect, useRef, useState } from 'react';
+
+import pauseIcon from '../../images/pause-solid.svg';
+import playIcon from '../../images/play-solid.svg';
 
 export default function RecommendedArtists({ recommended, type }) {
 	const [songToPlay, setSongToPlay] = useState(null);
@@ -93,6 +95,7 @@ export default function RecommendedArtists({ recommended, type }) {
 										<a
 											href={url}
 											target='_blank'
+											rel='noopener noreferrer'
 											className='recommended-song-name'>
 											{song_name}
 										</a>

@@ -1,120 +1,128 @@
-.animation-page{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    /* transition: all 0.1s ease-in-out; */
+/*  =====================
+	=== Page Layout ===
+	===================== */
+.animation-page {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: center;
+	width: 100%;
 }
 
-.animation-content-wrapper{
-    z-index: 1;
-    padding-inline: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.animation-content-wrapper {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-inline: 20px;
+	z-index: 1;
 }
 
-.recommend{
-    position: absolute;
-    bottom: 10px;
-    font-size: 18px;
-    font-weight: 500;
-    color: white;
-    
+/*  ======================
+	=== Artists Layout ===
+	====================== */
+.animation-page-artists,
+.animation-page-but-here-artists,
+.animation-page-recommended-artists {
+	background-color: #8449a6;
 }
 
-
-.buttons{
-    bottom: 30px;
-    position: absolute;
-    display: flex;
-    margin: auto;
-    width: fit-content;
-    margin-top: 30px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 10px;
+/*  ====================
+	=== Songs Layout ===
+	==================== */
+.animation-page-songs,
+.animation-page-but-here-songs,
+.animation-page-recommended-songs {
+	background-color: #9a2f5a;
 }
 
-.buttons-three{
-    margin-top: 50px;
-    position: static;
-    grid-template-columns: 1fr 1fr 1fr;
+/*  =====================
+	=== Button Layout ===
+	===================== */
+.buttons {
+	bottom: 30px;
+	column-gap: 10px;
+	display: flex;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	margin: auto;
+	margin-top: 30px;
+	position: absolute;
+	width: fit-content;
 }
 
-.carret{
-    width: 20px;
+.buttons-three {
+	grid-template-columns: 1fr 1fr 1fr;
+	margin-top: 50px;
+	position: static;
 }
 
-.share-button{
-    color: black;
+/*  ===============
+	=== Buttons ===
+	===============*/
+.share-button {
+	color: black;
 }
 
-.animation-button{
-    height: 45px;
-    min-width: 45px;
-    font-size: 16px;
-    border-radius: 5px;
-    font-weight: 600;
-    border: none;
-    background-color: white;
-    cursor: pointer;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.2s;
+.back-button {
+	color: black !important;
+	position: absolute;
+	right: 30px;
+	top: 25px;
 }
 
-.redo-button{
-    height: 45px;
-    width: 100%;
-    border-radius: 5px;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    background-color: white;
-    transition: all 0.2s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.animation-button {
+	align-items: center;
+	background-color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	display: flex;
+	font-size: 16px;
+	font-weight: 600;
+	height: 45px;
+	justify-content: center;
+	min-width: 45px;
+	padding: 0;
+	transition: all 0.2s;
 }
 
-.redo-icon{
-    width: 20px;
-    height: 20px;
+.redo-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.redo-button:hover, .animation-button:hover{
-    transform: scale(1.05);
+.redo-button:hover,
+.animation-button:hover {
+	transform: scale(1.05);
 }
 
-
-/* Screens */
-.titles{
-    font-weight: 700;
-    font-size: 60px;
-    color: white;
-    text-transform: uppercase;
+/*  =============
+	=== Icons ===
+	============= */
+.carret {
+	width: 20px;
 }
 
-.sub-texts{
-    font-size: 40px;
-    font-weight: 800;
+.redo-icon {
+	height: 20px;
+	width: 20px;
 }
 
-.fade-in{
-    animation: fade-in 0.5s ease-in-out  forwards ;
+/*  ==================
+	=== Animations ===
+	================== */
+.fade-in {
+	animation: fade-in 0.5s ease-in-out forwards;
 }
 
 @keyframes fade-in {
-    0%   {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-  }
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

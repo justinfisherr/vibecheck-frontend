@@ -1,5 +1,6 @@
-import React from 'react';
 import './screen2.css';
+
+import React from 'react';
 
 function Screen2({ genres, text }) {
 	return (

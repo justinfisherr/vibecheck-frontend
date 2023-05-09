@@ -1,11 +1,11 @@
-import React, { useRef, useEffect, useState, useContext } from 'react';
+import './social-button.css';
+
+import html2canvas from 'html2canvas';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 
 import { animationContext } from '../../context/animationContext';
-import ShareScreen from '../share-screen/ShareScreen';
-import html2canvas from 'html2canvas';
 import xIcon from '../../images/x-solid.svg';
-
-import './social-button.css';
+import ShareScreen from '../share-screen/ShareScreen';
 
 export default function SocialButtons() {
 	const shareUrl = 'thevibecheck.io';
@@ -16,7 +16,6 @@ export default function SocialButtons() {
 	const modalShareClicked = useRef(false);
 	const myRef = useRef();
 	const animationData = useContext(animationContext);
-	console.log(animationData);
 
 	useEffect(() => {
 		const captureElement = async (element) => {
@@ -24,9 +23,8 @@ export default function SocialButtons() {
 				allowTaint: true,
 				useCORS: true,
 				onclone: (el) => {
-					const elementsWithShiftedDownwardText = el.querySelectorAll(
-						'.shifted-text'
-					);
+					const elementsWithShiftedDownwardText =
+						el.querySelectorAll('.shifted-text');
 					elementsWithShiftedDownwardText.forEach((element) => {
 						element.style.transform = 'translateY(-30%)';
 					});
@@ -49,7 +47,7 @@ export default function SocialButtons() {
 			if (downloadClicked.current) {
 				const link = document.createElement('a');
 				link.href = canvas.toDataURL('image/png');
-				link.setAttribute('download', `Vibecheck.png`);
+				link.setAttribute('download', 'Vibecheck.png');
 				document.body.appendChild(link);
 				link.click();
 				link.parentNode.removeChild(link);
@@ -62,20 +60,16 @@ export default function SocialButtons() {
 		};
 
 		async function test(blob) {
-			try {
-				await navigator.share({
-					url: shareUrl,
-					title: 'thevibecheck.io',
-					text: `${animationData.current.users.user2.username} and I are a ${animationData.current.match_profile.match_percent}% match according to our music taste! Test your compatibility at thevibecheck.io`,
-					files: [
-						new File([blob], 'image.png', {
-							type: 'image/png',
-						}),
-					],
-				});
-			} catch (err) {
-				console.log(err);
-			}
+			await navigator.share({
+				url: shareUrl,
+				title: 'thevibecheck.io',
+				text: `${animationData.current.users.user2.username} and I are a ${animationData.current.match_profile.match_percent}% match according to our music taste! Test your compatibility at thevibecheck.io`,
+				files: [
+					new File([blob], 'image.png', {
+						type: 'image/png',
+					}),
+				],
+			});
 		}
 
 		if (shareButtonClicked.current) {
@@ -115,7 +109,7 @@ export default function SocialButtons() {
 
 	return (
 		<div className='social-buttons-container'>
-			<button className='share-button' onClick={() => toggleModal()}>
+			<button className='button social-button' onClick={() => toggleModal()}>
 				SHARE
 			</button>
 
@@ -137,6 +131,25 @@ export default function SocialButtons() {
 							SHARE
 						</button>
 					</div>
+
+					<p className='plug-text'>
+						Like Vibe Check? Follow us{' '}
+						<a
+							className='plug-link'
+							href='https://www.linkedin.com/in/justinthedev/'
+							target='_blank'
+							rel='noopener noreferrer'>
+							Justin Fisher
+						</a>{' '}
+						and{' '}
+						<a
+							className='plug-link'
+							href='https://www.linkedin.com/in/webdevlex/'
+							target='_blank'
+							rel='noopener noreferrer'>
+							Alexis Martin
+						</a>
+					</p>
 				</div>
 			</div>
 		</div>

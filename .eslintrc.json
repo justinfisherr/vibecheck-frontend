@@ -1,0 +1,75 @@
+{
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true
+    },
+    "settings": {
+        "import/resolver": {
+          "node": {
+            "extensions": [".js", ".jsx", ".ts", ".tsx"]
+          }
+        },
+        "react": {
+            "version": "detect"
+          }
+      },
+    "extends": [
+        "eslint:recommended",
+        "plugin:import/errors",
+        "plugin:react/recommended",
+        "plugin:jsx-a11y/recommended"
+      ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": ["react", "import", "jsx-a11y", "simple-import-sort"],
+    "rules": {
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error",
+        "linebreak-style": [
+            "error",
+            "windows"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ]
+    },
+    "overrides": [
+        {
+          "files": ["**/*.js", "**/*.ts", "**/*.tsx"],
+          "rules": {
+            "simple-import-sort/imports": [
+              "error",
+              {
+                "groups": [
+                  // `react` first, `next` second, then packages starting with a character
+                  ["^react$", "^next", "^[a-z]"],
+                  // Packages starting with `@`
+                  ["^@"],
+                  // Packages starting with `~`
+                  ["^~"],
+                  // Imports starting with `../`
+                  ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+                  // Imports starting with `./`
+                  ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+                  // Style imports
+                  ["^.+\\.s?css$"],
+                  // Side effect imports
+                  ["^\\u0000"]
+                ]
+              }
+            ]
+          }
+        }
+      ]
+}
