@@ -55,7 +55,7 @@ function Background({ children, currentScreenName }) {
 				/>
 			</div>
 			<a
-				className='focus-outline spotify-logo'
+				className='focus-outline spotify-logo-wrapper'
 				href='https://open.spotify.com/'
 				target='_blank'
 				rel='noopener noreferrer'
@@ -64,6 +64,7 @@ function Background({ children, currentScreenName }) {
 				<img
 					src={windowSize.width < 480 ? spotifyLogo : spotifyLogoWithText}
 					alt='spotify logo'
+					className='spotify-logo'
 				/>
 			</a>
 			<div className='background-wrapper'>

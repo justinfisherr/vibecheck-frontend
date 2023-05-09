@@ -95,7 +95,10 @@ function Compare() {
 					/>
 
 					<h1 className='compare-heading'>COMPARE WITH?</h1>
-					<div className='id-container' onClick={() => handleChangeUsername()}>
+					<div
+						className='id-container focus-outline'
+						tabIndex='0'
+						onClick={() => handleChangeUsername()}>
 						<p className='compare-your-id'>Your ID: {vibeId}</p>
 						<div className='edit-button'>
 							<img src={editIcon} alt='' />

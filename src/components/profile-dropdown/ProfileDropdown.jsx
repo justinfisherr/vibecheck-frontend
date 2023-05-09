@@ -33,7 +33,8 @@ function ProfileDropdown({
 
 	return (
 		<div
-			className='profile-dropdown-container'
+			className='profile-dropdown-container focus-outline'
+			tabIndex='0'
 			id='allow-close'
 			onClick={(e) => handleCloseDropdown(e)}>
 			<div

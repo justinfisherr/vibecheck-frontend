@@ -6,13 +6,16 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import { animationContext } from '../../context/animationContext';
 import xIcon from '../../images/x-solid.svg';
 import ShareScreen from '../share-screen/ShareScreen';
+import Spinner from '../spinner/Spinner';
 
 export default function SocialButtons() {
 	const shareUrl = 'thevibecheck.io';
 	const shareButtonClicked = useRef(false);
 	const downloadClicked = useRef(false);
+	const shareClickedBefore = useRef(false);
 	const [runShare, setRunShare] = useState(false);
 	const [showModal, setShowModal] = useState(false);
+	const [shareLoading, setShareLoading] = useState(false);
 	const modalShareClicked = useRef(false);
 	const myRef = useRef();
 	const animationData = useContext(animationContext);
@@ -43,6 +46,8 @@ export default function SocialButtons() {
 			img.src = canvas.toDataURL('image/png');
 			img.className = 'rendered-img';
 			modal.appendChild(img);
+			setShareLoading(false);
+			shareClickedBefore.current = true;
 
 			if (downloadClicked.current) {
 				const link = document.createElement('a');
@@ -87,6 +92,7 @@ export default function SocialButtons() {
 
 	function handleShareClick() {
 		shareButtonClicked.current = true;
+		setShareLoading(true);
 		setRunShare(true);
 	}
 
@@ -101,33 +107,42 @@ export default function SocialButtons() {
 		handleShareClick();
 	}
 
-	function handleModalClick(e) {
-		if (e.target.className === 'modal') {
+	function handleModalClick({ target }) {
+		if (target.id === 'allow-close') {
 			toggleModal();
 		}
 	}
 
 	return (
 		<div className='social-buttons-container'>
-			<button className='button social-button' onClick={() => toggleModal()}>
+			<button
+				className='button social-button focus-outline'
+				tabIndex='0'
+				onClick={() => toggleModal()}>
 				SHARE
 			</button>
 
 			<div
 				onClick={(e) => handleModalClick(e)}
-				className={`modal${showModal ? '' : ' hide'}`}>
+				tabIndex='0'
+				id='allow-close'
+				className={`focus-outline modal ${showModal ? '' : 'hide'}`}>
 				<div className='modal-content'>
-					<div className='close-button' onClick={() => toggleModal()}>
-						<img src={xIcon} className='x-icon' alt='close window icon' />
-					</div>
 					<div className='modal-img-wrapper'>
+						{shareLoading && !shareClickedBefore.current && <Spinner />}
 						<ShareScreen myRef={myRef} />
 					</div>
 					<div className='modal-buttons-container'>
-						<button className='modal-button' onClick={() => handleDownload()}>
+						<button
+							className='modal-button focus-outline'
+							tabIndex='0'
+							onClick={() => handleDownload()}>
 							DOWNLOAD
 						</button>
-						<button className='modal-button' onClick={() => handleShareClick()}>
+						<button
+							className='modal-button focus-outline'
+							tabIndex='0'
+							onClick={() => handleShareClick()}>
 							SHARE
 						</button>
 					</div>
@@ -135,7 +150,7 @@ export default function SocialButtons() {
 					<p className='plug-text'>
 						Like Vibe Check? Follow us{' '}
 						<a
-							className='plug-link'
+							className='plug-link focus-outline'
 							href='https://www.linkedin.com/in/justinthedev/'
 							target='_blank'
 							rel='noopener noreferrer'>
@@ -143,7 +158,7 @@ export default function SocialButtons() {
 						</a>{' '}
 						and{' '}
 						<a
-							className='plug-link'
+							className='plug-link focus-outline'
 							href='https://www.linkedin.com/in/webdevlex/'
 							target='_blank'
 							rel='noopener noreferrer'>

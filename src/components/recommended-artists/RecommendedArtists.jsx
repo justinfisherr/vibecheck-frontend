@@ -74,7 +74,8 @@ export default function RecommendedArtists({ recommended, type }) {
 									<p className='recommended-index recommended-song-index'>
 										<img
 											onClick={() => handlePlayClick(index)}
-											className='play-icon'
+											className='play-icon focus-outline'
+											tabIndex='0'
 											src={
 												songPlayingIndex.current === index && songIsPlaying
 													? pauseIcon
@@ -96,7 +97,7 @@ export default function RecommendedArtists({ recommended, type }) {
 											href={url}
 											target='_blank'
 											rel='noopener noreferrer'
-											className='recommended-song-name'>
+											className='recommended-song-name focus-outline'>
 											{song_name}
 										</a>
 										<p className='recommended-artist-name'>{artist_name}</p>
