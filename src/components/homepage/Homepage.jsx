@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Navigate } from 'react-router-dom';
 
-import coverImg from '../../images/vibecheck-cover.png';
 import Background from '../background/Background';
 import NotEnoughDataModal from '../not-enough-data-modal/NotEnoughDataModal';
 
@@ -44,7 +43,7 @@ function Home() {
 					content='Check your music compatibility. Connect your Spotify account and see how well your music taste matches up with others.'
 				/>
 				<meta property='og:url' content='https://thevibecheck.io/' />
-				<meta property='og:image' content={coverImg} />
+
 				{/* End Facebook tags */}
 
 				{/* Twitter tags */}
@@ -55,7 +54,7 @@ function Home() {
 					name='twitter:description'
 					content='Check your music compatibility. Connect your Spotify account and see how well your music taste matches up with others.'
 				/>
-				<meta name='twitter:image' content={coverImg} />
+
 				<meta name='twitter:image:alt' content='the homepage'></meta>
 				{/* End Twitter tags */}
 			</Helmet>
