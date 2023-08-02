@@ -10,7 +10,7 @@ export default function useSubmit(
 ) {
 	const defaultUrl =
 		process.env.NODE_ENV === 'production'
-			? 'https://vibecheck-backend-production.up.railway.app/compare/'
+			? 'https://vibecheck-backend.cyclic.app/compare/'
 			: 'http://localhost:5000/compare/';
 
 	// Context

@@ -15,7 +15,7 @@ function DeleteAccountModal({ vibeId, showDeleteModal, setShowDeleteModal }) {
 	function deleteAccount() {
 		const defaultUrl =
 			process.env.NODE_ENV === 'production'
-				? 'https://vibecheck-backend-production.up.railway.app/deleteUser/'
+				? 'https://vibecheck-backend.cyclic.app/deleteUser/'
 				: 'http://localhost:5000/deleteUser/';
 
 		axios

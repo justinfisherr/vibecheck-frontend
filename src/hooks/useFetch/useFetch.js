@@ -3,7 +3,7 @@ import axios from 'axios';
 export default function useFetcher(setSearchLoading, setSearchResults) {
 	const defaultUrl =
 		process.env.NODE_ENV === 'production'
-			? 'https://vibecheck-backend-production.up.railway.app/getuser/'
+			? 'https://vibecheck-backend.cyclic.app/getuser/'
 			: 'http://localhost:5000/getuser/';
 
 	async function getSearchResults(value) {
