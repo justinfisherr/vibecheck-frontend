@@ -12,7 +12,7 @@ export default function useSubmitVibeId(
 
 	const defaultUrl =
 		process.env.NODE_ENV === 'production'
-			? 'https://vibecheck-backend-production.up.railway.app/changeID'
+			? 'https://vibecheck-backend.cyclic.app/changeID'
 			: 'http://localhost:5000/changeID';
 
 	useEffect(() => {
