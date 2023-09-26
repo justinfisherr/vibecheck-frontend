@@ -18,6 +18,7 @@
 .compare-img-left {
 	object-fit: cover;
 	position: absolute;
+	width: 100%;
 }
 
 .compare-img-right {
