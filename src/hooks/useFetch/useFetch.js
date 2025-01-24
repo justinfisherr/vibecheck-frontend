@@ -1,10 +1,10 @@
-import axios from 'axios';
+import axios from "axios";
 
 export default function useFetcher(setSearchLoading, setSearchResults) {
 	const defaultUrl =
-		process.env.NODE_ENV === 'production'
-			? 'https://vibecheck-backend.cyclic.app/getuser/'
-			: 'http://localhost:5000/getuser/';
+		process.env.NODE_ENV === "production"
+			? "https://vibecheck-backend-production-8135.up.railway.app/getuser/"
+			: "http://localhost:5000/getuser/";
 
 	async function getSearchResults(value) {
 		const url = defaultUrl + value;
@@ -12,7 +12,7 @@ export default function useFetcher(setSearchLoading, setSearchResults) {
 			axios
 				.get(url, {
 					headers: {
-						'Content-Type': 'application/json',
+						"Content-Type": "application/json",
 					},
 				})
 				.then((res) => {

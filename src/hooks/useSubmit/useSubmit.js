@@ -1,7 +1,7 @@
-import { useContext } from 'react';
-import axios from 'axios';
+import { useContext } from "react";
+import axios from "axios";
 
-import { animationContext } from '../../context/animationContext';
+import { animationContext } from "../../context/animationContext";
 
 export default function useSubmit(
 	username,
@@ -9,9 +9,9 @@ export default function useSubmit(
 	setExistsDisplayModal
 ) {
 	const defaultUrl =
-		process.env.NODE_ENV === 'production'
-			? 'https://vibecheck-backend.cyclic.app/compare/'
-			: 'http://localhost:5000/compare/';
+		process.env.NODE_ENV === "production"
+			? "https://vibecheck-backend-production-8135.up.railway.app/compare/"
+			: "http://localhost:5000/compare/";
 
 	// Context
 	const animationData = useContext(animationContext);
@@ -23,7 +23,7 @@ export default function useSubmit(
 		};
 		const header = {
 			headers: {
-				'Content-Type': 'application/json',
+				"Content-Type": "application/json",
 			},
 		};
 
@@ -32,7 +32,7 @@ export default function useSubmit(
 			.then((res) => {
 				setResponseData(res.data.data);
 				animationData.current = res.data.data;
-				localStorage.setItem('animationData', JSON.stringify(res.data.data));
+				localStorage.setItem("animationData", JSON.stringify(res.data.data));
 			})
 			.catch(() => {
 				setExistsDisplayModal(true);

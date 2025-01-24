@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function useSubmitVibeId(
 	setUserData,
@@ -11,9 +11,9 @@ export default function useSubmitVibeId(
 	const [state, setState] = useState(null);
 
 	const defaultUrl =
-		process.env.NODE_ENV === 'production'
-			? 'https://vibecheck-backend.cyclic.app/changeID'
-			: 'http://localhost:5000/changeID';
+		process.env.NODE_ENV === "production"
+			? "https://vibecheck-backend-production-8135.up.railway.app/changeID"
+			: "http://localhost:5000/changeID";
 
 	useEffect(() => {
 		const sendRequest = async () => {
@@ -23,20 +23,20 @@ export default function useSubmitVibeId(
 			};
 			const header = {
 				headers: {
-					'Content-Type': 'application/json',
+					"Content-Type": "application/json",
 				},
 			};
 
 			await axios
 				.post(defaultUrl, body, header)
 				.then(() => {
-					const userData = JSON.parse(localStorage.getItem('userData'));
+					const userData = JSON.parse(localStorage.getItem("userData"));
 					userData.vibeId = state.newId;
 					setVibeId(state.newId);
 					setUserData(userData);
-					localStorage.setItem('userData', JSON.stringify(userData));
+					localStorage.setItem("userData", JSON.stringify(userData));
 					setLoading(false);
-					setActive('Saved');
+					setActive("Saved");
 				})
 				.catch((error) => {
 					setError(true);
